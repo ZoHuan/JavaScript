@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array</title>
+    <script>
+        function reverse(arr) {
+            if (arr instanceof Array) {
+                var newArr = [];
+                for (var i = arr.length - 1; i >= 0; i--) {
+                    newArr[newArr.length] = arr[i]
+                }
+                return newArr;
+            } else {
+                return 'error 这个参数不是数组'
+            }
+        }
+
+        console.log(reverse([1, 2, 3]));
+        console.log(reverse(1, 2, 3));
+
+        //检测是否为数组
+        //instanceof 运算符 
+        var arr = [];
+        var obj = {};
+        console.log(arr instanceof Array);
+        console.log(obj instanceof Array);
+        // Array.isArray(参数)
+        console.log(Array.isArray(arr));
+        console.log(Array.isArray(obj));
+
+
+        //添加删除数组元素方法
+        //1.push() 在数组末尾添加一个或多个数组元素
+        var arr = [1, 2, 3];
+        //arr.push(4, 'a');
+        console.log(arr.push(4, 'a'));
+        console.log(arr);
+
+        //2.unshift() 在数组开头添加一个或多个数组元素
+        console.log(arr.unshift('b'));
+        console.log(arr);
+
+        //3.pop() 删除数组的最后一个元素
+        console.log(arr.pop());
+        console.log(arr);
+
+        //shift() 删除数组的第一个元素
+        console.log(arr.shift());
+        console.log(arr);
+
+        var arr = [1500, 1200, 2000, 2100, 1800];
+        var newArr = [];
+        for (var i = 0; i < arr.length; i++) {
+            if (arr[i] < 2000) {
+                newArr.push(arr[i])
+            }
+        }
+        console.log(newArr);
+
+        //数组排序
+        //1.翻转数组
+        var arr = ['red', 'blue', 'yellow'];
+        arr.reverse();
+        console.log(arr);
+        //2.数组排序(冒泡排序)
+        var arr = [6, 418, 9, 7, 34];
+        arr.sort(function(a, b) {
+            return a - b;
+        });
+        console.log(arr);
+
+        //返回数组元素索引号方法 indexOf(数组元素)
+        var arr = ['red', 'green', 'blue'];
+        console.log(arr.indexOf('blue'));
+        //返回数组元素索引号方法 lastIndexOf(数组元素)
+        console.log(arr.lastIndexOf('blue'));
+
+        //数组去重
+        function unique(arr) {
+            var newArr = [];
+            for (let i = 0; i < arr.length; i++) {
+                if (newArr.indexOf(arr[i]) == -1) {
+                    newArr.push(arr[i]);
+                }
+            }
+            return newArr
+
+        }
+
+        var arr = ['c', 'a', 'z', 'a', 'x', 'a', 'x', 'c', 'b'];
+        console.log(unique(arr));
+
+        //数组转换为字符串
+        //1.toString()
+        console.log(arr.toString());
+        //2.join(分隔符)
+        console.log(arr.join('|'));
+
+        //查找出现的位置以及次数
+        var arr = ['red', 'blue', 'red', 'green', 'pink', 'red'];
+        var index = arr.indexOf('red');
+        var num = 0;
+        while (index !== -1) {
+            console.log(index);
+            num++;
+            index = arr.indexOf('red', index + 1);
+        }
+        console.log(num);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

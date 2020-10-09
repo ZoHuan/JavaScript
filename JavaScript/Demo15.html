@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>表单元素</title>
+</head>
+
+<body>
+    <button>按钮</button>
+    <input type="text" value="输入内容">
+    <div id="login" style="margin-top: 20px;">
+        <input type="text"><br>
+        <input type="password">
+        <button>◎</button>
+    </div>
+    <script>
+        var btn = document.querySelector('button');
+        var input = document.querySelector('input');
+        btn.onclick = function() {
+            input.value = '被点击';
+            // btn.disabled = true;
+            this.disabled = true;
+        }
+
+        var login = document.getElementById('login');
+        var password = login.getElementsByTagName('input')[1];
+        var look = login.querySelector('button');
+        look.onclick = function() {
+            var type = password.type;
+            if (type == 'password') {
+                password.type = 'text';
+                this.innerHTML = '¤'
+            } else {
+                password.type = 'password';
+                this.innerHTML = '◎';
+            }
+        }
+    </script>
+</body>
+
+</html>

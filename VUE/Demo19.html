@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>播放器</title>
+    <link rel="stylesheet" type="text/css" href="css/reset.css" />
+    <style>
+        .wrap {
+            background: url(images/background.jpg) no-repeat;
+            background-size: 100%;
+            overflow: hidden;
+            height: 937px;
+            min-width: 980px;
+        }
+        
+        .play_wrap {
+            position: relative;
+            width: 980px;
+            margin: auto;
+            margin-top: 100px;
+        }
+        
+        .search_bar {
+            height: 40px;
+            padding: 10px 20px;
+            background-color: #303451;
+            border-radius: 6px;
+            border-bottom-left-radius: 0;
+            border-bottom-right-radius: 0;
+        }
+        
+        .search_bar img {
+            float: left;
+            margin-top: 3.5px;
+        }
+        
+        .search_bar input {
+            float: right;
+            width: 260px;
+            height: 30px;
+            margin-top: 5px;
+            padding: 0;
+            border: 0;
+            border-radius: 20px;
+            background: #fbfbfb url(images/search.png) no-repeat 98%;
+            background-size: 24px;
+            color: #303451;
+            font-size: 16px;
+            text-indent: 10px;
+            outline: none
+        }
+        
+        .center_con {
+            height: 520px;
+            background: #fff;
+        }
+        
+        .center_con::after,
+        .song_list li::after,
+        .comment_list dl::after {
+            content: "";
+            display: block;
+            height: 0;
+            clear: both;
+            visibility: hidden;
+        }
+        
+        .song_wrapper,
+        .player_con,
+        .comment_wrapper,
+        .song_list li a,
+        .song_list li b,
+        .song_list li span,
+        .line {
+            float: left;
+        }
+        
+        .song_list {
+            width: 260px;
+            height: 500px;
+            padding: 10px;
+            font-size: 16px;
+            line-height: 30px;
+            color: #5c658e;
+        }
+        
+        .song_list,
+        .comment_list {
+            overflow-y: auto;
+        }
+        
+        .song_list::-webkit-scrollbar,
+        .comment_list::-webkit-scrollbar {
+            width: 0 !important
+        }
+        
+        .song_list li:nth-of-type(even) {
+            background-color: #4b5a7e0d;
+        }
+        
+        .song_list li a {
+            width: 20px;
+            height: 30px;
+            margin-right: 8px;
+            background: url(images/play.png) no-repeat center;
+            background-size: 22px;
+            vertical-align: bottom;
+        }
+        
+        .song_list li b {
+            width: 180px;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+        }
+        
+        .song_list li span {
+            width: 20px;
+            height: 30px;
+        }
+        
+        .song_list li span i {
+            display: inline-block;
+            width: 20px;
+            height: 30px;
+            background: url(images/video.png) no-repeat center;
+            background-size: 22px;
+        }
+        
+        .line {
+            height: 520px;
+            border-left: 2px solid;
+            border-image: -webkit-linear-gradient( #ffffff00, #8b8eae, #ffffff00) 20 100;
+            border-image: -moz-linear-gradient( #ffffff00, #8b8eae, #ffffff00) 20 100;
+            border-image: linear-gradient( #ffffff00, #8b8eae, #ffffff00) 20 100;
+        }
+        
+        .player_con {
+            position: relative;
+            width: 456px;
+            height: 520px;
+            border-top: 0;
+            border-bottom: 0;
+        }
+        
+        .player_con .play_bar {
+            position: absolute;
+            z-index: 10;
+            top: -22px;
+            left: 58%;
+            width: 56px;
+            -moz-transform: rotate(-60deg);
+            -webkit-transform: rotate(-60deg);
+            -ms-transform: rotate(-60deg);
+            -o-transform: rotate(-60deg);
+        }
+        
+        .player .play_bar {
+            top: -5px;
+            left: 53%;
+            -moz-transform: rotate(-36deg);
+            -webkit-transform: rotate(-36deg);
+            -ms-transform: rotate(-36deg);
+            -o-transform: rotate(-36deg);
+        }
+        
+        .player_con .disc {
+            position: absolute;
+            top: 20%;
+            left: 50%;
+            z-index: 9;
+            width: 260px;
+            margin-left: -130px;
+        }
+        
+        .player_con .cover {
+            position: absolute;
+            top: 29%;
+            left: 50%;
+            width: 166px;
+            margin-left: -83px;
+        }
+        
+        .player .disc,
+        .player .cover {
+            -webkit-animation: run 6s linear 0s infinite;
+        }
+        
+        @-webkit-keyframes run {
+            from {
+                -webkit-transform: rotate(0deg);
+            }
+            to {
+                -webkit-transform: rotate(360deg);
+            }
+        }
+        
+        .comment_wrapper {
+            width: 220px;
+            padding: 0 10px;
+        }
+        
+        .comment_wrapper .title {
+            font-size: 16px;
+            font-weight: 700;
+            padding: 10px 0px 14px;
+        }
+        
+        .comment_list {
+            height: 475px;
+        }
+        
+        .comment_list dl {
+            margin-bottom: 26px;
+        }
+        
+        .comment_list dt {
+            float: left;
+            width: 44px;
+            height: 44px;
+            margin-right: 10px;
+        }
+        
+        .comment_list dt img {
+            width: 100%;
+            border-radius: 50%;
+        }
+        
+        .comment_list .name {
+            float: left;
+            margin: 4px 0 5px;
+            font-size: 14px;
+            font-weight: 700;
+            color: #424157;
+        }
+        
+        .comment_list .detail {
+            float: left;
+            width: 164px;
+            font-size: 13px;
+            color: #9ba1bc;
+        }
+        
+        .audio_con audio {
+            width: 100%;
+            height: 50px;
+            background-color: #f1f3f4;
+            border-bottom-left-radius: 6px;
+            border-bottom-right-radius: 6px;
+        }
+        
+        .video_con video {
+            position: absolute;
+            top: 0;
+            z-index: 20;
+            width: 980px;
+        }
+        
+        .video_con .mask {
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 10;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <!-- 播放器主体区域 -->
+        <div class="play_wrap" id="player">
+            <div class="search_bar">
+                <img src="images/MusicLogo.png" alt="">
+                <!-- 搜索歌曲 -->
+                <input type="text" autocomplete="off" v-model="query" @keyup.enter="searchMusic">
+            </div>
+            <div class="center_con">
+                <!-- 搜索歌曲列表 -->
+                <div class="song_wrapper">
+                    <ul class="song_list">
+                        <li v-for="item in musicList">
+                            <a href="javascript:;" @click="playMusic(item.id)"></a><b>{{item.name}}</b><span v-if="item.mvid!=0" @click="playMv(item.mvid)"><i></i></span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="line"></div>
+                <!-- 歌曲信息容器 -->
+                <div class="player_con" :class="{player:isPlaying}">
+                    <img src="images/stylus.png" class="play_bar" alt="">
+                    <!-- 黑胶碟片 -->
+                    <img src="images/singlecover.png" class="disc autoRotate" alt="">
+                    <img :src="musicCover" class="cover autoRotate" alt="">
+                </div>
+                <div class="line"></div>
+                <!-- 评论容器 -->
+                <div class="comment_wrapper">
+                    <h5 class="title">热门留言</h5>
+                    <div class="comment_list">
+                        <dl v-for="item in hotComments">
+                            <dt><img :src="item.user.avatarUrl" alt=""></dt>
+                            <dd class="name">{{item.user.nickname}}</dd>
+                            <dd class="detail">
+                                {{item.content}}
+                            </dd>
+                        </dl>
+                    </div>
+                </div>
+            </div>
+            <div class="audio_con">
+                <audio ref='audio' @play="play" @pause="pause" :src="musicUrl" controls autoplay loop class="myaudio"></audio>
+            </div>
+            <div class="video_con" v-show="isShow" style="display: none;">
+                <video :src="mvUrl" controls="controls"></video>
+                <div class="mask" @click="hide"></div>
+            </div>
+        </div>
+    </div>
+    <!-- 官网提供的 axios 在线地址 -->
+    <script src="https://unpkg.com/axios/dist/axios.min.js "></script>
+    <!-- 开发环境版本，包含了有帮助的命令行警告 -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js "></script>
+    <!-- 自己写的js -->
+    <script src="./js/Demo19.js "></script>
+</body>
+
+</html>

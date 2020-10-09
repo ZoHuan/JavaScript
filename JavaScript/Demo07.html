@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Math</title>
+    <script>
+        var myMath = {
+            PI: 3.141592653,
+            max: function() {
+                if (arguments.length == 0) {
+                    return -Infinity;
+                }
+                var max = arguments[0];
+                for (var i = 0; i < arguments.length; i++) {
+                    if (isNaN(arguments[i])) {
+                        return NaN;
+                    }
+                    if (arguments[i] > max) {
+                        max = arguments[i];
+                    }
+                }
+                return max
+            },
+            min: function() {
+                if (arguments.length == 0) {
+                    return -Infinity;
+                }
+                var min = arguments[0];
+                for (var i = 0; i < arguments.length; i++) {
+                    if (isNaN(arguments[i])) {
+                        return NaN;
+                    }
+                    if (arguments[i] < min) {
+                        min = arguments[i];
+                    }
+                }
+                return min
+            }
+        }
+
+        console.log(myMath.PI);
+        console.log(myMath.max());
+        console.log(myMath.max(1, ''));
+        console.log(myMath.max(1, 2, 3));
+        console.log(myMath.min());
+        console.log(myMath.max(1, 2, 3));
+
+
+
+        function getRandom(min, max) {
+            return Math.floor(Math.random() * (max - min + 1) + min);
+        }
+        var result = getRandom(1, 10);
+
+        while (true) {
+            var num = prompt('请输入1~10的数字!');
+            if (num == '' || isNaN(num)) {
+                alert('请输入正确的数字')
+            }
+            if (num > result) {
+                alert('数字大了');
+            } else if (num < result) {
+                alert('数字小了');
+            } else {
+                alert('猜对了');
+                break;
+            }
+        }
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

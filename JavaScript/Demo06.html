@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>小结</title>
+    <script>
+        var Computer = function(color, weight, brand, model) {
+            this.color = color;
+            this.weight = weight;
+            this.brand = brand;
+            this.model = model;
+            this.effect = function() {
+                console.log("可以看电影、听音乐、打游戏和敲代码");
+            }
+        }
+
+        var computer = new Computer('bule', '100', '华硕', '飞行堡垒');
+        console.log(computer.color);
+        console.log(computer.weight);
+        console.log(computer.brand);
+        console.log(computer.model);
+        computer.effect();
+
+        var Button = function(width, height, background) {
+            this.width = width;
+            this.height = height;
+            this.background = background;
+            this.onclick = function() {
+                console.log("点击");
+            }
+        }
+
+        var button = new Button('100', '100', 'red');
+        console.log(button.width);
+        console.log(button.height);
+        console.log(button.background);
+        button.onclick();
+
+        var car = function(weight, color, brand) {
+            this.weight = weight;
+            this.color = color;
+            this.brand = brand;
+            this.role = function() {
+                console.log("可以载人，拉货和耕田");
+            }
+        }
+
+        var car = new car('100', 'back', 'BMW');
+        console.log(car.weight);
+        console.log(car.color);
+        console.log(car.brand);
+        car.role();
+
+
+        function arrReverse(arr) {
+            var newArr = [];
+            for (var i = arr.length - 1; i >= 0; i--) {
+                newArr[newArr.length] = arr[i]
+            }
+            return newArr;
+        }
+
+        var arr = arrReverse([1, 2, 3, 4, 5, 6]);
+        console.log(arr);
+
+        function arrSort(arr) {
+            var num;
+            for (var i = 0; i < arr.length; i++) {
+                if (arr[i] > arr[i + 1]) {
+                    num = arr[i];
+                    arr[i] = arr[i + 1];
+                    arr[i + 1] = num;
+                }
+            }
+            return arr;
+        }
+
+        var arr1 = arrSort([7, 2, 6, 18, 64, 8, 98]);
+        console.log(arr1);
+
+        var num = prompt("欢迎使用简易计算器：\n1.加法运算：\n2.减法运算：\n3.乘法运算：\n4.除法运算：\n5.退出：\n请输入您的选项：");
+        if (isNaN(num)) {
+            alert('请输入正确数字');
+        } else if (num > 5) {
+            alert('输入的数字不在范围内');
+        } else if (num == 5) {
+            alert('退出成功')
+        } else {
+            var num1 = prompt('请输入一个数值');
+            if (isNaN(num1)) {
+                alert('请输入正确数字');
+            }
+            var num2 = prompt('请输入一个数值');
+            if (isNaN(num2)) {
+                alert('请输入正确数字');
+            }
+            var sum;
+            switch (num) {
+
+                case '1':
+                    sum = parseFloat(num1) + parseFloat(num2);
+                    debugger;
+                    break;
+                case '2':
+                    sum = num1 - num2;
+                    break;
+                case '3':
+                    sum = num1 * num2;
+                    break;
+                case '4':
+                    sum = num1 / num2;
+                    break;
+            }
+            alert(sum);
+        }
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

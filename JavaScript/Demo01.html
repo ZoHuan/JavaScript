@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>循环</title>
+    <script>
+        var sum = 0;
+        for (var i = 1; i <= 100; i++) {
+            sum += i;
+        }
+        console.log(sum);
+        console.log(sum / 100);
+
+        var sum1 = 0;
+        for (var i = 1; i <= 100; i++) {
+            if (i % 2 == 0) {
+                sum1 += i;
+            }
+        }
+        console.log(sum1)
+
+        var sum2 = 0;
+        for (var i = 1; i <= 100; i++) {
+            if (i % 7 == 0) {
+                sum2 += i;
+            }
+        }
+        console.log(sum2)
+
+        var str = '';
+        for (var i = 1; i <= 4; i++) {
+            for (var j = 1; j <= 5; j++) {
+                str += "♤"
+            }
+            str += "\n";
+        }
+        console.log(str);
+
+        var str1 = '';
+        for (var i = 1; i <= 6; i++) {
+            for (var j = 1; j <= i; j++) {
+                str1 += "♤"
+            }
+            str1 += "\n";
+        }
+        console.log(str1);
+
+        var str3 = '';
+        for (var i = 1; i <= 9; i++) {
+            for (var j = 1; j <= i; j++) {
+                str3 += j + '×' + i + '=' + i * j;
+                str3 += "\t";
+            }
+            str3 += "\n";
+        }
+        console.log(str3)
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>数组</title>
+    <script>
+        var arr = [2, 6, 1, 7, 4];
+        var sum = 0;
+        var avg = 0;
+        for (var i = 0; i < arr.length; i++) {
+            sum += arr[i];
+        }
+        avg = sum / arr.length;
+        console.log(sum);
+        console.log(avg);
+
+        var arr1 = [5, 66, 1, 74, 25, 48];
+        var max = arr1[0];
+        for (var i = 0; i < arr1.length; i++) {
+            if (arr1[i] > max) {
+                max = arr1[i]
+            }
+        }
+        console.log(max);
+
+        var arr2 = [2, 0, 6, 1, 77, 0, 52, 0, 25, 7];
+        var newArr = [];
+        for (var i = 0; i < arr2.length; i++) {
+            if (arr2[i] > 10) {
+                newArr[newArr.length] = arr2[i];
+            }
+        }
+        console.log(newArr);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

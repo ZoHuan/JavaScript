@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>换肤功能</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            background: url(images/bg1.jpg) no-repeat center top;
+        }
+        
+        ul,
+        li {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+        }
+        
+        .option {
+            width: 370px;
+            margin: 100px auto;
+        }
+        
+        .option li {
+            display: inline-block;
+            cursor: pointer;
+        }
+        
+        .option img {
+            width: 120px;
+        }
+    </style>
+</head>
+
+<body>
+    <ul class="option">
+        <li><img src="images/bg1.jpg"></li>
+        <li><img src="images/bg3.jpg"></li>
+        <li><img src="images/bg4.jpg"></li>
+    </ul>
+    <script>
+        var imgs = document.querySelector('.option').querySelectorAll('img');
+        for (let i = 0; i < imgs.length; i++) {
+            imgs[i].onclick = function() {
+                document.body.style.backgroundImage = 'url(' + this.src + ')';
+
+            }
+        }
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>操作元素</title>
+</head>
+
+<body>
+    <!-- 修改元素内容 -->
+    <button>显示当前系统时间</button>
+    <div>某个时间</div>
+    <p>某个时间</p>
+
+    <div></div>
+
+    <p>
+        获取文字
+        <span>获取标签文字</span>
+    </p>
+
+    <!-- 修改元素属性 -->
+    <button id='change1'>1</button>
+    <button id='change2'>2</button><br>
+    <img src="images/vue-1.jpg" alt="" title="vue1" width="300">
+    <script>
+        // 修改元素内容
+        var time = document.querySelector('button');
+        var timeText = document.querySelector('div');
+        time.onclick = function() {
+            timeText.innerText = getDate();
+        }
+
+        function getDate() {
+            var date = new Date();
+            var year = date.getFullYear();
+            var month = date.getMonth() + 1;
+            var dates = date.getDate();
+            var arr = ['星期日', '星期一', '星期二', '星期三', '星期四', '星期五', '星期六', ];
+            var day = date.getDay();
+            return year + '年' + month + '月' + dates + '日 ' + arr[day];
+        }
+
+        var p = document.querySelector('p');
+        p.innerText = getDate();
+
+
+        var setText = document.querySelectorAll('div')[1];
+        setText.innerText = '2020';
+        setText.innerHTML = '<strong>2020</strong>';
+
+        var getText = document.querySelectorAll('p')[1];
+        console.log(getText.innerText);
+        console.log(getText.innerHTML);
+
+        // 修改元素属性
+        var change1 = document.getElementById('change1');
+        var change2 = document.getElementById('change2');
+        var img = document.querySelector('img');
+        change1.onclick = function() {
+            img.src = 'images/vue-1.jpg';
+            img.title = 'vue1'
+        }
+        change2.onclick = function() {
+            img.src = 'images/vue-2.jpg';
+            img.title = 'vue2'
+        }
+    </script>
+</body>
+
+</html>

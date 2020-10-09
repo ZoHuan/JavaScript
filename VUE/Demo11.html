@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>图片切换</title>
+    <style>
+        #mask {
+            position: relative;
+            width: 400px;
+            height: 400px;
+            margin: auto;
+            background-color: aqua;
+        }
+        
+        #mask img {
+            width: 100%;
+        }
+        
+        a {
+            position: absolute;
+            top: 50%;
+            width: 30px;
+            height: 60px;
+            margin-top: -30px;
+            font-size: 40px;
+            color: #ffffff;
+            background: rgba(0, 0, 0, 0.3);
+            line-height: 60px;
+            text-decoration: none;
+        }
+        
+        .prev {
+            left: 0;
+        }
+        
+        .next {
+            right: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="mask">
+        <img :src="imgArr[index]" alt="">
+        <a href="#" @click="prev" v-show="index!=0" class="prev">&lt;</a>
+        <a href="#" @click="next" v-show="index<imgArr.length-1" class="next">&gt;</a>
+    </div>
+    <!-- 开发环境版本，包含了有帮助的命令行警告 -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+        var app = new Vue({
+            el: "#mask",
+            data: {
+                imgArr: ["images/vue-1.jpg", "images/vue-2.jpg", "images/vue-3.jpg", "images/vue-4.jpg"],
+                index: 0
+            },
+            methods: {
+                prev: function() {
+                    this.index--;
+                },
+                next: function() {
+                    this.index++;
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

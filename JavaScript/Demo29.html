@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>创建添加节点</title>
+</head>
+
+<body>
+    <ul>
+        <li>one</li>
+    </ul>
+    <button>删除</button>
+    <div class="inner"></div>
+    <div class="create"></div>
+    <script>
+        var ul = document.querySelector('ul');
+        // 1. 创建元素节点
+        var li = document.createElement('li');
+        // 2. 添加元素节点 node.appendChild(child) node 父级 child 子级 追加元素
+        ul.appendChild(li);
+        // 2. 添加元素节点 node.insertBefore(child,指定元素)
+        var lili = document.createElement('li');
+        ul.insertBefore(lili, ul.children[0]);
+
+        // 3. 删除元素节点 node.removeChild(child)
+        //ul.removeChild(ul.children[0]);
+        var btn = document.querySelector('button');
+        btn.onclick = function() {
+            if (ul.children.length == 0) {
+                this.disabled = true;
+            }
+            ul.removeChild(ul.children[0]);
+        }
+
+        // 4. 复制元素节点 
+        // node.cloneNode() 括号为空或者里面是false 浅拷贝 只复制标签不复制里面的内容
+        // node.cloneNode(true) 括号为true 深拷贝 复制标签并且复制里面的内容
+        var liOne = ul.children[1].cloneNode(true);
+        ul.appendChild(liOne);
+
+
+        // 三种创建元素方式区别
+        // 1. document.write() 创建元素 如果页面文档流加载完毕，再调用这句话会导致页面重绘
+        document.write('<div>write</div>');
+        // 2. innerHTML 创建元素 将内容写入某个DOM节点，不会导致页面全部重绘
+        // 创建多个元素效率更高（不要拼接字符串，采取数组形式拼接），结构稍微复杂
+        var inner = document.querySelector('.inner');
+        inner.innerHTML = '<a href= "javascript:;">innerHTML</a>';
+        // 3. document.createElement() 创建元素 创建多个元素效率稍低一点点，但是结构更清晰
+        var create = document.querySelector('.create');
+        var a = document.createElement('a');
+        create.appendChild(a);
+    </script>
+</body>
+
+</html>

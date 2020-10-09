@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>函数</title>
+    <script>
+        function getMax(num1, num2) {
+            // if (num1 > num2) {
+            //     return num1;
+            // } else {
+            //     return num2;
+            // }
+            return num1 > num2 ? num1 : num2;
+        }
+
+        console.log(getMax(9, 26));
+
+
+        function getArrMax(arr) {
+            var max = arr[0];
+            for (var i = 0; i < arr.length; i++) {
+                if (arr[i] > max) {
+                    max = arr[i];
+                }
+            }
+            return max;
+        }
+        var arr = [1, 54, 4, 2, 6, 7, 4]
+        console.log(getArrMax(arr));
+
+
+
+        function fun() {
+            console.log('第一种声明函数的方法');
+        }
+        fun();
+
+        var func = function() {
+            console.log('第二种声明函数的方法(匿名函数)');
+        }
+        func()
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
