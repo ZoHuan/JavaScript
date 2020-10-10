@@ -62,6 +62,9 @@
             e.preventDefault();
             // 低版本浏览器 ie678 
             e.returnValue;
+            // 我们可以利用return false 也能阻止默认行为 没有兼容性问题 
+            // return 后面的代码不执行了 而且只限于传统的注册方式
+            return false;
         }
     </script>
 </body>
