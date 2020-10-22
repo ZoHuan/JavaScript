@@ -11,19 +11,19 @@
             type: "阿拉斯加犬",
             age: 5,
             color: "棕红色",
-            show: function() {
+            show: function () {
                 console.log("bark");
             }
 
         }
 
-        console.log(dog.show());
+        dog.show();
 
         var naruto = new Object();
         naruto.name = "鸣人";
         naruto.sex = "男";
         naruto.age = 19;
-        naruto.skill = function() {
+        naruto.skill = function () {
             console.log("影分身术")
         }
         console.log(naruto.name);
@@ -34,7 +34,7 @@
             this.name = name;
             this.type = type;
             this.blood = blood;
-            this.attacker = function(attack) {
+            this.attacker = function (attack) {
                 console.log(this.name + attack);
             }
         }
