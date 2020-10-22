@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>定时器之clearInterval</title>
+</head>
+
+<body>
+    <button class="begin">开启定时器</button>
+    <button class="stop">停止定时器</button>
+    <br>
+    手机号码： <input type="text">
+    <button class="send">发送</button>
+    <script>
+        var begin = document.querySelector('.begin');
+        var stop = document.querySelector('.stop');
+        var times = null;
+        begin.addEventListener('click', function () {
+            times = setInterval(function () {
+                console.log('开启定时器');
+            }, 1000)
+        })
+        stop.addEventListener('click', function () {
+            clearInterval(times);
+        })
+
+        // 发送短信
+        var send = document.querySelector('.send');
+        var num = 3;
+        send.addEventListener('click', function () {
+            this.disabled = true;
+            var timer = setInterval(function () {
+                if (num == 0) {
+                    clearInterval(timer);
+                    send.disabled = false;
+                    send.innerHTML = '发送';
+                    num = 3;
+                } else {
+                    send.innerHTML = '还剩下' + num + '秒';
+                    num--;
+                }
+            }, 1000);
+        })
+
+
+    </script>
+</body>
+
+</html>
