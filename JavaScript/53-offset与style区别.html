@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>offset与style区别</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        .box {
+            width: 200px;
+            height: 200px;
+            background-color: aqua;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box" style="width:200px"></div>
+    <script>
+        // offset与style区别
+        var box = document.querySelector('.box');
+        console.log(box.offsetWidth);
+        console.log(box.style.width);
+        // box.offsetWidth = "300px";
+        // box.style.width = "300px";
+
+        // 计算鼠标在盒子内的坐标
+        box.addEventListener('mousemove', function (e) {
+            var x = e.pageX - this.offsetLeft;
+            var y = e.pageY - this.offsetTop;
+            this.innerHTML = 'X坐标是：' + x + ' Y坐标是' + y;
+        })
+    </script>
+</body>
+
+</html>
