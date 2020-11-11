@@ -57,13 +57,18 @@
 
       // 缓动动画
       // 核心算法：（目标值 - 现在的位置） / 10
-      function slowAnimate(obj, target) {
+      function slowAnimate(obj, target, callback) {
         clearInterval(obj.timer);
         obj.timer = setInterval(function () {
           var step = (target - obj.offsetLeft) / 10;
           step = step > 0 ? Math.ceil(step) : Math.floor(step);
           if (obj.offsetLeft == target) {
             clearInterval(obj.timer);
+            // 回调函数写到定时器结束里面
+            if (callback) {
+              // 调用函数
+              callback();
+            }
           }
           obj.style.left = obj.offsetLeft + step + "px";
         }, 30);
@@ -76,7 +81,9 @@
         slowAnimate(slow, 500);
       });
       btn800.addEventListener("click", function () {
-        slowAnimate(slow, 800);
+        slowAnimate(slow, 800, function () {
+          slow.style.backgroundColor = "coral";
+        });
       });
     </script>
   </body>
