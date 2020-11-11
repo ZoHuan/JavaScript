@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>固定侧边栏</title>
+    <style>
+      .w {
+        width: 1600px;
+        margin: 0 auto 20px;
+      }
+      .header {
+        height: 200px;
+        background-color: cyan;
+      }
+      .banner {
+        height: 500px;
+        background-color: cornflowerblue;
+      }
+      .main {
+        height: 1200px;
+        background-color: cadetblue;
+      }
+      .slider-bar {
+        position: absolute;
+        top: 30%;
+        right: 4%;
+        width: 70px;
+        height: 120px;
+        background-color: coral;
+      }
+      .slider-bar span {
+        display: none;
+        position: absolute;
+        bottom: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="slider-bar">
+      <span class="goBack">回到顶部</span>
+    </div>
+    <div class="header w"></div>
+    <div class="banner w"></div>
+    <div class="main w"></div>
+    <script>
+      var sliderbar = document.querySelector(".slider-bar");
+      var banner = document.querySelector(".banner");
+      var bannerTop = banner.offsetTop;
+      var sliderbarTop = sliderbar.offsetTop - bannerTop;
+      var main = document.querySelector(".main");
+      var goBack = document.querySelector(".goBack");
+      var mainTop = main.offsetTop;
+      document.addEventListener("scroll", function () {
+        // window.pageYOffset 页面被卷去的头部
+        if (window.pageYOffset >= bannerTop) {
+          sliderbar.style.position = "fixed";
+          sliderbar.style.top = sliderbarTop + "px";
+        } else {
+          sliderbar.style.position = "absolute";
+          sliderbar.style.top = "30%";
+        }
+
+        if (window.pageYOffset >= mainTop) {
+          goBack.style.display = "block";
+        } else {
+          goBack.style.display = "none";
+        }
+      });
+    </script>
+  </body>
+</html>
