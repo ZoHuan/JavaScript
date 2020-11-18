@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>移动端轮播图</title>
+    <link rel="stylesheet" href="css\base.css" />
+    <style>
+      .focus {
+        position: relative;
+        overflow: hidden;
+      }
+      .focus img {
+        width: 100%;
+      }
+      .focus ul {
+        overflow: hidden;
+        width: 500%;
+        margin-left: -100%;
+      }
+      .focus ul li {
+        float: left;
+        width: 20%;
+      }
+      .focus ol {
+        position: absolute;
+        bottom: 5px;
+        right: 5px;
+      }
+      .focus ol li {
+        display: inline-block;
+        width: 5px;
+        height: 5px;
+        border-radius: 2px;
+        background-color: #fff;
+      }
+      .focus ol .current {
+        width: 15px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="focus">
+      <ul>
+        <li><img src="images\tour-3.jpg" alt="" /></li>
+        <li><img src="images\tour-1.jpg" alt="" /></li>
+        <li><img src="images\tour-2.jpg" alt="" /></li>
+        <li><img src="images\tour-3.jpg" alt="" /></li>
+        <li><img src="images\tour-1.jpg" alt="" /></li>
+      </ul>
+      <!-- 小圆点 -->
+      <ol>
+        <li class="current"></li>
+        <li></li>
+        <li></li>
+      </ol>
+    </div>
+    <script>
+      var focus = document.querySelector(".focus");
+      var ul = focus.children[0];
+      var w = focus.offsetWidth;
+      var index = 0;
+      var timer = setInterval(function () {
+        index++;
+        var transformX = -index * w;
+        ul.style.transform = "transformX(" + transformX + "px)";
+      }, 2000);
+    </script>
+  </body>
+</html>

@@ -4,24 +4,223 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>轮播图</title>
+    <link rel="stylesheet" href="css\base.css" />
+    <style>
+      .w {
+        width: 800px;
+        margin: auto;
+      }
+      .main {
+        width: 800px;
+        height: 600px;
+      }
+      .focus {
+        position: relative;
+        width: 800px;
+        height: 600px;
+        overflow: hidden;
+      }
+      .focus ul {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 400%;
+      }
+      .focus ul li {
+        float: left;
+      }
+      .arrow-l,
+      .arrow-r {
+        display: none;
+        position: absolute;
+        top: 50%;
+        margin-top: -20px;
+        width: 24px;
+        height: 40px;
+        background-color: rgba(0, 0, 0, 0.3);
+        text-align: center;
+        line-height: 40px;
+        color: #fff;
+        z-index: 10;
+      }
+      .arrow-r {
+        right: 0;
+      }
+      .arrow-l {
+        left: 0;
+      }
+      .circle {
+        position: absolute;
+        bottom: 0px;
+        left: 50%;
+        height: 20px;
+        background-color: #0006;
+        transform: translateX(-50%);
+      }
+      .circle li {
+        float: left;
+        height: 10px;
+        width: 10px;
+        border-radius: 50%;
+        border: 2px solid #fff;
+        margin: 2px 6px;
+        cursor: pointer;
+      }
+      .current {
+        background: #fff;
+      }
+    </style>
+    <script src="js\animate.js"></script>
   </head>
   <body>
     <div class="w">
       <div class="main">
         <div class="focus fl">
           <!-- 左侧按钮 -->
-          <a href="#" class="arrow-l"> &lt; </a>
+          <a href="javaScript:;" class="arrow-l"> &lt; </a>
           <!-- 右侧按钮 -->
-          <a href="#" class="arrow-r"> &gt; </a>
+          <a href="javaScript:;" class="arrow-r"> &gt; </a>
+          <!-- 核心滚动区域 -->
           <ul>
             <li>
-              <a href="#">
-                <img src="" alt="" />
+              <a href="javaScript:;">
+                <img src="images\vue-1.jpg" alt="" />
+              </a>
+            </li>
+            <li>
+              <a href="javaScript:;">
+                <img src="images\vue-2.jpg" alt="" />
+              </a>
+            </li>
+            <li>
+              <a href="javaScript:;">
+                <img src="images\vue-3.jpg" alt="" />
               </a>
             </li>
           </ul>
+          <!-- 小圆点 -->
+          <ol class="circle"></ol>
         </div>
       </div>
     </div>
+    <script>
+      var arrow_l = document.querySelector(".arrow-l");
+      var arrow_r = document.querySelector(".arrow-r");
+      var focus = document.querySelector(".focus");
+      // 获取显示宽度
+      var focusWidth = focus.offsetWidth;
+      // 控制左右箭头显示隐藏
+      focus.addEventListener("mouseenter", function () {
+        console.log(22);
+        arrow_l.style.display = "block";
+        arrow_r.style.display = "block";
+        // 鼠标经过停止定时器
+        clearInterval(timer);
+        // 清除定时器
+        timer = null;
+      });
+      focus.addEventListener("mouseleave", function () {
+        arrow_l.style.display = "none";
+        arrow_r.style.display = "none";
+        timer = setInterval(function () {
+          arrow_r.click();
+        }, 2000);
+      });
+
+      var ul = focus.querySelector("ul");
+      var ol = focus.querySelector(".circle");
+      // 根据ul中的图片数量创建圆圈
+      for (let i = 0; i < ul.children.length; i++) {
+        var li = document.createElement("li");
+        // 添加圆圈下标
+        li.setAttribute("index", i);
+        ol.appendChild(li);
+        // 圆圈点击事件
+        li.addEventListener("click", function () {
+          for (let i = 0; i < ol.children.length; i++) {
+            ol.children[i].className = "";
+          }
+          // 添加圆圈选中样式
+          this.className = "current";
+          // 根据下标获取移动位置
+          var index = this.getAttribute("index");
+          // 下标赋值num 和 circle
+          num = index;
+          circle = index;
+          animate(ul, -index * focusWidth);
+        });
+      }
+      // 默认第一个圆圈选中
+      ol.children[0].className = "current";
+
+      // 克隆第一个图片放到最后
+      var first = ul.children[0].cloneNode(true);
+      ul.appendChild(first);
+
+      var num = 0;
+      var circle = 0;
+      // flag 节流阀
+      var flag = true;
+      // 右侧滚动
+      arrow_r.addEventListener("click", function () {
+        if (flag) {
+          // 关闭节流阀
+          flag = false;
+          // 图片走到最后，将ul恢复到0的位置
+          if (num == ul.children.length - 1) {
+            ul.style.left = 0;
+            num = 0;
+          }
+          num++;
+          animate(ul, -num * focusWidth, function () {
+            // 打开节流阀
+            flag = true;
+          });
+          // 控制圆圈跟随变化
+          circle++;
+          if (circle == ol.children.length) {
+            circle = 0;
+          }
+          circleChange();
+        }
+      });
+
+      // 左侧滚动
+      arrow_l.addEventListener("click", function () {
+        if (flag) {
+          flag = false; // 图片走到前面，将ul恢复到最后的位置
+          if (num == 0) {
+            num = ul.children.length - 1;
+            ul.style.left = -num * focusWidth;
+          }
+          num--;
+          animate(ul, -num * focusWidth, function () {
+            flag = true;
+          });
+          // 控制圆圈跟随变化
+          circle--;
+          /* 
+        if (circle < 0) {
+          circle = ol.children.length - 1;
+        } */
+          // 优化写法
+          circle = circle < 0 ? ol.children.length - 1 : circle;
+          circleChange();
+        }
+      });
+
+      // 封装圆圈当前选中状态
+      function circleChange() {
+        for (let i = 0; i < ol.children.length; i++) {
+          ol.children[i].className = "";
+        }
+        ol.children[circle].className = "current";
+      }
+
+      // 自动播放轮播图
+      var timer = setInterval(function () {
+        arrow_r.click();
+      }, 2000);
+    </script>
   </body>
 </html>

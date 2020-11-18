@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>touch触摸事件</title>
+    <style>
+      div {
+        width: 100px;
+        height: 100px;
+        background-color: darkcyan;
+      }
+    </style>
+  </head>
+  <body>
+    <div></div>
+    <script>
+      var div = document.querySelector("div");
+      // 手指触摸DOM元素事件
+      div.addEventListener("touchstart", function () {
+        console.log("触摸开始事件");
+      });
+      // 手指在DOM元素身上移动事件
+      div.addEventListener("touchmove", function () {
+        console.log("移动触摸事件");
+      });
+      // 手指离开DOm元素事件
+      div.addEventListener("touchend", function () {
+        console.log("触摸结束事件");
+      });
+    </script>
+  </body>
+</html>
