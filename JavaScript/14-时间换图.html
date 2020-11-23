@@ -1,31 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>时间换图</title>
-</head>
+  </head>
 
-<body>
+  <body>
     <div>问候语</div>
-    <img src="images/vue-1.jpg" alt="">
+    <img src="images/vue-1.jpg" alt="" />
     <script>
-        var div = document.querySelector('div');
-        var img = document.querySelector('img');
-        var date = new Date();
-        var hours = date.getHours();
-        if (hours >= 6 & hours < 12) {
-            div.innerHTML = '上午好！';
-            img.src = 'images/vue-1.jpg';
-        } else if (hours >= 12 & hours < 18) {
-            div.innerHTML = '下午好！';
-            img.src = 'images/vue-2.jpg';
-        } else {
-            div.innerHTML = '晚上好！';
-            img.src = 'images/vue-3.jpg';
-        }
+      var div = document.querySelector("div");
+      var img = document.querySelector("img");
+      var date = new Date();
+      var hours = date.getHours();
+      if ((hours >= 6) & (hours < 12)) {
+        div.innerHTML = "上午好！";
+        img.src = "images/vue-1.jpg";
+      } else if ((hours >= 12) & (hours < 18)) {
+        div.innerHTML = "下午好！";
+        img.src = "images/vue-2.jpg";
+      } else {
+        div.innerHTML = "晚上好！";
+        img.src = "images/vue-3.jpg";
+      }
     </script>
-</body>
-
+  </body>
 </html>

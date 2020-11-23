@@ -1,3 +1,4 @@
+// 动画函数封装 obj 目标对象 target 目标位置 callback 回调函数
 function animate(obj, target, callback) {
   clearInterval(obj.timer);
   obj.timer = setInterval(function () {

@@ -1,72 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>事件对象属性和方法</title>
     <style>
-        div {
-            height: 100px;
-            width: 100px;
-            background-color: aqua;
-        }
+      div {
+        height: 100px;
+        width: 100px;
+        background-color: aqua;
+      }
     </style>
-</head>
+  </head>
 
-<body>
+  <body>
     <div>DIV</div>
     <ul>
-        <li>1</li>
-        <li>2</li>
-        <li>3</li>
+      <li>1</li>
+      <li>2</li>
+      <li>3</li>
     </ul>
     <a href="http://www.baidu.com">百度</a>
     <form action="http://www.baidu.com">
-        <input type="submit" value="提交" name="sub">
+      <input type="submit" value="提交" name="sub" />
     </form>
     <script>
-        // 常见事件对象的属性和方法
-        // 1. e.target 返回的是触发事件的对象 (元素) this 返回的是绑定事件的对象(元素)
-        var div = document.querySelector('div');
-        div.addEventListener('click', function(e) {
-            console.log(e.target);
-            console.log(this);
-        })
-        var ul = document.querySelector('ul');
-        ul.addEventListener('click', function(e) {
-            // 给ul绑定事件 this就指向ul
-            console.log(this);
-            // e.target 指向点击的那个对象 
-            console.log(e.target);
-        })
+      // 常见事件对象的属性和方法
+      // 1. e.target 返回的是触发事件的对象 (元素) this 返回的是绑定事件的对象(元素)
+      var div = document.querySelector("div");
+      div.addEventListener("click", function (e) {
+        console.log(e.target);
+        console.log(this);
+      });
+      var ul = document.querySelector("ul");
+      ul.addEventListener("click", function (e) {
+        // 给ul绑定事件 this就指向ul
+        console.log(this);
+        // e.target 指向点击的那个对象
+        console.log(e.target);
+      });
 
-        // 2. 返回事件类型
-        div.addEventListener('click', fn);
-        div.addEventListener('mouseover', fn);
-        div.addEventListener('mouseout', fn);
+      // 2. 返回事件类型
+      div.addEventListener("click", fn);
+      div.addEventListener("mouseover", fn);
+      div.addEventListener("mouseout", fn);
 
-        function fn(e) {
-            console.log(e.type);
-        }
+      function fn(e) {
+        console.log(e.type);
+      }
 
-        // 阻止默认行为（事件）让链接不跳转 或者让提交按钮不提交
-        var a = document.querySelector('a');
-        a.addEventListener('click', function(e) {
-            e.preventDefault(); // dom 标准写法
-        })
+      // 阻止默认行为（事件）让链接不跳转 或者让提交按钮不提交
+      var a = document.querySelector("a");
+      a.addEventListener("click", function (e) {
+        e.preventDefault(); // dom 标准写法
+      });
 
-        // 传统的注册方式
-        a.onclick = function(e) {
-            // 普通浏览器 e.preventDefault();
-            e.preventDefault();
-            // 低版本浏览器 ie678 
-            e.returnValue;
-            // 我们可以利用return false 也能阻止默认行为 没有兼容性问题 
-            // return 后面的代码不执行了 而且只限于传统的注册方式
-            return false;
-        }
+      // 传统的注册方式
+      a.onclick = function (e) {
+        // 普通浏览器 e.preventDefault();
+        e.preventDefault();
+        // 低版本浏览器 ie678
+        e.returnValue;
+        // 我们可以利用return false 也能阻止默认行为 没有兼容性问题
+        // return 后面的代码不执行了 而且只限于传统的注册方式
+        return false;
+      };
     </script>
-</body>
-
+  </body>
 </html>

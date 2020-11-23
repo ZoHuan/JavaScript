@@ -1,34 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>类名样式操作</title>
     <style>
-        div {
-            width: 100px;
-            height: 100px;
-            background-color: aqua;
-        }
-        
-        .change {
-            background: orange;
-            color: #fff;
-            font-size: 25px;
-            margin-top: 100px;
-        }
-    </style>
-</head>
+      div {
+        width: 100px;
+        height: 100px;
+        background-color: aqua;
+      }
 
-<body>
+      .change {
+        background: orange;
+        color: #fff;
+        font-size: 25px;
+        margin-top: 100px;
+      }
+    </style>
+  </head>
+
+  <body>
     <div>文本</div>
     <script>
-        var test = document.querySelector('div');
-        test.onclick = function() {
-            this.className = 'change'
-        }
+      var test = document.querySelector("div");
+      test.onclick = function () {
+        this.className = "change";
+      };
     </script>
-</body>
-
+  </body>
 </html>

@@ -1,142 +1,136 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>location对象</title>
     <style>
-        .login {
-            display: flex;
-            width: 784px;
-            min-height: 580px;
-            margin: 50px auto;
-            border-radius: 3px;
-            box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
-            background-color: #ffffff;
-        }
+      .login {
+        display: flex;
+        width: 784px;
+        min-height: 580px;
+        margin: 50px auto;
+        border-radius: 3px;
+        box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+        background-color: #ffffff;
+      }
 
-        .login-left {
-            width: 50%;
-            background-image: url('images/login.svg');
-            border-radius: 3px 0 0 3px;
-        }
+      .login-left {
+        width: 50%;
+        background-image: url("images/login.svg");
+        border-radius: 3px 0 0 3px;
+      }
 
-        .login-left h2 {
-            margin-top: 88px;
-            margin-bottom: 16px;
-            font-weight: bold;
-            font-size: 24px;
-            color: #ffffff;
-            line-height: 28px;
-            text-align: center;
-        }
+      .login-left h2 {
+        margin-top: 88px;
+        margin-bottom: 16px;
+        font-weight: bold;
+        font-size: 24px;
+        color: #ffffff;
+        line-height: 28px;
+        text-align: center;
+      }
 
-        .login-left h4 {
-            padding: 0 40px;
-            font-size: 15px;
-            font-weight: 300;
-            color: #ffffff;
-            line-height: 20px;
-            text-align: left;
-        }
+      .login-left h4 {
+        padding: 0 40px;
+        font-size: 15px;
+        font-weight: 300;
+        color: #ffffff;
+        line-height: 20px;
+        text-align: left;
+      }
 
-        .login-right {
-            width: 50%;
-            padding: 32px;
-            width: 392px;
-        }
+      .login-right {
+        width: 50%;
+        padding: 32px;
+        width: 392px;
+      }
 
-        form {
-            margin-top: 25px;
-        }
+      form {
+        margin-top: 25px;
+      }
 
-        .username,
-        .password {
-            margin-bottom: 16px;
-        }
+      .username,
+      .password {
+        margin-bottom: 16px;
+      }
 
-        .username label,
-        .password label {
-            display: block;
-            font-size: 12px;
-            font-weight: 600;
-            color: #282828;
-            margin-bottom: 8px;
-        }
+      .username label,
+      .password label {
+        display: block;
+        font-size: 12px;
+        font-weight: 600;
+        color: #282828;
+        margin-bottom: 8px;
+      }
 
-        .username input,
-        .password input {
-            display: block;
-            width: 100%;
-            height: 40px;
-            padding: 8px;
-            border: 1px solid #d4d4d4;
-            border-radius: 3px;
-            box-shadow: none;
-            box-sizing: border-box;
-            background-color: #fafafa;
-            font-size: 14px;
-            color: #282828;
-            line-height: 1.42857143;
-        }
+      .username input,
+      .password input {
+        display: block;
+        width: 100%;
+        height: 40px;
+        padding: 8px;
+        border: 1px solid #d4d4d4;
+        border-radius: 3px;
+        box-shadow: none;
+        box-sizing: border-box;
+        background-color: #fafafa;
+        font-size: 14px;
+        color: #282828;
+        line-height: 1.42857143;
+      }
 
-        .login-btn {
-            display: block;
-            width: 328px;
-            height: 40px;
-            margin: 140px auto 0;
-            border: 1px solid transparent;
-            border-radius: 3px;
-            background-color: #ff6c37;
-            font-size: 14px;
-            font-weight: 400;
-            color: #fff;
-            line-height: 40px;
-            text-align: center;
-
-
-        }
+      .login-btn {
+        display: block;
+        width: 328px;
+        height: 40px;
+        margin: 140px auto 0;
+        border: 1px solid transparent;
+        border-radius: 3px;
+        background-color: #ff6c37;
+        font-size: 14px;
+        font-weight: 400;
+        color: #fff;
+        line-height: 40px;
+        text-align: center;
+      }
     </style>
-</head>
+  </head>
 
-<body>
+  <body>
     <button>点击</button>
     <div>您将在5秒钟之后跳转到首页</div>
 
     <div class="login">
-        <div class="login-left">
-            <h2>Why Sign Up?</h2>
-            <h4>
-                Organize all your API development within Postman Workspaces<br>
-                Sync your Postman data across devices<br>
-                Backup your data to the Postman cloud<br>
-                It's free!
-            </h4>
-
-        </div>
-        <div class="login-right">
-            <form action="49-location获取URL参数.html">
-                <div class="username">
-                    <label for="username">用户名</label>
-                    <input type="text" name="username">
-                </div>
-                <div class="password">
-                    <label for="password">密码</label>
-                    <input type="password" name="password">
-                </div>
-                <input class="login-btn" type="submit" value="登录">
-            </form>
-        </div>
-
+      <div class="login-left">
+        <h2>Why Sign Up?</h2>
+        <h4>
+          Organize all your API development within Postman Workspaces<br />
+          Sync your Postman data across devices<br />
+          Backup your data to the Postman cloud<br />
+          It's free!
+        </h4>
+      </div>
+      <div class="login-right">
+        <form action="49-location获取URL参数.html">
+          <div class="username">
+            <label for="username">用户名</label>
+            <input type="text" name="username" />
+          </div>
+          <div class="password">
+            <label for="password">密码</label>
+            <input type="password" name="password" />
+          </div>
+          <input class="login-btn" type="submit" value="登录" />
+        </form>
+      </div>
     </div>
 
-
     <script>
-        // 统一资源定位符(Uniform Resource Locator,URL)是互联网上标准资源的地址。
-        // 互联网上的每个文件都有一个唯一的URL， 它包含的信息指出文件的位置以及浏览器应该怎么处理它。
+      // 统一资源定位符(Uniform Resource Locator,URL)是互联网上标准资源的地址。
+      // 互联网上的每个文件都有一个唯一的URL， 它包含的信息指出文件的位置以及浏览器应该怎么处理它。
 
-        /*
+      /*
         URL 的一般语法格式为：
         protocol://host[:port]/path/[?query]#fragment
         http://www.baicu.com/index.html?name=andy&age=18#link
@@ -149,36 +143,31 @@
         fragment | 片段 #后面内容 常见于链接 锚点
         */
 
-        console.log(location.href);     // 获取或者设置整个URL
-        console.log(location.host);     // 返回主机（域名） 
-        console.log(location.port);     // 返回端口号 如果未写返回 空字符串
-        console.log(location.pathname); // 返回路径
-        console.log(location.search);   // 返回参数
-        console.log(location.hash);     // 返回片段 #后面内容 常见于链接锚点
+      console.log(location.href); // 获取或者设置整个URL
+      console.log(location.host); // 返回主机（域名）
+      console.log(location.port); // 返回端口号 如果未写返回 空字符串
+      console.log(location.pathname); // 返回路径
+      console.log(location.search); // 返回参数
+      console.log(location.hash); // 返回片段 #后面内容 常见于链接锚点
 
-        // 跳转页面
-        var btn = document.querySelector('button');
-        var div = document.querySelector('div');
-        btn.addEventListener('click', function () {
-            //console.log(window.location.href);
-            location.href = 'http://www.baidu.com';
-        })
+      // 跳转页面
+      var btn = document.querySelector("button");
+      var div = document.querySelector("div");
+      btn.addEventListener("click", function () {
+        //console.log(window.location.href);
+        location.href = "http://www.baidu.com";
+      });
 
-        // 倒计时跳转页面
-        var timer = 5;
-        setInterval(function () {
-            if (timer == 0) {
-                location.href = '#';
-            } else {
-                div.innerHTML = '您将在' + timer + '秒钟之后跳转到首页';
-                timer--;
-            }
-        }, 1000)
-
-
-
+      // 倒计时跳转页面
+      var timer = 5;
+      setInterval(function () {
+        if (timer == 0) {
+          location.href = "#";
+        } else {
+          div.innerHTML = "您将在" + timer + "秒钟之后跳转到首页";
+          timer--;
+        }
+      }, 1000);
     </script>
-
-</body>
-
+  </body>
 </html>

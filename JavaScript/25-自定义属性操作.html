@@ -1,53 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>自定义属性操作</title>
-</head>
+  </head>
 
-<body>
+  <body>
     <div id="demo" index="1" class="nav"></div>
     <div getTime="20" data-index="2" data-list-name="custom"></div>
     <script>
-        var div = document.querySelector('div');
-        // 1. 获取元素的属性值
-        // (1) element.属性
-        console.log(div.id);
-        // (2) element.getAttributr('属性') 获取自定义属性
-        console.log(div.getAttribute('id'));
-        console.log(div.getAttribute('index'));
+      var div = document.querySelector("div");
+      // 1. 获取元素的属性值
+      // (1) element.属性
+      console.log(div.id);
+      // (2) element.getAttributr('属性') 获取自定义属性
+      console.log(div.getAttribute("id"));
+      console.log(div.getAttribute("index"));
 
-        // 2. 设置元素的属性值
-        // (1) element.属性 = '值'
-        div.id = 'One';
-        div.className = 'navOne';
-        // (2) element.setAttribute('属性','值') 主要针对自定义属性
-        div.setAttribute('index', '2');
-        div.setAttribute('class', 'navTwo'); //class特殊
+      // 2. 设置元素的属性值
+      // (1) element.属性 = '值'
+      div.id = "One";
+      div.className = "navOne";
+      // (2) element.setAttribute('属性','值') 主要针对自定义属性
+      div.setAttribute("index", "2");
+      div.setAttribute("class", "navTwo"); //class特殊
 
-        // 3. 移除属性 removeAttribute(属性)
-        div.removeAttribute('index');
+      // 3. 移除属性 removeAttribute(属性)
+      div.removeAttribute("index");
 
+      var div1 = document.getElementsByTagName("div")[1];
+      console.log(div1.getTime);
+      console.log(div1.getAttribute("getTime"));
+      // H5 规定自定义属性data-开头做为属性名并赋值
+      div1.setAttribute("data-time", 20);
 
-        var div1 = document.getElementsByTagName('div')[1];
-        console.log(div1.getTime);
-        console.log(div1.getAttribute('getTime'));
-        // H5 规定自定义属性data-开头做为属性名并赋值
-        div1.setAttribute('data-time', 20);
-
-        console.log(div1.getAttribute('data-index'));
-        console.log(div1.getAttribute('data-list-name'));
-        // dataset 是一个集合里面存放了所有以data开头的自定义属性
-        console.log(div1.dataset);
-        // H5 新增的获取自定义属性的方法
-        console.log(div1.dataset.index);
-        console.log(div1.dataset['index']);
-        // 如果自定义属性里面有多个-链接的单词，我们获取的时候采取 驼峰命名法
-        console.log(div1.dataset.listName);
-        console.log(div1.dataset['listName']);
+      console.log(div1.getAttribute("data-index"));
+      console.log(div1.getAttribute("data-list-name"));
+      // dataset 是一个集合里面存放了所有以data开头的自定义属性
+      console.log(div1.dataset);
+      // H5 新增的获取自定义属性的方法
+      console.log(div1.dataset.index);
+      console.log(div1.dataset["index"]);
+      // 如果自定义属性里面有多个-链接的单词，我们获取的时候采取 驼峰命名法
+      console.log(div1.dataset.listName);
+      console.log(div1.dataset["listName"]);
     </script>
-</body>
-
+  </body>
 </html>

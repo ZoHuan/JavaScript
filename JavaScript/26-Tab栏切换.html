@@ -1,96 +1,92 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Tab栏切换</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-        }
-        
-        ul,
-        li {
-            padding: 0;
-            margin: 0;
-            list-style: none;
-        }
-        
-        .tab {
-            width: 800px;
-            margin: 100px auto;
-        }
-        
-        .tab_list {
-            width: 800px;
-            height: 39px;
-            background: #efefef;
-            border: 1px solid #cebfbf;
-        }
-        
-        .tab_list li {
-            float: left;
-            height: 39px;
-            line-height: 39px;
-            padding: 0 20px;
-            text-align: center;
-            cursor: pointer;
-        }
-        
-        .tab_list .current {
-            background-color: #c81623;
-            color: #fff;
-        }
-        
-        .item {
-            display: none;
-        }
-    </style>
-</head>
+      * {
+        margin: 0;
+        padding: 0;
+      }
 
-<body>
+      ul,
+      li {
+        padding: 0;
+        margin: 0;
+        list-style: none;
+      }
+
+      .tab {
+        width: 800px;
+        margin: 100px auto;
+      }
+
+      .tab_list {
+        width: 800px;
+        height: 39px;
+        background: #efefef;
+        border: 1px solid #cebfbf;
+      }
+
+      .tab_list li {
+        float: left;
+        height: 39px;
+        line-height: 39px;
+        padding: 0 20px;
+        text-align: center;
+        cursor: pointer;
+      }
+
+      .tab_list .current {
+        background-color: #c81623;
+        color: #fff;
+      }
+
+      .item {
+        display: none;
+      }
+    </style>
+  </head>
+
+  <body>
     <div class="tab">
-        <div class="tab_list">
-            <ul>
-                <li class="current">商品介绍</li>
-                <li>规格与包装</li>
-                <li>售后保障</li>
-                <li>商品评价</li>
-                <li>手机社区</li>
-            </ul>
-        </div>
-        <div class="tab_con">
-            <div class="item" style='display: block;'>商品介绍模块内容</div>
-            <div class="item">规格与包装模块内容</div>
-            <div class="item">售后保障模块内容</div>
-            <div class="item">商品评价模块内容</div>
-            <div class="item">手机社区模块内容</div>
-        </div>
+      <div class="tab_list">
+        <ul>
+          <li class="current">商品介绍</li>
+          <li>规格与包装</li>
+          <li>售后保障</li>
+          <li>商品评价</li>
+          <li>手机社区</li>
+        </ul>
+      </div>
+      <div class="tab_con">
+        <div class="item" style="display: block">商品介绍模块内容</div>
+        <div class="item">规格与包装模块内容</div>
+        <div class="item">售后保障模块内容</div>
+        <div class="item">商品评价模块内容</div>
+        <div class="item">手机社区模块内容</div>
+      </div>
     </div>
 
     <script>
-        var lis = document.querySelector('.tab_list').querySelectorAll('li');
-        var items = document.querySelector('.tab_con').querySelectorAll('div');
-        for (let i = 0; i < lis.length; i++) {
-            lis[i].setAttribute('index', i);
-            lis[i].onclick = function() {
-                for (let i = 0; i < lis.length; i++) {
-                    lis[i].className = '';
-                }
-                this.className = 'current';
+      var lis = document.querySelector(".tab_list").querySelectorAll("li");
+      var items = document.querySelector(".tab_con").querySelectorAll("div");
+      for (let i = 0; i < lis.length; i++) {
+        lis[i].setAttribute("index", i);
+        lis[i].onclick = function () {
+          for (let i = 0; i < lis.length; i++) {
+            lis[i].className = "";
+          }
+          this.className = "current";
 
-                var index = lis[i].getAttribute('index');
-                for (let i = 0; i < items.length; i++) {
-                    items[i].style.display = 'none';
-                }
-                items[index].style.display = 'block';
-
-            }
-
-        }
+          var index = lis[i].getAttribute("index");
+          for (let i = 0; i < items.length; i++) {
+            items[i].style.display = "none";
+          }
+          items[index].style.display = "block";
+        };
+      }
     </script>
-</body>
-
+  </body>
 </html>

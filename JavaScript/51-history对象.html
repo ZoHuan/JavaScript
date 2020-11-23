@@ -1,27 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>history对象</title>
-</head>
+  </head>
 
-<body>
+  <body>
     <a href="50-location常见方法.html">点击去往其他页面</a>
     <button id="forward">前进</button>
     <button id="back">后退</button>
     <script>
-        var forward = document.querySelector("#forward");
-        var back = document.querySelector("#back");
-        forward.addEventListener('click', function () {
-            // history.forward();
-            history.go(1)
-        })
-        back.addEventListener('click', function () {
-            history.back();
-        })
+      var forward = document.querySelector("#forward");
+      var back = document.querySelector("#back");
+      forward.addEventListener("click", function () {
+        // history.forward();
+        history.go(1);
+      });
+      back.addEventListener("click", function () {
+        history.back();
+      });
     </script>
-</body>
-
+  </body>
 </html>

@@ -1,80 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>location获取URL参数</title>
     <style>
-        body {
-            margin: 0;
-            padding: 0;
-        }
+      body {
+        margin: 0;
+        padding: 0;
+      }
 
-        .main {
-            padding: 80px 0;
-            background-color: rgb(28, 39, 43);
-            color: #fff;
-        }
+      .main {
+        padding: 80px 0;
+        background-color: rgb(28, 39, 43);
+        color: #fff;
+      }
 
-        .content {
-            display: flex;
-            flex-wrap: wrap;
-            width: 100%;
-            max-width: 1440px;
-            padding: 0 82px;
-            margin: auto;
+      .content {
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+        max-width: 1440px;
+        padding: 0 82px;
+        margin: auto;
+      }
 
-        }
+      .content-title {
+        width: 60%;
+        padding: 0 15px;
+        box-sizing: border-box;
+      }
 
-        .content-title {
-            width: 60%;
-            padding: 0 15px;
-            box-sizing: border-box;
+      .content-title h1 {
+        margin-bottom: 32px;
+        font-size: 60px;
+      }
 
-        }
+      .content-title p {
+        font-size: 24px;
+      }
 
-        .content-title h1 {
-            margin-bottom: 32px;
-            font-size: 60px;
-
-        }
-
-        .content-title p {
-            font-size: 24px;
-
-        }
-
-        .content-img {
-            width: 40%
-        }
+      .content-img {
+        width: 40%;
+      }
     </style>
-</head>
+  </head>
 
-<body>
+  <body>
     <div class="main">
-        <div class="content">
-            <div class="content-title">
-                <h1>WELCOME</h1>
-                <p>HELLO！WORLD</p>
-            </div>
-            <div class="content-img">
-                <img src="images\successful.svg" alt="">
-            </div>
+      <div class="content">
+        <div class="content-title">
+          <h1>WELCOME</h1>
+          <p>HELLO！WORLD</p>
         </div>
+        <div class="content-img">
+          <img src="images\successful.svg" alt="" />
+        </div>
+      </div>
     </div>
 
     <script>
-        var params = location.search.substr(1);
-        var arr = params.split('&');
-        var newArr = [];
-        for (let i = 0; i < arr.length; i++) {
-            newArr.push(arr[i].split('='))
-        }
-        var title = document.querySelector(".content-title");
-        var username = title.querySelector("p");
-        username.innerHTML = "HELLO!  " + newArr[0][1]
+      var params = location.search.substr(1);
+      var arr = params.split("&");
+      var newArr = [];
+      for (let i = 0; i < arr.length; i++) {
+        newArr.push(arr[i].split("="));
+      }
+      var title = document.querySelector(".content-title");
+      var username = title.querySelector("p");
+      username.innerHTML = "HELLO!  " + newArr[0][1];
     </script>
-</body>
-
+  </body>
 </html>

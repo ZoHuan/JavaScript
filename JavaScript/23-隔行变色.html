@@ -1,79 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>隔行变色</title>
     <style>
-        table {
-            width: 400px;
-            margin: 0 auto;
-            text-align: center;
-            border-collapse: collapse;
-            font-size: 14px;
-        }
-        
-        thead tr {
-            height: 30px;
-            background-color: skyblue;
-            color: #4e4a4a;
-        }
-        
-        tbody tr {
-            height: 30px;
-        }
-        
-        tbody td {
-            border-bottom: 1px solid #d7d7d7;
-            font-size: 12px;
-            color: #5b5ba5;
-        }
-        
-        .bg {
-            background-color: #9eb9ea;
-        }
-    </style>
-</head>
+      table {
+        width: 400px;
+        margin: 0 auto;
+        text-align: center;
+        border-collapse: collapse;
+        font-size: 14px;
+      }
 
-<body>
+      thead tr {
+        height: 30px;
+        background-color: skyblue;
+        color: #4e4a4a;
+      }
+
+      tbody tr {
+        height: 30px;
+      }
+
+      tbody td {
+        border-bottom: 1px solid #d7d7d7;
+        font-size: 12px;
+        color: #5b5ba5;
+      }
+
+      .bg {
+        background-color: #9eb9ea;
+      }
+    </style>
+  </head>
+
+  <body>
     <table>
-        <thead>
-            <tr>
-                <th>编号</th>
-                <th>名称</th>
-                <th>数量</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>001</td>
-                <td>iphone</td>
-                <td>11</td>
-            </tr>
-            <tr>
-                <td>002</td>
-                <td>HUAWEI</td>
-                <td>22</td>
-            </tr>
-            <tr>
-                <td>003</td>
-                <td>SAMSUNG</td>
-                <td>33</td>
-            </tr>
-        </tbody>
+      <thead>
+        <tr>
+          <th>编号</th>
+          <th>名称</th>
+          <th>数量</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>001</td>
+          <td>iphone</td>
+          <td>11</td>
+        </tr>
+        <tr>
+          <td>002</td>
+          <td>HUAWEI</td>
+          <td>22</td>
+        </tr>
+        <tr>
+          <td>003</td>
+          <td>SAMSUNG</td>
+          <td>33</td>
+        </tr>
+      </tbody>
     </table>
     <script>
-        var trs = document.querySelector('tbody').querySelectorAll('tr');
-        for (let i = 0; i < trs.length; i++) {
-            trs[i].onmouseover = function() {
-                this.className = 'bg';
-            }
-            trs[i].onmouseout = function() {
-                this.className = '';
-            }
-        }
+      var trs = document.querySelector("tbody").querySelectorAll("tr");
+      for (let i = 0; i < trs.length; i++) {
+        trs[i].onmouseover = function () {
+          this.className = "bg";
+        };
+        trs[i].onmouseout = function () {
+          this.className = "";
+        };
+      }
     </script>
-</body>
-
+  </body>
 </html>

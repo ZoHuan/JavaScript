@@ -1,58 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>作用域</title>
     <script>
-        // var num = 10; //num就是一个全局变量
-        // console.log(num);
+      // var num = 10; //num就是一个全局变量
+      // console.log(num);
 
-        // function fn() {
-        //     num1 = 20; //在函数内部 没有声明直接赋值的变量也属于全局变量    
-        //     console.log(num);
-        // }
-        // fn();
-        // console.log(num1);
+      // function fn() {
+      //     num1 = 20; //在函数内部 没有声明直接赋值的变量也属于全局变量
+      //     console.log(num);
+      // }
+      // fn();
+      // console.log(num1);
 
-        // function testOne() {
-        //     var num = 10; //num就是局部变量 只能在函数内使用
-        //     console.log(num);
-        // }
-        // testOne();
+      // function testOne() {
+      //     var num = 10; //num就是局部变量 只能在函数内使用
+      //     console.log(num);
+      // }
+      // testOne();
 
-        // function testTwo() {
-        //     var num = 20;
-        //     console.log(num);
-        // }
-        // testTwo();
+      // function testTwo() {
+      //     var num = 20;
+      //     console.log(num);
+      // }
+      // testTwo();
 
-        // var num = 30
+      // var num = 30
 
-        // function testThree() {
-        //     var num1 = 40;
-        //     console.log(num);
-        // }
-        // testThree();
-        // console.log(num1); //Uncaught ReferenceError: num1 is not defined
+      // function testThree() {
+      //     var num1 = 40;
+      //     console.log(num);
+      // }
+      // testThree();
+      // console.log(num1); //Uncaught ReferenceError: num1 is not defined
 
-        var num = 10;
+      var num = 10;
 
-        function fn() { //外部函数
-            var num = 20;
+      function fn() {
+        //外部函数
+        var num = 20;
 
-            function fun() { //内部函数
-                console.log(num)
-            }
-            fun();
+        function fun() {
+          //内部函数
+          console.log(num);
         }
-        fn();
+        fun();
+      }
+      fn();
     </script>
-</head>
+  </head>
 
-<body>
-
-</body>
-
+  <body></body>
 </html>

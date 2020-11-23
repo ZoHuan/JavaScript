@@ -1,100 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>键盘事件对象</title>
     <style>
-        .search {
-            position: relative;
-            width: 178px;
-            margin-top: 100px;
-        }
-        
-        .con {
-            display: none;
-            position: absolute;
-            top: -40px;
-            width: 171px;
-            border: 1px solid rgba(0, 0, 0, .2);
-            box-shadow: 0 2px 4px rgba(0, 0, 0, .2);
-            padding: 5px 0;
-            font-size: 18px;
-            line-height: 20px;
-            color: #333333;
-        }
-        
-        .con::before {
-            content: '';
-            width: 0;
-            height: 0;
-            position: absolute;
-            top: 28px;
-            left: 18px;
-            border: 8px solid #000;
-            border-style: solid dashed dashed;
-            border-color: #fff transparent transparent;
-        }
-    </style>
-</head>
+      .search {
+        position: relative;
+        width: 178px;
+        margin-top: 100px;
+      }
 
-<body>
-    <input type="text">
+      .con {
+        display: none;
+        position: absolute;
+        top: -40px;
+        width: 171px;
+        border: 1px solid rgba(0, 0, 0, 0.2);
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        padding: 5px 0;
+        font-size: 18px;
+        line-height: 20px;
+        color: #333333;
+      }
+
+      .con::before {
+        content: "";
+        width: 0;
+        height: 0;
+        position: absolute;
+        top: 28px;
+        left: 18px;
+        border: 8px solid #000;
+        border-style: solid dashed dashed;
+        border-color: #fff transparent transparent;
+      }
+    </style>
+  </head>
+
+  <body>
+    <input type="text" />
 
     <div class="search">
-        <div class="con">123</div>
-        <input type="text" placeholder="请输入您的快递单号" class="jd">
+      <div class="con">123</div>
+      <input type="text" placeholder="请输入您的快递单号" class="jd" />
     </div>
     <script>
-        // 键盘事件对象中的keyCode属性可以得到相应键的ASCII码值
-        // 1. keyup 和 keydown 事件不区分字母大小写
-        // 2. keypress 事件区分字母大小写
-        document.addEventListener('keyup', function(e) {
-            // console.log(e);
-            console.log(e.keyCode);
-            // if (e.keyCode === 65) {
-            //     alert('按下A键');
-            // } else {
-            //     alert('没按下A键')
-            // }
-        })
+      // 键盘事件对象中的keyCode属性可以得到相应键的ASCII码值
+      // 1. keyup 和 keydown 事件不区分字母大小写
+      // 2. keypress 事件区分字母大小写
+      document.addEventListener("keyup", function (e) {
+        // console.log(e);
+        console.log(e.keyCode);
+        // if (e.keyCode === 65) {
+        //     alert('按下A键');
+        // } else {
+        //     alert('没按下A键')
+        // }
+      });
 
-        document.addEventListener('keypress', function(e) {
-            console.log(e.keyCode);
-        })
+      document.addEventListener("keypress", function (e) {
+        console.log(e.keyCode);
+      });
 
+      // 按键输入内容
+      var input = document.querySelector("input");
+      document.addEventListener("keyup", function (e) {
+        // console.dir(input);
+        if (e.keyCode === 83) {
+          input.focus();
+        }
+      });
 
-        // 按键输入内容
-        var input = document.querySelector('input');
-        document.addEventListener('keyup', function(e) {
-            // console.dir(input);
-            if (e.keyCode === 83) {
-                input.focus();
-            }
-        })
-
-
-        //快递单号查询
-        var con = document.querySelector('.con');
-        var input = document.querySelector('.jd');
-        input.addEventListener('keyup', function() {
-            if (input.value == '') {
-                con.style.display = 'none';
-            } else {
-                con.style.display = 'block';
-                con.innerHTML = input.value;
-            }
-        })
-        input.addEventListener('blur', function() {
-            con.style.display = 'none';
-        })
-        input.addEventListener('focus', function() {
-            if (input.value !== '') {
-                con.style.display = 'block';
-            }
-        })
+      //快递单号查询
+      var con = document.querySelector(".con");
+      var input = document.querySelector(".jd");
+      input.addEventListener("keyup", function () {
+        if (input.value == "") {
+          con.style.display = "none";
+        } else {
+          con.style.display = "block";
+          con.innerHTML = input.value;
+        }
+      });
+      input.addEventListener("blur", function () {
+        con.style.display = "none";
+      });
+      input.addEventListener("focus", function () {
+        if (input.value !== "") {
+          con.style.display = "block";
+        }
+      });
     </script>
-</body>
-
+  </body>
 </html>
