@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>zyMedia播放器</title>
+    <link rel="stylesheet" href="plugin\zyMedia\css\zy.media.min.css" />
+    <script src="plugin\zyMedia\js\zy.media.min.js"></script>
+    <style>
+
+    </style>
+  </head>
+  <body>
+    <div class="zy_media">
+      <video data-config='{"mediaTitle": "iPhone12"}'>
+        <source src="images\medium.mp4" type="video/mp4" />
+        您的浏览器不支持HTML5视频
+      </video>
+    </div>
+    <script>
+      zymedia("video", {
+        autoplay: true,
+        aspectRation: (16 / 15)
+      });
+    </script>
+  </body>
+</html>

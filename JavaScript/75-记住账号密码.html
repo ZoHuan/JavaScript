@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>记住账号密码</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+      }
+
+      a {
+        color: #555;
+        text-decoration: none;
+      }
+
+      .login {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        display: flex;
+        width: 784px;
+        min-height: 580px;
+        border-radius: 3px;
+        box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+        background-color: #ffffff;
+        transform: translate(-50%, -50%);
+        z-index: 10;
+      }
+
+      .login-left {
+        width: 50%;
+        background-image: url("images/login.svg");
+        border-radius: 3px 0 0 3px;
+      }
+
+      .login-left h2 {
+        margin-top: 88px;
+        margin-bottom: 16px;
+        font-weight: bold;
+        font-size: 24px;
+        color: #ffffff;
+        line-height: 28px;
+        text-align: center;
+      }
+
+      .login-left h4 {
+        padding: 0 40px;
+        font-size: 15px;
+        font-weight: 300;
+        color: #ffffff;
+        line-height: 20px;
+        text-align: left;
+      }
+
+      .login-right {
+        position: relative;
+        padding: 32px;
+        width: 392px;
+      }
+
+      .close-login {
+        position: absolute;
+        top: 5px;
+        right: 10px;
+        font-size: 24px;
+        font-weight: 600;
+      }
+
+      form {
+        margin-top: 25px;
+      }
+
+      .username,
+      .password {
+        margin-bottom: 16px;
+      }
+
+      .username label,
+      .password label {
+        display: block;
+        font-size: 12px;
+        font-weight: 600;
+        color: #282828;
+        margin-bottom: 8px;
+      }
+
+      .username input,
+      .password input {
+        display: block;
+        width: 100%;
+        height: 40px;
+        padding: 8px;
+        border: 1px solid #d4d4d4;
+        border-radius: 3px;
+        box-shadow: none;
+        box-sizing: border-box;
+        background-color: #fafafa;
+        font-size: 14px;
+        color: #282828;
+        line-height: 1.42857143;
+      }
+      .remember {
+        display: flex;
+      }
+      .remember input {
+        width: 18px;
+        height: 18px;
+        margin-right: 10px;
+      }
+
+      .login-btn {
+        display: block;
+        width: 328px;
+        height: 40px;
+        margin: 140px auto 0;
+        border: 1px solid transparent;
+        border-radius: 3px;
+        background-color: #ff6c37;
+        font-size: 14px;
+        font-weight: 400;
+        color: #fff;
+        line-height: 40px;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="login">
+      <div class="login-left">
+        <h2>Why Sign Up?</h2>
+        <h4>
+          Organize all your API development within Postman Workspaces<br />
+          Sync your Postman data across devices<br />
+          Backup your data to the Postman cloud<br />
+          It's free!
+        </h4>
+      </div>
+      <div class="login-right">
+        <a id="closeBtn" class="close-login" href="javascript:;">×</a>
+        <form action="49-location获取URL参数.html">
+          <div class="username">
+            <label for="username">用户名</label>
+            <input type="text" name="username" />
+          </div>
+          <div class="password">
+            <label for="password">密码</label>
+            <input type="password" name="password" />
+          </div>
+          <div class="remember">
+            <input type="checkbox" />
+            <label>记住用户</label>
+          </div>
+          <input class="login-btn" type="submit" value="登录" />
+        </form>
+      </div>
+    </div>
+    <script>
+      var username = document.querySelector(".username").querySelector("input");
+      var remember = document.querySelector(".remember").querySelector("input");
+      if (localStorage.getItem("username")) {
+        username.value = localStorage.getItem("username");
+        remember.checked = true;
+      }
+      remember.addEventListener("change", function () {
+        if (this.checked) {
+          localStorage.setItem("username", username.value);
+        } else {
+          localStorage.removeItem("username");
+        }
+      });
+    </script>
+  </body>
+</html>
