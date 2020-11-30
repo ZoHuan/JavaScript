@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="jquery\jquery.min.js"></script>
+  </head>
+  <body>
+    <div>曾经沧海难为水，除却巫山不是云。</div>
+    <div>曾经沧海难为水，除却巫山不是云。</div>
+    <div>曾经沧海难为水，除却巫山不是云。</div>
+    <div>曾经沧海难为水，除却巫山不是云。</div>
+    <ul>
+      <li>UL的LI</li>
+      <li>UL的LI</li>
+      <li>UL的LI</li>
+      <li>UL的LI</li>
+    </ul>
+    <script>
+      $(function () {
+        // 1. 获取四个div元素
+        // 2. 给四个div设置背景颜色
+        $("div").css("color", "darkcyan");
+        // 3. 隐式迭代就是把匹配的所有元素内部进行遍历循环，给每一个元素添加css这个方法
+        $("ul li").css("color", "dodgerblue");
+      });
+    </script>
+  </body>
+</html>
