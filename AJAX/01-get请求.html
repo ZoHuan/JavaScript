@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button onclick="sendMsg()">发送请求</button>
+    <div></div>
+    <script>
+      function sendMsg() {
+        // 1.创建一个XMLHttpRequest对象
+        let xhr = new XMLHttpRequest();
+        // 2.调用open方法打开连接
+        // open方法有三个参数:
+        // 2.1 请求的method
+        // 2.2 请求的url
+        // 2.3 是否异步,默认值为true，一般这个参数可以不传
+        xhr.open("get", "http://wthrcdn.etouch.cn/weather_mini?city=福州");
+        // 3.发送请求
+        xhr.send();
+        // 4.监听状态的改变
+        xhr.onreadystatechange = function () {
+          // 判断状态值， 0-4 五种状态，4代表最终的完成
+          if (xhr.readyState === 4) {
+            // 判断状态码
+            if (xhr.status === 200) {
+              let resp = JSON.parse(xhr.responseText);
+              console.log(resp);
+              document.querySelector("div").innerHTML = `
+                <h2>城市:${resp.data.city}</h2>
+                <h2>天气:${resp.data.forecast[0].low}</h2>
+              `;
+            }
+          }
+        };
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button onclick="sendMsg()">发送请求</button>
+
+    <script>
+      function sendMsg() {
+        get(
+          "http://wthrcdn.etouch.cn/weather_mini",
+          { city: "福州" },
+          function (resp) {
+            console.log(resp);
+          },
+          true
+        );
+      }
+      /*
+        封装get
+        url:       string, 请求的地址
+        query:     object,请求携带的参数
+        callback:  function,成功之后的回调
+        isJson:    boolean,是否需要解析json
+      */
+      function get(url, query, callback, isJson) {
+        // 如果有参数，先把参数拼接在url后面
+        if (query) {
+          url += "?";
+          for (let key in query) {
+            url += `${key}=${query[key]}&`;
+          }
+          // 取出最后多余的&
+          url = url.slice(0, -1);
+        }
+        let xhr = new XMLHttpRequest();
+        xhr.open("get", url);
+        xhr.send();
+        xhr.onreadystatechange = function () {
+          if (xhr.readyState === 4) {
+            if (xhr.status === 200) {
+              let resp = isJson ? JSON.parse(xhr.response) : xhr.response;
+              callback(resp);
+            }
+          }
+        };
+      }
+    </script>
+  </body>
+</html>

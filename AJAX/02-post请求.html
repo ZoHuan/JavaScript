@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button onclick="sendMsg()">发送请求</button>
+    <div></div>
+    <script>
+      function sendMsg() {
+        var xhr = new XMLHttpRequest();
+        // 这里method传post
+        xhr.open("post", "https://autumnfish.cn/api/user/reg");
+        // 设置请求头的content-type
+        xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+        xhr.send(JSON.stringify({ username: "jack" }));
+        xhr.onreadystatechange = function () {
+          if (xhr.readyState === 4) {
+            if (xhr.status === 200) {
+              var resp = xhr.response;
+              console.log(  );
+              document.querySelector("div").innerHTML = `
+                <h2>${resp}</h2>
+              `;
+            }
+          }
+        };
+      }
+    </script>
+  </body>
+</html>
