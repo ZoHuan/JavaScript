@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <ul id="wrap"></ul>
+    <script>
+      // 列表接口：https://api.apiopen.top/getJoke
+      // 详情接口: https://api.apiopen.top/getSingleJoke?sid=id值
+
+      // 页面一开始就查询列表
+      // fetch方法，在then里来写成功之后的逻辑
+      fetch("https://api.apiopen.top/getJoke")
+        .then(function (response) {
+          return response.json();
+        })
+        .then(function (resp) {
+          let html = "";
+          // 拼接li字符串显示在ul里
+          resp.result.forEach(function (item) {
+            html += `
+              <li>
+                <h3>${item.text}</h3>
+                <button data-id ="${item.sid}">查看作者</button>
+              </li>
+            `;
+          });
+          document.querySelector("#wrap").innerHTML = html;
+        });
+
+      // 事件委托给button添加事件
+      document.querySelector("#wrap").onclick = function (e) {
+        let target = e.target;
+        if (target.tagName === "BUTTON") {
+          // 从按钮的自定义属性上取到sid
+          let sid = target.getAttribute("data-id");
+
+          fetch(`https://api.apiopen.top/getSingleJoke?sid=${sid}`)
+            .then(function (response) {
+              return response.json();
+            })
+            .then(function (resp) {
+              console.log(resp);
+              let name = resp.result.name;
+              // 找到父级li,
+              let b = document.createElement("b");
+              b.innerHTML = name;
+              target.parentNode.appendChild(b);
+            });
+        }
+      };
+    </script>
+  </body>
+</html>

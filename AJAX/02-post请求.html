@@ -20,7 +20,7 @@
           if (xhr.readyState === 4) {
             if (xhr.status === 200) {
               var resp = xhr.response;
-              console.log(  );
+              console.log(resp);
               document.querySelector("div").innerHTML = `
                 <h2>${resp}</h2>
               `;

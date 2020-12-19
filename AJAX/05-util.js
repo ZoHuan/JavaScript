@@ -44,7 +44,7 @@ var util = {
     if (params.method.toLowerCase() === "get") {
       if (params.query) {
         params.url += "?";
-        for (key in params.query) {
+        for (let key in params.query) {
           params.url += `${key}=${params.query[key]}&`;
         }
         params.url = params.url.slice(0, -1);
@@ -69,5 +69,32 @@ var util = {
         }
       }
     };
+  },
+  // 基于promise的get请求
+  // return new Promise
+  fetch: function (url, query, isJson) {
+    if (query) {
+      url += "?";
+      for (let key in query) {
+        url += `${key}=${query[key]}$`;
+      }
+      url = url.slice(0, -1);
+    }
+
+    return new Promise(function (resolve, reject) {
+      let xhr = new XMLHttpRequest();
+      xhr.open("get", url);
+      xhr.send();
+      xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4) {
+          if (xhr.status === 200) {
+            let resp = isJson ? JSON.parse(xhr.responseText) : xhr.responseText;
+            resolve(resp);
+          } else {
+            reject();
+          }
+        }
+      };
+    });
   },
 };

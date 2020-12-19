@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="./05-util.js"></script>
+    <title>Document</title>
+  </head>
+  <body>
+    <button onclick="sendMsg()">发送请求</button>
+    <script>
+      function sendMsg() {
+        // 把异步代码写成同步形式，不用传回调函数，而是在then里处理
+        util
+          .fetch(
+            "http://wthrcdn.etouch.cn/weather_mini",
+            { city: "福州" },
+            true
+          )
+          .then(function (resp) {
+            console.log(resp);
+          });
+      }
+    </script>
+  </body>
+</html>
