@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- src属性具有开放性原则，所以可以跨域引入资源 -->
+    <!-- <img src="https://s1.hdslb.com/bfs/seed/jinkela/header-v2/images/vip-default-banner.png"/> -->
+    <!-- <script src="http://ajax.microsoft.com/ajax/jquery/jquery-1.4.4.min.js"></script> -->
+
+    <!-- <script src="http://localhost/data.txt"></script> -->
+    <!-- 无论文件的后缀名是什么，请求回来的内容都会作为js代码来执行 -->
+
+    <script>
+      // jsonp接口后端返回的是一个函数的调用
+      // jsonp只能处理get类型的跨域
+      function fn(resp) {
+        console.log(resp);
+      }
+    </script>
+    <!-- 
+        利用<script>在引入外部JS时不受同源策略限制的特性，来实现跨域
+        服务器端构建一个字符串:字符串中的内容是能够在JS中执行的函数调用的结构
+     -->
+    <script src="http://localhost/data.java?cb=fn"></script>
+  </body>
+</html>
