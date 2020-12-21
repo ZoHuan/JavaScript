@@ -73,7 +73,8 @@
         // 这里需要一个script标签来发请求
         let script = document.createElement("script");
         script.src = `https://sp0.baidu.com/5a1Fazu8AA54nxGko9WTAnF6hhy/su?wd=${text}&cb=fn`;
-        document.body.append(script);
+        document.body.appendChild(script);
+        document.body.removeChild(script);
       });
 
       list.addEventListener("mousedown", function (e) {
