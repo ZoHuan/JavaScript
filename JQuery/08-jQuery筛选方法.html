@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="jquery\jquery.min.js"></script>
+  </head>
+  <body>
+    <div class="grandpa">
+      <div class="father">
+        <div class="son">son</div>
+      </div>
+    </div>
+
+    <div class="nav">
+      <p>一级</p>
+      <div>
+        <p>三级</p>
+      </div>
+    </div>
+
+    <ol>
+      <li>无意苦争春，一任群芳妒。</li>
+      <li>无意苦争春，一任群芳妒。</li>
+      <li class="item">无意苦争春，一任群芳妒。</li>
+      <li>无意苦争春，一任群芳妒。</li>
+      <li>无意苦争春，一任群芳妒。</li>
+      <li>无意苦争春，一任群芳妒。</li>
+    </ol>
+
+    <ul>
+      <li>零落成泥碾作尘，只有香如故。</li>
+      <li>零落成泥碾作尘，只有香如故。</li>
+      <li>零落成泥碾作尘，只有香如故。</li>
+      <li>零落成泥碾作尘，只有香如故。</li>
+      <li>零落成泥碾作尘，只有香如故。</li>
+      <li>零落成泥碾作尘，只有香如故。</li>
+    </ul>
+
+    <script>
+      $(function () {
+        /*
+        parent()              查找父级
+        children(selector)    相当于$("ul>li"),最近一级
+        find(selector)        相当于$("ul li"),后代选择器
+        siblings(selector)    查找兄弟节点，不包括本身
+        nextAll([expr])       查找当前元素之后所有的同辈元素
+        prevtAll([expr])      查找当前元素之前所有的同辈元素
+        hasClass(class)       检查当前的元素是否含有某个特定的类
+        eq(index)             相当于$("li:eq(2)"),index从0开始
+        */
+
+        console.log($(".son").parent());
+
+        $(".nav").children("p").css("color", "darkcyan");
+
+        $(".nav").find("p").css("color", "dodgerblue");
+
+        $("ol .item").siblings("li").css("color", "dodgerblue");
+
+        let index = 2;
+        // $("ul li:eq(2)").css("color", "darkcyan");
+        $("ul li:eq(" + index + ")").css("color", "darkcyan");
+
+        // $("ul li").eq(3).css("color", "dodgerblue");
+        $("ul li")
+          .eq(index + 1)
+          .css("color", "dodgerblue");
+
+        console.log($("ol li").hasClass("item"));
+      });
+    </script>
+  </body>
+</html>

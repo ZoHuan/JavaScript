@@ -7,37 +7,33 @@
     <script src="jquery\jquery.min.js"></script>
   </head>
   <body>
-    <div>DIV</div>
-    <div class="nav">NAV</div>
-    <p>P</p>
-    <ol>
-      <li>驿外断桥边，寂寞开无主</li>
-      <li>驿外断桥边，寂寞开无主</li>
-      <li>驿外断桥边，寂寞开无主</li>
-      <li>驿外断桥边，寂寞开无主</li>
-      <li>驿外断桥边，寂寞开无主</li>
-    </ol>
     <ul>
-      <li>已是黄昏独自愁，更著风和雨。</li>
-      <li>已是黄昏独自愁，更著风和雨。</li>
-      <li>已是黄昏独自愁，更著风和雨。</li>
-      <li>已是黄昏独自愁，更著风和雨。</li>
-      <li>已是黄昏独自愁，更著风和雨。</li>
+      <li>驿外断桥边，寂寞开无主</li>
+      <li>驿外断桥边，寂寞开无主</li>
+      <li>驿外断桥边，寂寞开无主</li>
+      <li>驿外断桥边，寂寞开无主</li>
+      <li>驿外断桥边，寂寞开无主</li>
     </ul>
+
+    <ol>
+      <li>已是黄昏独自愁，更著风和雨。</li>
+      <li>已是黄昏独自愁，更著风和雨。</li>
+      <li>已是黄昏独自愁，更著风和雨。</li>
+      <li>已是黄昏独自愁，更著风和雨。</li>
+      <li>已是黄昏独自愁，更著风和雨。</li>
+    </ol>
     <script>
       $(function () {
-        /* 
-        $("*");            匹配所有元素
-        $("#id");          获取指定ID的元素
-        $(".class");       获取同一类class的元素
-        $("div");          获取同一类标签的所有元素
-        $("div,p,li");     获取多个元素
-        $("li.current");   获取交集元素
-        $("ul>li");        获取子代元素
-        $("ul li");        获取后代元素
+        /*
+        :first      获取第一个元素
+        :last       获取最后一个元素
+        :eq(index)  获取到的元素中，索引号为2的元素，索引号index从0开始
+        :odd        获取到的元素中，选择索引号为奇数的元素
+        :even       获取到的元素中，选择索引号为偶数的元素
         */
-        console.log($(".nav"));
-        console.log($("ul li"));
+        $("ul li:first").css("color", "darkcyan");
+        $("ul li:eq(2)").css("color", "dodgerblue");
+        $("ol li:odd").css("color", "dodgerblue");
       });
     </script>
   </body>

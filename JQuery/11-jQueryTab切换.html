@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="css/base.css" />
+    <style>
+      .wrapper {
+        display: flex;
+        width: 460px;
+        margin: auto;
+      }
+      #left {
+        width: 60px;
+        padding: 20px 0;
+      }
+      #left li {
+        padding: 20px 0;
+        font-size: 16px;
+        line-height: 20px;
+        text-align: center;
+      }
+      .wrapper > div {
+        width: 400px;
+        height: 400px;
+        overflow: hidden;
+      }
+      img {
+        width: 100%;
+      }
+    </style>
+    <script src="jquery\jquery.min.js"></script>
+    <script>
+      $(function () {
+        $("#left li").mouseover(function () {
+          let index = $(this).index();
+          $(this).css("background", "dodgerblue");
+          $(this).siblings("li").css("background", "");
+          $("#content div").eq(index).show();
+          $("#content div").eq(index).siblings("div").hide();
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <div class="wrapper">
+      <ul id="left">
+        <li><a href="#">苹果</a></li>
+        <li><a href="#">三星</a></li>
+        <li><a href="#">华为</a></li>
+        <li><a href="#">小米</a></li>
+        <li><a href="#">VIVO</a></li>
+        <li><a href="#">OPPO</a></li>
+      </ul>
+      <div id="content">
+        <div>
+          <a href="#"><img src="./images/iPhone.jpg" alt="" /></a>
+        </div>
+        <div>
+          <a href="#"><img src="./images/SAMSUNG.jpg" alt="" /></a>
+        </div>
+        <div>
+          <a href="#"><img src="./images/华为.jpg" alt="" /></a>
+        </div>
+        <div>
+          <a href="#"><img src="./images/小米.jpg" alt="" /></a>
+        </div>
+        <div>
+          <a href="#"><img src="./images/VIVO.jpg" alt="" /></a>
+        </div>
+        <div>
+          <a href="#"><img src="./images/OPPO.jpg" alt="" /></a>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
