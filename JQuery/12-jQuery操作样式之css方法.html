@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="jquery\jquery.min.js"></script>
+    <style>
+      div {
+        height: 200px;
+        width: 200px;
+        background-color: darkcyan;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div></div>
+    <script>
+      // 操作样式之css方法
+      $(function () {
+        console.log($("div").css("width"));
+        // 属性名一定要加引号
+        $("div").css("width", "300px");
+        $("div").css({
+          width: 400,
+          height: 400,
+          backgroundColor: "dodgerblue",
+        });
+      });
+    </script>
+  </body>
+</html>

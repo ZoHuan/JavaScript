@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="css/base.css" />
+    <style>
+      body {
+        background-color: #000;
+      }
+      .wrap {
+        width: 880px;
+        margin: auto;
+        margin-top: 120px;
+        padding: 10px;
+        border: 2px solid #e9a61b;
+      }
+      .wrap ul {
+        width: 880px;
+        overflow: hidden;
+      }
+      .wrap ul li {
+        float: left;
+        width: 200px;
+        margin: 10px;
+      }
+      .wrap ul img {
+        width: 200px;
+        height: 305px;
+      }
+    </style>
+    <script src="jquery\jquery.min.js"></script>
+    <script>
+      $(function () {
+        $(".wrap li").hover(
+          function () {
+            $(this)
+              .css({
+                transformStyle: "preserve-3d",
+                "-webkitTransform": "rotateY(360deg)",
+                "-webkitTransition": "all 0.6s",
+              })
+              .siblings()
+              .stop()
+              .fadeTo(200, 0.5);
+          },
+          function () {
+            $(this)
+              .css({
+                "-webkitTransform": "rotateY(0deg)",
+              })
+              .siblings()
+              .stop()
+              .fadeTo(200, 1);
+          }
+        );
+      });
+    </script>
+  </head>
+
+  <body>
+    <div class="wrap">
+      <ul>
+        <li>
+          <a href="#"><img src="./images/One Piece01.jpg" alt="" /></a>
+        </li>
+        <li>
+          <a href="#"><img src="./images/One Piece02.jpg" alt="" /></a>
+        </li>
+        <li>
+          <a href="#"><img src="./images/One Piece03.jpg" alt="" /></a>
+        </li>
+        <li>
+          <a href="#"><img src="./images/One Piece04.jpg" alt="" /></a>
+        </li>
+        <li>
+          <a href="#"><img src="./images/One Piece05.jpg" alt="" /></a>
+        </li>
+        <li>
+          <a href="#"><img src="./images/One Piece06.jpg" alt="" /></a>
+        </li>
+        <li>
+          <a href="#"><img src="./images/One Piece07.jpg" alt="" /></a>
+        </li>
+        <li>
+          <a href="#"><img src="./images/One Piece08.jpg" alt="" /></a>
+        </li>
+      </ul>
+    </div>
+  </body>
+</html>
