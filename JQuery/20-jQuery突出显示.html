@@ -48,7 +48,9 @@
           function () {
             $(this)
               .css({
+                transformStyle: "preserve-3d",
                 "-webkitTransform": "rotateY(0deg)",
+                "-webkitTransition": "all 0.6s",
               })
               .siblings()
               .stop()
