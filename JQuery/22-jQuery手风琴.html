@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="css/base.css" />
     <style>
       .wrap {
-        width: 1600px;
+        width: 1046px;
         margin: auto;
         margin-top: 140px;
       }
@@ -46,7 +46,30 @@
     </style>
     <script src="jquery\jquery.min.js"></script>
     <script>
-      $(function () {});
+      $(function () {
+        $(".wrap li").mouseenter(function () {
+          $(this)
+            .stop()
+            .animate({ width: 200 }, 200)
+            .find("div")
+            .stop()
+            .fadeOut()
+            .siblings(".big")
+            .stop()
+            .fadeIn();
+        });
+        $(".wrap li").mouseleave(function () {
+          $(this)
+            .stop()
+            .animate({ width: 106 })
+            .find("div")
+            .stop()
+            .fadeIn()
+            .siblings(".big")
+            .stop()
+            .fadeOut();
+        });
+      });
     </script>
   </head>
 
