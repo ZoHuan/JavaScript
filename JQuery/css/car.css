@@ -1,0 +1,275 @@
+body {
+  background: #f5f5f5;
+}
+body,
+button,
+input,
+select,
+textarea {
+  font: 12px/1.5 Helvetica Neue, Helvetica, Arial, Microsoft Yahei,
+    Hiragino Sans GB, Heiti SC, WenQuanYi Micro Hei, sans-serif;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none !important;
+}
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+.header {
+  height: 50px;
+  min-width: 120ppx;
+  padding: 10px;
+  background-color: #fff;
+  line-height: 1.5;
+}
+.header .left {
+  float: left;
+  margin-top: 8px;
+}
+.header .left a {
+  display: inline-block;
+}
+.header .left img {
+  width: 120px;
+  height: 36px;
+}
+.header .left span {
+  margin-left: 26px;
+  font-size: 22px;
+  line-height: 36px;
+  vertical-align: middle;
+}
+
+.header .right {
+  float: right;
+}
+.header .right div {
+  width: 320px;
+  height: 50px;
+  overflow: hidden;
+  background: url(../images/sprites.svg) no-repeat;
+  background-position: -42px -20px;
+}
+
+.layout {
+  width: 1200px;
+  margin: 0 auto;
+}
+
+.hr-20 {
+  height: 20px;
+}
+
+.list-title {
+  display: flex;
+  padding-left: 40px;
+  background-color: #fff;
+  line-height: 40px;
+  color: #a4a4a4;
+}
+
+.list-title > div,
+.list-item > div {
+  width: 100px;
+  margin-left: 30px;
+  min-height: 14px;
+  text-align: center;
+}
+.list-title div:nth-child(1) {
+  width: 150px;
+  text-align: left;
+  margin-left: 0;
+}
+.list-title div:nth-child(2) {
+  width: 450px;
+  text-align: left;
+  margin-left: 0;
+}
+.list-title div input,
+.total-control div input {
+  margin-right: 10px;
+  cursor: pointer;
+}
+.checkbox input {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  border: 0;
+  vertical-align: text-top;
+  color: hsla(0, 0%, 100%, 0);
+}
+
+.list-item {
+  display: flex;
+  margin-top: 10px;
+  padding: 20px 0;
+  padding-left: 40px;
+  background-color: #fff;
+}
+.list-item .checkbox {
+  width: 27px;
+  text-align: left;
+  margin-left: 0;
+}
+
+.list-item .list-main {
+  display: flex;
+  width: 570px;
+  text-align: left;
+  margin-left: 0;
+}
+.list-item .list-price {
+  width: 140px;
+  margin-left: 10px;
+  margin-right: -20px;
+}
+.list-item > div > input {
+  margin: 43px 0px 0 0;
+  cursor: pointer;
+}
+.list-main .list-main-img {
+  width: 100px;
+  height: 100px;
+  margin-right: 20px;
+}
+.list-main .list-main-img img {
+  width: 100%;
+  height: 100%;
+}
+.list-main div {
+  width: 450px;
+}
+
+.list-main div a {
+  display: block;
+  max-height: 40px;
+  margin-bottom: 2px;
+  font-size: 14px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: 20px;
+}
+
+.list-main div p {
+  font-size: 14px;
+  color: #666;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  line-height: 17px;
+}
+
+.list-main div span {
+  display: inline-block;
+  margin-top: 6px;
+  margin-right: 8px;
+  padding: 0 8px;
+  border: 1px solid #ca141d;
+  font-size: 14px;
+  color: #ca141d;
+  line-height: 18px;
+}
+
+.list-price span {
+  display: block;
+  margin-bottom: 3px;
+  font-size: 14px;
+  color: #3a3a3a;
+}
+
+.list-stock-area {
+  display: flex;
+  width: 86px;
+  height: 20px;
+  margin: 0 auto;
+  border: 1px solid #d6d6d6;
+  border-radius: 2px;
+}
+
+.list-stock-area input {
+  width: 42px;
+  height: 20px;
+  border: 1px solid #d6d6d6;
+  border-top: none;
+  border-bottom: none;
+  text-align: center;
+}
+.list-stock-area a {
+  width: 21px;
+  height: 20px;
+  line-height: 19px;
+
+  font-size: 16px;
+  text-align: center;
+  color: #717171;
+}
+
+.list-total {
+  font-size: 14px;
+  color: #ca141d;
+  font-weight: 700;
+}
+
+.list-del a {
+  font-size: 14px;
+  color: #a4a4a4;
+}
+
+.total-tool {
+  height: 60px;
+  margin-top: 10px;
+  padding-left: 40px;
+  background: #fff;
+}
+.total-tool .total-control {
+  float: left;
+  line-height: 60px;
+}
+
+.total-control div {
+  display: inline-block;
+}
+.total-control a {
+  margin-left: 20px;
+}
+
+.total-btn {
+  float: right;
+}
+.total-btn a {
+  display: block;
+  width: 180px;
+  height: 60px;
+  background: #ca151e;
+  font-size: 18px;
+  color: #fff;
+  line-height: 60px;
+  text-align: center;
+}
+
+.total-price {
+  float: right;
+  margin-top: 7px;
+  padding-right: 30px;
+  text-align: right;
+}
+.total-price p {
+  font-size: 14px;
+}
+.total-price p span {
+  color: #ca151e;
+  font-size: 18px;
+  font-weight: 700;
+}
+.total-price .total-choose {
+  color: #a4a4a4;
+}
+.total-price .total-choose em {
+  margin: 0 5px;
+  color: #ca151e;
+  font-weight: 700;
+}
+.total-price .total-choose span {
+  color: #3a3a3a;
+}

@@ -62,11 +62,14 @@ strong {
   font-weight: normal;
 }
 a {
-  color: #555;
+  color: #3a3a3a;
   text-decoration: none;
 }
 a:hover {
   text-decoration: none;
+}
+:focus {
+  outline: 0;
 }
 img {
   border: none;

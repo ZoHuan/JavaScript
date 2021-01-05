@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="jquery\jquery.min.js"></script>
+  </head>
+  <body>
+    <div>
+      <span>我是内容</span>
+    </div>
+    <input type="text" value="请输入内容" />
+    <script>
+      /* 
+        1. 获取设置元素内容 html()
+
+        2. 获取设置元素文本内容 text()
+
+        3. 获取设置表单值 val()
+      */
+      $(function () {
+        console.log($("div").html());
+        $("div").html("HTMl");
+
+        console.log($("div").text());
+        $("div").html("TEXT");
+
+        console.log($("input").val());
+        $("input").val("value");
+      });
+    </script>
+  </body>
+</html>
