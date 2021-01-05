@@ -13,13 +13,55 @@ $(function () {
   });
   // 3. 商品数量增减功能
   $(".increment").click(function () {
-    var n = $(this).siblings("input").val();
+    let n = $(this).siblings("input").val();
     n++;
     $(this).siblings("input").val(n);
+    // 4. 小计计算功能
+    // let p = $(this).parent().parent().siblings(".list-price").children().html();
+    let p = $(this)
+      .parents(".list-stock")
+      .siblings(".list-price")
+      .children()
+      .html();
+    p = p.substr(2);
+    let price = (p * n).toFixed(2);
+    $(this)
+      .parents(".list-stock")
+      .siblings(".list-total")
+      .html("¥ " + price);
   });
   $(".decrement").click(function () {
-    var n = $(this).siblings("input").val();
+    let n = $(this).siblings("input").val();
+    if (n == 1) {
+      return;
+    }
     n--;
     $(this).siblings("input").val(n);
+    let p = $(this)
+      .parents(".list-stock")
+      .siblings(".list-price")
+      .children()
+      .html();
+    p = p.substr(2);
+    let price = (p * n).toFixed(2);
+    $(this)
+      .parents(".list-stock")
+      .siblings(".list-total")
+      .html("¥ " + price);
+  });
+  // 5. 本文框输入功能
+  $(".itxt").change(function () {
+    let n = $(this).val();
+    let p = $(this)
+      .parents(".list-stock")
+      .siblings(".list-price")
+      .children()
+      .html();
+    p = p.substr(2);
+    let price = (p * n).toFixed(2);
+    $(this)
+      .parents(".list-stock")
+      .siblings(".list-total")
+      .html("¥ " + price);
   });
 });
