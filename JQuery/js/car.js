@@ -29,6 +29,8 @@ $(function () {
       .parents(".list-stock")
       .siblings(".list-total")
       .html("¥ " + price);
+
+    getSum();
   });
   $(".decrement").click(function () {
     let n = $(this).siblings("input").val();
@@ -48,6 +50,7 @@ $(function () {
       .parents(".list-stock")
       .siblings(".list-total")
       .html("¥ " + price);
+    getSum();
   });
   // 5. 本文框输入功能
   $(".itxt").change(function () {
@@ -63,5 +66,22 @@ $(function () {
       .parents(".list-stock")
       .siblings(".list-total")
       .html("¥ " + price);
+    getSum();
   });
+  // 6. 计算总计和总额模块
+  getSum();
+  function getSum(domEle) {
+    let count = 0; // 计算总件数
+    let money = 0; // 计算总价钱
+    $(".itxt").each(function (index, ele) {
+      count += parseInt($(ele).val());
+    });
+    $(".total-count").text(count);
+    $(".list-total").each(function (index, ele) {
+      money += parseFloat($(ele).text().substr(2));
+    });
+    $(".total-sum").text("¥ " + money.toFixed(2));
+  }
+  // 7. 删除商品
+   
 });

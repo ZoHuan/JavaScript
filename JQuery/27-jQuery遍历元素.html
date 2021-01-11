@@ -21,8 +21,10 @@
         2. $.each(object,function(index,element){})
         (1) $.each()方法可用于遍历任何对象。主要用于数据处理，比如数组，对象
         (2) 里面的函数有2个参数:index是每个元素的索引号，element遍历内容
-        */
+      */
+
       $(function () {
+        // 1.each() 方法
         // $("div").css("color", "red");
         let sum = 0;
         let arr = ["deeppink", "darkcyan", "dodgerblue"];
@@ -33,6 +35,22 @@
           sum += parseInt($(domEle).text());
         });
         console.log(sum);
+
+        // 2. $.each() 方法
+        $.each($("div"), function (index, ele) {
+          console.log(index);
+          console.log(ele);
+        });
+
+        $.each(arr, function (i, ele) {
+          console.log(i);
+          console.log(ele);
+        });
+
+        $.each({ name: "jQuery", age: 20 }, function (i, ele) {
+          console.log(i);
+          console.log(ele);
+        });
       });
     </script>
   </body>
