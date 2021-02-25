@@ -107,6 +107,11 @@ input[type="number"] {
   padding-left: 40px;
   background-color: #fff;
 }
+
+.check-list-item {
+  background-color: #ece7e7;
+}
+
 .list-item .checkbox {
   width: 27px;
   text-align: left;

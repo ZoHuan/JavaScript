@@ -2,6 +2,12 @@ $(function () {
   // 1. 全选 全不选功能
   $(".checkall").change(function () {
     $(".j-checkbox,.checkall").prop("checked", $(this).prop("checked"));
+    // 添加商品背景颜色
+    if ($(this).prop("checked")) {
+      $(".list-item").addClass("check-list-item");
+    } else {
+      $(".list-item").removeClass("check-list-item");
+    }
   });
   // 2. 小复选框功能
   $(".j-checkbox").change(function () {
@@ -9,6 +15,12 @@ $(function () {
       $(".checkall").prop("checked", true);
     } else {
       $(".checkall").prop("checked", false);
+    }
+    // 添加商品背景颜色
+    if ($(this).prop("checked")) {
+      $(this).parents(".list-item").addClass("check-list-item");
+    } else {
+      $(this).parents(".list-item").removeClass("check-list-item");
     }
   });
   // 3. 商品数量增减功能
@@ -83,5 +95,19 @@ $(function () {
     $(".total-sum").text("¥ " + money.toFixed(2));
   }
   // 7. 删除商品
-   
+  // (1) 商品后面的删除按钮
+  $(".list-del a").click(function () {
+    $(this).parents(".list-item").remove();
+    getSum();
+  });
+  // (2) 删除选中的商品
+  $(".control-del").click(function () {
+    $(".j-checkbox:checked").parents(".list-item").remove();
+    getSum();
+  });
+  // (3) 清空购物车 删除全部商品
+  $(".control-clear").click(function () {
+    $(".list-item").remove();
+    getSum();
+  });
 });
