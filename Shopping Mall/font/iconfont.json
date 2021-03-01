@@ -1,0 +1,23 @@
+{
+  "id": "2392124",
+  "name": "Shopping Mall",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon",
+  "description": "商场项目",
+  "glyphs": [
+    {
+      "icon_id": "8075259",
+      "name": "三角箭头 Triangular",
+      "font_class": "sanjiaojiantoutriangular",
+      "unicode": "e601",
+      "unicode_decimal": 58881
+    },
+    {
+      "icon_id": "16828022",
+      "name": "商店、店铺、商城",
+      "font_class": "shangcheng",
+      "unicode": "e6f2",
+      "unicode_decimal": 59122
+    }
+  ]
+}
