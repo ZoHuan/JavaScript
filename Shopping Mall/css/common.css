@@ -49,3 +49,96 @@
 .shortcut li {
   float: left;
 }
+
+.header {
+  position: relative;
+  height: 105px;
+}
+.logo {
+  position: absolute;
+  top: 25px;
+  left: 0;
+  width: 175px;
+  height: 56px;
+}
+
+.logo a {
+  display: block;
+  width: 175px;
+  height: 56px;
+  background: url(../img/logo.png) no-repeat;
+  background-size: 175px;
+  font-size: 0px;
+}
+
+.search {
+  position: absolute;
+  top: 25px;
+  left: 348px;
+}
+
+.text {
+  float: left;
+  width: 445px;
+  height: 32px;
+  border: 2px solid #b1191a;
+  padding-left: 10px;
+  color: #ccc;
+}
+.btn {
+  float: left;
+  width: 82px;
+  height: 36px;
+  border: none;
+  background-color: #b1191a;
+  color: #fff;
+  font-size: 16px;
+}
+
+.hotwrods {
+  position: absolute;
+  top: 65px;
+  left: 348px;
+}
+.hotwrods a {
+  margin: 0 10px;
+}
+
+.shopcar {
+  position: absolute;
+  top: 25px;
+  right: 64px;
+  width: 138px;
+  height: 34px;
+  border: 1px solid #dfdfdf;
+  background-color: #f7f7f7;
+  line-height: 34px;
+  text-align: center;
+}
+
+.car {
+  margin-right: 4px;
+  color: #da5555;
+  font-family: "iconfont";
+  vertical-align: revert;
+}
+
+.arrow {
+  margin-left: 5px;
+  font-family: "iconfont";
+}
+.count {
+  position: absolute;
+  top: -5px;
+  left: 100px;
+  height: 14px;
+  padding: 0 3px;
+  background-color: #e60012;
+  line-height: 14px;
+  color: #fff;
+  border-radius: 7px 7px 7px 0;
+}
+.nav {
+  height: 45px;
+  border-bottom: 2px solid #b1191a;
+}

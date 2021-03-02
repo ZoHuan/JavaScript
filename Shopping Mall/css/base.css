@@ -34,6 +34,7 @@ button,
 input {
   font-family: Microsoft YaHei, Heiti SC, tahoma, arial, Hiragino Sans GB,
     \\5b8b\4f53, sans-serif;
+  outline: none;
 }
 
 body {
