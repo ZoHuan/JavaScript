@@ -1,0 +1,80 @@
+.main {
+    width: 980px;
+    height: 455px;
+    margin: 10px 0 0 219px;
+}
+
+.focus {
+    position: relative;
+    width: 720px;
+    height: 455px;
+
+}
+
+.arrow-l,
+.arrow-r {
+    position: absolute;
+    top: 50%;
+    width: 24px;
+    height: 40px;
+    margin-top: -20px;
+    background: rgba(0, 0, 0, 0.3);
+    text-align: center;
+    line-height: 40px;
+    color: #fff;
+    font-family: "iconfont";
+    font-size: 18px;
+}
+
+.arrow-r {
+    right: 0;
+}
+
+.circle {
+    position: absolute;
+    bottom: 10px;
+    left: 50px;
+}
+
+.circle li {
+    float: left;
+    width: 8px;
+    height: 8px;
+    margin: 0 3px;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.current {
+    background-color: #fff;
+}
+
+.newsflash {
+    width: 250px;
+    height: 455px;
+}
+
+.news {
+    height: 163px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+}
+
+.news-hd {
+    height: 32px;
+    border-bottom: 1px dotted #ccc;
+}
+.news-bd{
+    
+}
+.lifeservice {
+    height: 208px;
+    border: 1px solid #ccc;
+    border-top: 0;
+}
+
+.bargain {
+    height: 75px;
+    margin-top: 5px;
+}

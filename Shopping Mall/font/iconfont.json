@@ -20,6 +20,13 @@
       "unicode_decimal": 58881
     },
     {
+      "icon_id": "20158116",
+      "name": "三角箭头 Triangular",
+      "font_class": "leftarrow",
+      "unicode": "e6f4",
+      "unicode_decimal": 59124
+    },
+    {
       "icon_id": "20130008",
       "name": "三角箭头 Triangular",
       "font_class": "rightarrow",
