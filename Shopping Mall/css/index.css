@@ -63,18 +63,159 @@
 
 .news-hd {
     height: 32px;
+    padding: 0 15px;
     border-bottom: 1px dotted #ccc;
+    font-size: 14px;
+    line-height: 32px;
 }
-.news-bd{
-    
+
+.news-hd a {
+    float: right;
+    font-size: 12px;
+    font-family: "iconfont";
 }
+
+.news-bd {
+    padding: 10px 0 0 15px;
+}
+
+.news-bd li {
+    height: 23px;
+}
+
 .lifeservice {
+    overflow: hidden;
     height: 208px;
     border: 1px solid #ccc;
     border-top: 0;
 }
 
+.lifeservice ul {
+    width: 252px;
+}
+
+.lifeservice li {
+    position: relative;
+    float: left;
+    width: 62px;
+    height: 70px;
+    border-right: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+}
+
+.lifeservice li a {
+    display: block;
+    overflow: hidden;
+    height: 100%;
+}
+
+.lifeservice li p {
+    text-align: center;
+}
+
+.hot {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 12px;
+    height: 15px;
+    background: url(../img/jian.png) no-repeat;
+}
+
+.service_ico {
+    display: block;
+    width: 24px;
+    height: 24px;
+    background: url(../img/icons.png) no-repeat;
+    margin: 10px auto;
+}
+
+.service_ico_huafei {
+    background-position: 0 0;
+}
+
+.service_ico_lvxing {
+    background-position: 0 -88px;
+}
+
+.service_ico_chexian {
+    background-position: 0 -44px;
+}
+
+.service_ico_youxi {
+    background-position: 0 -132px;
+}
+
+.service_ico_caipiao {
+    background-position: 0 -176px;
+}
+
+.service_ico_dianying {
+    background-position: 0 -220px;
+}
+
+.service_ico_jiudian {
+    background-position: 0 -264px;
+}
+
+.service_ico_licai {
+    background-position: 0 -308px;
+}
+
+.service_ico_jiaoyu {
+    background-position: 0 -352px;
+}
+
+.service_ico_yanchang {
+    background-position: 0 -396px;
+}
+
+.service_ico_shenghuo {
+    background-position: 0 -440px;
+}
+
+.service_ico_huoche {
+    background-position: 0 -484px;
+}
+
 .bargain {
     height: 75px;
     margin-top: 5px;
+}
+
+
+.recommend {
+    height: 163px;
+    margin-top: 10px;
+}
+
+.recom-hd {
+    width: 200px;
+    height: 163px;
+    background: url(../img/recommend.png) no-repeat;
+}
+
+.recom-hd-text {
+    width: 160px;
+    height: 90px;
+    margin: 30px auto 0;
+    background: url(../img/container.png) no-repeat;
+    font-size: 16px;
+    color: #fff;
+    text-align: center;
+    line-height: 130px;
+}
+
+.recom-bd {
+    width: 1000px;
+    height: 163px;
+    background-color: #ebebeb;
+}
+
+.recom-bd li {
+    float: left;
+    width: 249px;
+    height: 145px;
+    margin-top: 10px;
+    border-left: 1px solid #ccc;
 }
