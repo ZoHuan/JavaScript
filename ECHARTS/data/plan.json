@@ -1,0 +1,41 @@
+{
+  "code": "000",
+  "message": "message",
+  "lists": [
+    {
+      "planNumber": "8942154",
+      "fulfilNumber": "7942154",
+      "fulfil": "15%",
+      "adopt": "96%",
+      "PPM": "6584"
+    },
+    {
+      "planNumber": "1232154",
+      "fulfilNumber": "1232154",
+      "fulfil": "25%",
+      "adopt": "86%",
+      "PPM": "1284"
+    },
+    {
+      "planNumber": "2312154",
+      "fulfilNumber": "74322154",
+      "fulfil": "31%",
+      "adopt": "16%",
+      "PPM": "6554"
+    },
+    {
+      "planNumber": "89426554",
+      "fulfilNumber": "3322154",
+      "fulfil": "20%",
+      "adopt": "11%",
+      "PPM": "624"
+    },
+    {
+      "planNumber": "8124121254",
+      "fulfilNumber": "19221154",
+      "fulfil": "65%",
+      "adopt": "21%",
+      "PPM": "6284"
+    }
+  ]
+}
