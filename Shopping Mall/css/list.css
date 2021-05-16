@@ -1,0 +1,28 @@
+.sk_list li {
+    float: left;
+    margin: 0 30px;
+    line-height: 45px;
+}
+
+.sk_list li a {
+    font-size: 16px;
+    font-weight: 700;
+    color: #000;
+}
+
+.sk_list li a:hover {
+    color: #c81523;
+}
+
+.sk_con li {
+    float: left;
+    margin: 0 20px;
+    line-height: 45px;
+
+}
+
+.sk_con li a {
+    font-size: 14px;
+    font-weight: 700;
+    font-family: iconfont;
+}

@@ -215,7 +215,101 @@
 .recom-bd li {
     float: left;
     width: 249px;
-    height: 145px;
-    margin-top: 10px;
+    height: 163px;
     border-left: 1px solid #ccc;
+}
+
+.box-hd {
+    height: 30px;
+    margin-top: 25px;
+    border-bottom: 2px solid #c81623
+}
+
+.box-hd h3 {
+    float: left;
+    font-size: 18px;
+    color: #c81623;
+}
+
+.tab-list {
+    float: right;
+    line-height: 30px;
+}
+
+.tab-list li {
+    float: left;
+}
+
+.tab-list li a {
+    margin: 0 15px;
+}
+
+.box-bd {
+    height: 360px;
+}
+
+.box-bd img {
+    transition: all .2s;
+}
+
+.box-bd img:hover {
+    margin-left: 8px;
+}
+
+.w210 {
+    width: 210px;
+    background-color: #f9f9f9;
+}
+
+.w330 {
+    width: 330px;
+}
+
+.w220 {
+    width: 220px;
+}
+
+.tab-con li {
+    float: left;
+    height: 360px;
+}
+
+.tab-con-list {
+    overflow: hidden;
+    margin-bottom: 15px;
+}
+
+.tab-con-list li {
+    width: 86px;
+    height: 32px;
+    margin-left: 10px;
+    border-bottom: 1px solid #ccc;
+    line-height: 32px;
+    text-align: center;
+}
+
+
+
+/* 电梯导航 */
+.fixedtool {
+    position: fixed;
+    top: 100px;
+    left: 50%;
+    width: 66px;
+    margin-left: -676px;
+    background-color: #fff;
+}
+
+.fixedtool li {
+    height: 32px;
+    line-height: 32px;
+    text-align: center;
+    font-size: 12px;
+    border-bottom: 1px solid #ccc;
+    cursor: pointer;
+}
+
+.fixedtool .current {
+    background-color: #c81623;
+    color: #fff;
 }
