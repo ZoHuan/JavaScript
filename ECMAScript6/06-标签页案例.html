@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/base.css" />
+    <style>
+      .tabsbox {
+        width: 800px;
+        height: 400px;
+        margin: auto;
+        border: 1px solid #ddd;
+      }
+
+      .fisrstnav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 34px;
+        border-bottom: 1px solid #ddd;
+        line-height: 34px;
+      }
+      .fisrstnav ul {
+        display: flex;
+        align-items: center;
+      }
+      .fisrstnav ul li {
+        position: relative;
+        height: 37px;
+        padding: 0 16px;
+        border-bottom: 1px solid #ddd;
+        border-right: 1px solid #ddd;
+        line-height: 36px;
+        background-color: #fff;
+      }
+
+      .fisrstnav ul input {
+        width: 60px;
+        height: 26px;
+        border: 1px solid #1374e2;
+      }
+      .fisrstnav .liactive {
+        border-bottom: none;
+      }
+      .iconfont {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 10px;
+        height: 10px;
+        border-bottom-left-radius: 50%;
+        background-color: #e3e3e3;
+        color: #fff;
+        text-align: center;
+        line-height: 10px;
+      }
+      .tabadd {
+        height: 22px;
+        width: 22px;
+        margin: 10px;
+        border: 1px solid #ddd;
+        line-height: 22px;
+        text-align: center;
+      }
+      .tabscon {
+        padding: 10px;
+      }
+      .tabscon section {
+        display: none;
+      }
+      .tabscon .conactive {
+        display: block;
+      }
+
+      .tabscon input {
+        width: 98%;
+        height: 50px;
+        border: 1px solid #1374e2;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <div class="tabsbox" id="tab">
+        <!-- 标签 -->
+        <nav class="fisrstnav">
+          <ul>
+            <li class="liactive">
+              <span>测试1</span>
+              <span class="iconfont">×</span>
+            </li>
+            <li>
+              <span>测试2</span>
+              <span class="iconfont">×</span>
+            </li>
+            <li>
+              <span>测试3</span>
+              <span class="iconfont">×</span>
+            </li>
+          </ul>
+          <div class="tabadd">
+            <span>+</span>
+          </div>
+        </nav>
+        <!-- 内容 -->
+        <div class="tabscon">
+          <section class="conactive">测试1</section>
+          <section>测试2</section>
+          <section>测试3</section>
+        </div>
+      </div>
+    </main>
+
+    <script>
+      var that;
+      class Tab {
+        constructor(id) {
+          // 获取元素
+          that = this;
+          this.main = document.querySelector(id);
+          this.add = this.main.querySelector(".tabadd");
+          this.ul = this.main.querySelector(".fisrstnav ul:first-child");
+          this.fsection = this.main.querySelector(".tabscon");
+          this.init();
+        }
+        init() {
+          this.updateNode();
+          // init 初始化操作让相关的元素绑定事件
+          this.add.onclick = this.addTab;
+          for (let i = 0; i < this.lis.length; i++) {
+            this.lis[i].index = i;
+            this.lis[i].onclick = this.toggleTab;
+            this.remove[i].onclick = this.removeTab;
+            this.spans[i].ondblclick = this.editTab;
+            this.sections[i].ondblclick = this.editTab;
+          }
+        }
+
+        // 获取所有的小li 和section
+        updateNode() {
+          this.lis = this.main.querySelectorAll("li");
+          this.sections = this.main.querySelectorAll("section");
+          this.remove = this.main.querySelectorAll(".iconfont");
+          this.spans = this.main.querySelectorAll(
+            ".fisrstnav li span:first-child"
+          );
+        }
+
+        // 1. 切换功能
+        toggleTab() {
+          that.clearClass();
+          this.className = "liactive";
+          that.sections[this.index].className = "conactive";
+        }
+        // 清除所有li和section的类
+        clearClass() {
+          for (let i = 0; i < this.lis.length; i++) {
+            this.lis[i].className = "";
+            this.sections[i].className = "";
+          }
+        }
+
+        // 2. 添加功能
+        addTab() {
+          that.clearClass();
+          // 1. 创建li元素和section元素
+          var li =
+            '<li class="liactive"><span>测试</span><span class="iconfont">×</span></li>';
+          var section = '<section class="conactive">测试</section>';
+          // 2. 把两个元素追加到对应的父元素里面
+          that.ul.insertAdjacentHTML("beforeend", li);
+          that.fsection.insertAdjacentHTML("beforeend", section);
+          that.init();
+        }
+        // 3. 删除功能
+        removeTab(e) {
+          e.stopPropagation(); // 阻止冒泡
+          var index = this.parentNode.index;
+          // 根据索引号删除对应的li和section
+          that.lis[index].remove();
+          that.sections[index].remove();
+          that.init();
+          // 当我们删除的不是当前选中状态的li的时候，原来的选中状态保持不变
+          if (document.querySelector(".liactive")) return;
+          // 当我们删除了当前的选中的li，让它的前一个li处于选定状态
+          index--;
+          that.lis[index] && that.lis[index].click();
+        }
+        // 4. 修改功能
+        editTab() {
+          var str = this.innerHTML;
+          // 双击禁止选定文字
+          window.getSelection
+            ? window.getSelection().removeAllRanges()
+            : document.getSelection.empty();
+          this.innerHTML = '<input type = "text"/>';
+          var input = this.children[0];
+          input.value = str;
+          input.select();
+          input.onblur = function () {
+            this.parentNode.innerHTML = this.value;
+          };
+          input.onkeyup = function (e) {
+            if (e.keyCode === 13) {
+              this.blur();
+            }
+          };
+        }
+      }
+
+      var tab = new Tab("#tab");
+    </script>
+  </body>
+</html>
