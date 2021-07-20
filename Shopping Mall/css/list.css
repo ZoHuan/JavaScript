@@ -1,28 +1,44 @@
+.nav {
+  overflow: hidden;
+}
+
 .sk_list li {
-    float: left;
-    margin: 0 30px;
-    line-height: 45px;
+  float: left;
 }
 
 .sk_list li a {
-    font-size: 16px;
-    font-weight: 700;
-    color: #000;
+  display: block;
+  padding: 0 30px;
+  line-height: 47px;
+  font-size: 16px;
+  font-weight: 700;
+  color: #000;
 }
 
 .sk_list li a:hover {
-    color: #c81523;
+  color: #c81523;
 }
 
 .sk_con li {
-    float: left;
-    margin: 0 20px;
-    line-height: 45px;
-
+  float: left;
 }
 
 .sk_con li a {
-    font-size: 14px;
-    font-weight: 700;
-    font-family: iconfont;
+  display: block;
+  padding: 0 20px;
+  line-height: 49px;
+  font-size: 14px;
+}
+
+.sk_bd ul li {
+  overflow: hidden;
+  float: left;
+  width: 300px;
+  height: 520px;
+  border: 1px solid #eee;
+  box-sizing: border-box;
+}
+
+.sk_bd ul li:hover {
+  border: 1px solid #c81523;
 }

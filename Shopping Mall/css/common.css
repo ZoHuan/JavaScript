@@ -6,26 +6,9 @@
 .fr {
   float: right;
 }
-
-@font-face {
-  font-family: "iconfont";
-  src: url("../font/iconfont.eot");
-  src: url("../font/iconfont.eot?#iefix") format("embedded-opentype"),
-    url("../font/iconfont.woff2") format("woff2"),
-    url("../font/iconfont.woff") format("woff"),
-    url("../font/iconfont.ttf") format("truetype"),
-    url("../font/iconfont.svg#iconfont") format("svg");
-}
-
-.fr .iconfont {
-  font-family: "iconfont";
-  font-size: 16px;
-  font-style: normal;
+.iconfont {
   vertical-align: middle;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
-
 /* 版心 */
 .wrap {
   width: 1200px;
@@ -126,13 +109,11 @@
 .car {
   margin-right: 4px;
   color: #da5555;
-  font-family: "iconfont";
   vertical-align: revert;
 }
 
 .arrow {
   margin-left: 5px;
-  font-family: "iconfont";
 }
 
 .count {
@@ -178,7 +159,7 @@
   padding: 0 10px;
   line-height: 31px;
   color: #fff;
-  transition: all .5s;
+  transition: all 0.5s;
 }
 
 .menu_item:hover {
@@ -198,7 +179,6 @@
 .menu_item i {
   float: right;
   color: #fff;
-  font-family: "iconfont";
   font-size: 18px;
   vertical-align: middle;
 }

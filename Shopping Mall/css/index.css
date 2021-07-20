@@ -1,315 +1,309 @@
 .main {
-    width: 980px;
-    height: 455px;
-    margin: 10px 0 0 219px;
+  width: 980px;
+  height: 455px;
+  margin: 10px 0 0 219px;
 }
 
 .focus {
-    position: relative;
-    width: 720px;
-    height: 455px;
-
+  position: relative;
+  width: 720px;
+  height: 455px;
 }
 
 .arrow-l,
 .arrow-r {
-    position: absolute;
-    top: 50%;
-    width: 24px;
-    height: 40px;
-    margin-top: -20px;
-    background: rgba(0, 0, 0, 0.3);
-    text-align: center;
-    line-height: 40px;
-    color: #fff;
-    font-family: "iconfont";
-    font-size: 18px;
+  position: absolute;
+  top: 50%;
+  width: 24px;
+  height: 40px;
+  margin-top: -20px;
+  background: rgba(0, 0, 0, 0.3);
+  text-align: center;
+  line-height: 40px;
+  color: #fff;
+  font-size: 18px;
 }
 
 .arrow-r {
-    right: 0;
+  right: 0;
 }
 
 .circle {
-    position: absolute;
-    bottom: 10px;
-    left: 50px;
+  position: absolute;
+  bottom: 10px;
+  left: 50px;
 }
 
 .circle li {
-    float: left;
-    width: 8px;
-    height: 8px;
-    margin: 0 3px;
-    border: 2px solid rgba(255, 255, 255, 0.5);
-    border-radius: 50%;
-    cursor: pointer;
+  float: left;
+  width: 8px;
+  height: 8px;
+  margin: 0 3px;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+  cursor: pointer;
 }
 
 .current {
-    background-color: #fff;
+  background-color: #fff;
 }
 
 .newsflash {
-    width: 250px;
-    height: 455px;
+  width: 250px;
+  height: 455px;
 }
 
 .news {
-    height: 163px;
-    border: 1px solid #ccc;
-    background-color: #fff;
+  height: 163px;
+  border: 1px solid #ccc;
+  background-color: #fff;
 }
 
 .news-hd {
-    height: 32px;
-    padding: 0 15px;
-    border-bottom: 1px dotted #ccc;
-    font-size: 14px;
-    line-height: 32px;
+  height: 32px;
+  padding: 0 15px;
+  border-bottom: 1px dotted #ccc;
+  font-size: 14px;
+  line-height: 32px;
 }
 
 .news-hd a {
-    float: right;
-    font-size: 12px;
-    font-family: "iconfont";
+  float: right;
+  font-size: 12px;
 }
 
 .news-bd {
-    padding: 10px 0 0 15px;
+  padding: 10px 0 0 15px;
 }
 
 .news-bd li {
-    height: 23px;
+  height: 23px;
 }
 
 .lifeservice {
-    overflow: hidden;
-    height: 208px;
-    border: 1px solid #ccc;
-    border-top: 0;
+  overflow: hidden;
+  height: 208px;
+  border: 1px solid #ccc;
+  border-top: 0;
 }
 
 .lifeservice ul {
-    width: 252px;
+  width: 252px;
 }
 
 .lifeservice li {
-    position: relative;
-    float: left;
-    width: 62px;
-    height: 70px;
-    border-right: 1px solid #ccc;
-    border-bottom: 1px solid #ccc;
+  position: relative;
+  float: left;
+  width: 62px;
+  height: 70px;
+  border-right: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
 }
 
 .lifeservice li a {
-    display: block;
-    overflow: hidden;
-    height: 100%;
+  display: block;
+  overflow: hidden;
+  height: 100%;
 }
 
 .lifeservice li p {
-    text-align: center;
+  text-align: center;
 }
 
 .hot {
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 12px;
-    height: 15px;
-    background: url(../img/jian.png) no-repeat;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 12px;
+  height: 15px;
+  background: url(../img/jian.png) no-repeat;
 }
 
 .service_ico {
-    display: block;
-    width: 24px;
-    height: 24px;
-    background: url(../img/icons.png) no-repeat;
-    margin: 10px auto;
+  display: block;
+  width: 24px;
+  height: 24px;
+  background: url(../img/icons.png) no-repeat;
+  margin: 10px auto;
 }
 
 .service_ico_huafei {
-    background-position: 0 0;
+  background-position: 0 0;
 }
 
 .service_ico_lvxing {
-    background-position: 0 -88px;
+  background-position: 0 -88px;
 }
 
 .service_ico_chexian {
-    background-position: 0 -44px;
+  background-position: 0 -44px;
 }
 
 .service_ico_youxi {
-    background-position: 0 -132px;
+  background-position: 0 -132px;
 }
 
 .service_ico_caipiao {
-    background-position: 0 -176px;
+  background-position: 0 -176px;
 }
 
 .service_ico_dianying {
-    background-position: 0 -220px;
+  background-position: 0 -220px;
 }
 
 .service_ico_jiudian {
-    background-position: 0 -264px;
+  background-position: 0 -264px;
 }
 
 .service_ico_licai {
-    background-position: 0 -308px;
+  background-position: 0 -308px;
 }
 
 .service_ico_jiaoyu {
-    background-position: 0 -352px;
+  background-position: 0 -352px;
 }
 
 .service_ico_yanchang {
-    background-position: 0 -396px;
+  background-position: 0 -396px;
 }
 
 .service_ico_shenghuo {
-    background-position: 0 -440px;
+  background-position: 0 -440px;
 }
 
 .service_ico_huoche {
-    background-position: 0 -484px;
+  background-position: 0 -484px;
 }
 
 .bargain {
-    height: 75px;
-    margin-top: 5px;
+  height: 75px;
+  margin-top: 5px;
 }
 
-
 .recommend {
-    height: 163px;
-    margin-top: 10px;
+  height: 163px;
+  margin-top: 10px;
 }
 
 .recom-hd {
-    width: 200px;
-    height: 163px;
-    background: url(../img/recommend.png) no-repeat;
+  width: 200px;
+  height: 163px;
+  background: url(../img/recommend.png) no-repeat;
 }
 
 .recom-hd-text {
-    width: 160px;
-    height: 90px;
-    margin: 30px auto 0;
-    background: url(../img/container.png) no-repeat;
-    font-size: 16px;
-    color: #fff;
-    text-align: center;
-    line-height: 130px;
+  width: 160px;
+  height: 90px;
+  margin: 30px auto 0;
+  background: url(../img/container.png) no-repeat;
+  font-size: 16px;
+  color: #fff;
+  text-align: center;
+  line-height: 130px;
 }
 
 .recom-bd {
-    width: 1000px;
-    height: 163px;
-    background-color: #ebebeb;
+  width: 1000px;
+  height: 163px;
+  background-color: #ebebeb;
 }
 
 .recom-bd li {
-    float: left;
-    width: 249px;
-    height: 163px;
-    border-left: 1px solid #ccc;
+  float: left;
+  width: 249px;
+  height: 163px;
+  border-left: 1px solid #ccc;
 }
 
 .box-hd {
-    height: 30px;
-    margin-top: 25px;
-    border-bottom: 2px solid #c81623
+  height: 30px;
+  margin-top: 25px;
+  border-bottom: 2px solid #c81623;
 }
 
 .box-hd h3 {
-    float: left;
-    font-size: 18px;
-    color: #c81623;
+  float: left;
+  font-size: 18px;
+  color: #c81623;
 }
 
 .tab-list {
-    float: right;
-    line-height: 30px;
+  float: right;
+  line-height: 30px;
 }
 
 .tab-list li {
-    float: left;
+  float: left;
 }
 
 .tab-list li a {
-    margin: 0 15px;
+  margin: 0 15px;
 }
 
 .box-bd {
-    height: 360px;
+  height: 360px;
 }
 
 .box-bd img {
-    transition: all .2s;
+  transition: all 0.2s;
 }
 
 .box-bd img:hover {
-    margin-left: 8px;
+  margin-left: 8px;
 }
 
 .w210 {
-    width: 210px;
-    background-color: #f9f9f9;
+  width: 210px;
+  background-color: #f9f9f9;
 }
 
 .w330 {
-    width: 330px;
+  width: 330px;
 }
 
 .w220 {
-    width: 220px;
+  width: 220px;
 }
 
 .tab-con li {
-    float: left;
-    height: 360px;
+  float: left;
+  height: 360px;
 }
 
 .tab-con-list {
-    overflow: hidden;
-    margin-bottom: 15px;
+  overflow: hidden;
+  margin-bottom: 15px;
 }
 
 .tab-con-list li {
-    width: 86px;
-    height: 32px;
-    margin-left: 10px;
-    border-bottom: 1px solid #ccc;
-    line-height: 32px;
-    text-align: center;
+  width: 86px;
+  height: 32px;
+  margin-left: 10px;
+  border-bottom: 1px solid #ccc;
+  line-height: 32px;
+  text-align: center;
 }
-
-
 
 /* 电梯导航 */
 .fixedtool {
-    position: fixed;
-    top: 100px;
-    left: 50%;
-    width: 66px;
-    margin-left: -676px;
-    background-color: #fff;
+  position: fixed;
+  top: 100px;
+  left: 50%;
+  width: 66px;
+  margin-left: -676px;
+  background-color: #fff;
 }
 
 .fixedtool li {
-    height: 32px;
-    line-height: 32px;
-    text-align: center;
-    font-size: 12px;
-    border-bottom: 1px solid #ccc;
-    cursor: pointer;
+  height: 32px;
+  line-height: 32px;
+  text-align: center;
+  font-size: 12px;
+  border-bottom: 1px solid #ccc;
+  cursor: pointer;
 }
 
 .fixedtool .current {
-    background-color: #c81623;
-    color: #fff;
+  background-color: #c81623;
+  color: #fff;
 }
