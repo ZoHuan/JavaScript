@@ -23,43 +23,71 @@
           <div class="login">我有账号，去 <a href="#">登录</a></div>
         </h3>
         <div class="reg_form">
-          <ul>
-            <li>
-              <label for="">手机号：</label>
-              <input type="text" />
-              <span class="error">
-                <i class="iconfont icon-error error_icon"></i
-                >手机号码格式不正确，请重新输入</span
-              >
-            </li>
-            <li>
-              <label for="">短信验证码：</label>
-              <input type="text" />
-              <span class="success">
-                <i class="iconfont icon-success error_icon"></i
-                >短信验证码正确</span
-              >
-            </li>
-            <li>
-              <label for="">登录密码：</label>
-              <input type="text" />
-              <span class="error">
-                <i class="iconfont icon-error error_icon"></i
-                >手机号码格式不正确，请重新输入</span
-              >
-            </li>
-            <li>
-              <label for="">确认密码：</label>
-              <input type="text" />
-              <span class="error">
-                <i class="iconfont icon-error success_icon"></i
-                >手机号码格式不正确，请重新输入</span
-              >
-            </li>
-          </ul>
+          <form action="">
+            <ul>
+              <li>
+                <label for="">手机号：</label>
+                <input type="text" class="inp" />
+                <span class="error">
+                  <i class="iconfont icon-error error_icon"></i
+                  >手机号码格式不正确，请重新输入</span
+                >
+              </li>
+              <li>
+                <label for="">短信验证码：</label>
+                <input type="text" class="inp" />
+                <span class="success">
+                  <i class="iconfont icon-success error_icon"></i
+                  >短信验证码正确</span
+                >
+              </li>
+              <li>
+                <label for="">登录密码：</label>
+                <input type="password" class="inp" />
+                <span class="error">
+                  <i class="iconfont icon-error error_icon"></i
+                  >手机号码格式不正确，请重新输入</span
+                >
+              </li>
+              <li class="safe">
+                安全程度
+                <em class="weak">弱</em>
+                <em class="medium">中</em>
+                <em class="strong">强</em>
+              </li>
+              <li>
+                <label for="">确认密码：</label>
+                <input type="password" class="inp" />
+                <span class="error">
+                  <i class="iconfont icon-error success_icon"></i
+                  >手机号码格式不正确，请重新输入</span
+                >
+              </li>
+              <li class="agree">
+                <input type="checkbox" name="" id="" />同意协议并注册<a href="#"
+                  >《用户协议》</a
+                >
+              </li>
+              <li>
+                <input class="btn" type="submit" value="完成注册" />
+              </li>
+            </ul>
+          </form>
         </div>
       </div>
-      <footer></footer>
+      <footer>
+        <div class="mod_copyright">
+          <p class="mod_copyright_links">
+            关于我们|联系我们|联系客服|合作招商|商家帮助|营销中心|友情链接|销售联盟|京东社区|English
+            Site|Media & IR
+          </p>
+          <p class="mod_copyright_info">
+            隐私声明 服务协议 COOKIES Copyright © 2012-2022
+            <br />
+            闽ICP备19970501号|粤公网安备 111111111号
+          </p>
+        </div>
+      </footer>
     </div>
   </body>
 </html>
