@@ -9,10 +9,31 @@ body {
   line-height: 1.5;
 }
 
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+input {
+  -webkit-appearance: none;
+}
+
+img,
+a {
+  -webkit-touch-callout: none;
+}
 ul {
   margin: 0;
   padding: 0;
   list-style: none;
+}
+
+img {
+  vertical-align: middle;
+}
+
+a {
+  color: #666;
+  text-decoration: none;
 }
 
 .app {
@@ -54,9 +75,12 @@ ul {
 
 /* 搜索 */
 .search-wrap {
-  position: relative;
+  position: fixed;
   overflow: hidden;
   height: 44px;
+  width: 100%;
+  min-width: 320px;
+  max-width: 640px;
 }
 
 .search-btn {
@@ -92,6 +116,7 @@ ul {
   margin: 0 50px;
   margin-top: 7px;
   border-radius: 15px;
+  background: #f7f7f7;
 }
 
 .jd-icon {
@@ -111,7 +136,7 @@ ul {
   top: 0;
   display: block;
   width: 1px;
-  height: 10px;
+  height: 16px;
   background-color: #ccc;
 }
 
@@ -123,4 +148,57 @@ ul {
   height: 15px;
   background: url(../images/jd-sprites.png) no-repeat -81px 0;
   background-size: 200px auto;
+}
+
+.slider img {
+  width: 100%;
+}
+
+/* 活动 */
+.brand {
+  overflow: hidden;
+  border-radius: 10px 10px 0 0;
+}
+
+.brand div {
+  float: left;
+  width: 33.33%;
+}
+
+.brand div img {
+  width: 100%;
+}
+
+/* 导航 */
+nav {
+  padding-top: 5px;
+}
+
+nav a {
+  float: left;
+  width: 20%;
+  text-align: center;
+}
+
+nav a img {
+  width: 40px;
+  margin: 10px 0;
+}
+
+nav a span {
+  display: block;
+}
+
+/* 新闻 */
+
+.news {
+  margin-top: 20px;
+}
+.news a {
+  float: left;
+  box-sizing: border-box;
+  width: 33.33%;
+}
+.news img {
+  width: 100%;
 }
