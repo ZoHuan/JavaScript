@@ -1,0 +1,200 @@
+body {
+  max-width: 540px;
+  min-width: 320px;
+  margin: 0 auto;
+  font: normal 14px/1.5 Tahoma, "Lucida Grande", Verdana, "Microsoft Yahei",
+    STXihei, hei;
+  color: #000;
+  background: #f2f2f2;
+  overflow: hidden;
+  -webkit-tap-highlight-color: transparent;
+}
+
+a {
+  text-decoration: none;
+  color: #333;
+}
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+div {
+  box-sizing: border-box;
+}
+
+/* 搜索 */
+.search-index {
+  display: flex;
+  position: fixed;
+  top: 0;
+  left: 50%;
+  width: 100%;
+  transform: translateX(-50%);
+  min-width: 320px;
+  max-width: 540px;
+  height: 44px;
+  background-color: #f6f6f6;
+}
+
+.search {
+  position: relative;
+  height: 26px;
+  line-height: 24px;
+  flex: 1;
+  margin: 7px 10px;
+  padding-left: 25px;
+  border: 1px solid #ccc;
+  font-size: 12px;
+  color: #666;
+  border-radius: 15px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.search::before {
+  content: "";
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  width: 15px;
+  height: 15px;
+  background: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjciIGhlaWdodD0iMjciIHZpZXdCb3g9IjAgMCAyNyAyNyIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48dGl0bGU+aWNfc2VhcmNoPC90aXRsZT48ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgyIDIpIiBzdHJva2U9IiMwMDAiIHN0cm9rZS13aWR0aD0iMy42MjUiIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCIgb3BhY2l0eT0iLjgiPjxjaXJjbGUgY3g9IjguNzYiIGN5PSI4Ljc2IiByPSI4Ljc2Ii8+PHBhdGggZD0iTTE1LjUgMTUuNWw3LjY2NyA3LjY2NyIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+PC9nPjwvc3ZnPg==)
+    no-repeat 70%/70%;
+}
+
+.user {
+  width: 44px;
+  height: 44px;
+  font-size: 12px;
+  text-align: center;
+  color: #2eaae0;
+}
+
+.user::before {
+  content: "";
+  display: block;
+  width: 23px;
+  height: 23px;
+  background: url(../images/user.png) 100%/100% no-repeat;
+  margin: 4px auto 0;
+}
+
+/* 焦点图 */
+.focus {
+  height: 200px;
+  overflow: hidden;
+  margin-top: 44px;
+}
+.focus img {
+  width: 100%;
+  margin-top: -30px;
+}
+
+/* 导航 */
+.nav,
+.local-nav,
+.subnav {
+  display: flex;
+  background-color: #fff;
+}
+
+.nav li,
+.local-nav li,
+.subnav li {
+  flex: 1;
+}
+
+.nav a,
+.local-nav a,
+.subnav a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 12px;
+}
+
+.nav li [class^="nav-icon"] {
+  width: 56px;
+  height: 56px;
+  margin: 8px 0 4px;
+  background: url(../images/hotel.png) no-repeat 100%/100%;
+}
+
+.nav li .nav-icon2 {
+  background: url(../images/flight.png) no-repeat 100%/100%;
+}
+.nav li .nav-icon3 {
+  background: url(../images/train.png) no-repeat 100%/100%;
+}
+.nav li .nav-icon4 {
+  background: url(../images/package.png) no-repeat 100%/100%;
+}
+.nav li .nav-icon5 {
+  background: url(../images/piao.png) no-repeat 100%/100%;
+}
+
+/* 副导航 */
+.local-nav li [class^="local-nav-icon"] {
+  width: 32px;
+  height: 32px;
+  margin: 10px 0 4px;
+  background: url(../images/overseas-hotel.png) no-repeat 100%/100%;
+}
+
+.local-nav li .local-nav-icon2 {
+  background: url(../images/cheap-ticket.png) no-repeat 100%/100%;
+}
+.local-nav li .local-nav-icon3 {
+  background: url(../images/bus-ticket.png) no-repeat 100%/100%;
+}
+.local-nav li .local-nav-icon4 {
+  background: url(../images/independent-travel.png) no-repeat 100%/100%;
+}
+.local-nav li .local-nav-icon5 {
+  background: url(../images/introduction.png) no-repeat 100%/100%;
+}
+
+/* 子导航 */
+.subnav {
+  flex-wrap: wrap;
+}
+
+.subnav li {
+  flex: 20%;
+}
+
+.subnav li [class^="subnav-icon"] {
+  width: 32px;
+  height: 32px;
+  margin: 10px 0 4px;
+  background: url(../images/roadhouse.png) no-repeat 100%/100%;
+}
+
+.subnav li .subnav-icon2 {
+  background: url(../images/self-driving.png) no-repeat 100%/100%;
+}
+.subnav li .subnav-icon3 {
+  background: url(../images/credit-card.png) no-repeat 100%/100%;
+}
+.subnav li .subnav-icon4 {
+  background: url(../images/group-buying.png) no-repeat 100%/100%;
+}
+.subnav li .subnav-icon5 {
+  background: url(../images/tour.png) no-repeat 100%/100%;
+}
+.subnav li .subnav-icon6 {
+  background: url(../images/privilege-hotel.png) no-repeat 100%/100%;
+}
+.subnav li .subnav-icon7 {
+  background: url(../images/borrow-money.png) no-repeat 100%/100%;
+}
+.subnav li .subnav-icon8 {
+  background: url(../images/platinum-card.png) no-repeat 100%/100%;
+}
+.subnav li .subnav-icon9 {
+  background: url(../images/stroke-design.png) no-repeat 100%/100%;
+}
+.subnav li .subnav-icon10 {
+  background: url(../images/short-distance.png) no-repeat 100%/100%;
+}
