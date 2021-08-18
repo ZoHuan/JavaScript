@@ -123,20 +123,20 @@ h2 {
   width: 56px;
   height: 56px;
   margin: 8px 0 4px;
-  background: url(../images/hotel.png) no-repeat 100%/100%;
+  background: url(../images/nav1.png) no-repeat 100%/100%;
 }
 
 .nav li .nav-icon2 {
-  background: url(../images/flight.png) no-repeat 100%/100%;
+  background: url(../images/nav2.png) no-repeat 100%/100%;
 }
 .nav li .nav-icon3 {
-  background: url(../images/train.png) no-repeat 100%/100%;
+  background: url(../images/nav3.png) no-repeat 100%/100%;
 }
 .nav li .nav-icon4 {
-  background: url(../images/package.png) no-repeat 100%/100%;
+  background: url(../images/nav4.png) no-repeat 100%/100%;
 }
 .nav li .nav-icon5 {
-  background: url(../images/piao.png) no-repeat 100%/100%;
+  background: url(../images/nav5.png) no-repeat 100%/100%;
 }
 
 /* 副导航 */
@@ -144,20 +144,20 @@ h2 {
   width: 32px;
   height: 32px;
   margin: 10px 0 4px;
-  background: url(../images/overseas-hotel.png) no-repeat 100%/100%;
+  background: url(../images/localnav1.png) no-repeat 100%/100%;
 }
 
 .local-nav li .local-nav-icon2 {
-  background: url(../images/cheap-ticket.png) no-repeat 100%/100%;
+  background: url(../images/localnav2.png) no-repeat 100%/100%;
 }
 .local-nav li .local-nav-icon3 {
-  background: url(../images/bus-ticket.png) no-repeat 100%/100%;
+  background: url(../images/localnav3.png) no-repeat 100%/100%;
 }
 .local-nav li .local-nav-icon4 {
-  background: url(../images/independent-travel.png) no-repeat 100%/100%;
+  background: url(../images/localnav4.png) no-repeat 100%/100%;
 }
 .local-nav li .local-nav-icon5 {
-  background: url(../images/introduction.png) no-repeat 100%/100%;
+  background: url(../images/localnav5.png) no-repeat 100%/100%;
 }
 
 /* 子导航 */
@@ -173,35 +173,35 @@ h2 {
   width: 32px;
   height: 32px;
   margin: 10px 0 4px;
-  background: url(../images/roadhouse.png) no-repeat 100%/100%;
+  background: url(../images/subnav1.png) no-repeat 100%/100%;
 }
 
 .subnav li .subnav-icon2 {
-  background: url(../images/self-driving.png) no-repeat 100%/100%;
+  background: url(../images/subnav2.png) no-repeat 100%/100%;
 }
 .subnav li .subnav-icon3 {
-  background: url(../images/credit-card.png) no-repeat 100%/100%;
+  background: url(../images/subnav3.png) no-repeat 100%/100%;
 }
 .subnav li .subnav-icon4 {
-  background: url(../images/group-buying.png) no-repeat 100%/100%;
+  background: url(../images/subnav4.png) no-repeat 100%/100%;
 }
 .subnav li .subnav-icon5 {
-  background: url(../images/tour.png) no-repeat 100%/100%;
+  background: url(../images/subnav5.png) no-repeat 100%/100%;
 }
 .subnav li .subnav-icon6 {
-  background: url(../images/privilege-hotel.png) no-repeat 100%/100%;
+  background: url(../images/subnav6.png) no-repeat 100%/100%;
 }
 .subnav li .subnav-icon7 {
-  background: url(../images/borrow-money.png) no-repeat 100%/100%;
+  background: url(../images/subnav7.png) no-repeat 100%/100%;
 }
 .subnav li .subnav-icon8 {
-  background: url(../images/platinum-card.png) no-repeat 100%/100%;
+  background: url(../images/subnav8.png) no-repeat 100%/100%;
 }
 .subnav li .subnav-icon9 {
-  background: url(../images/stroke-design.png) no-repeat 100%/100%;
+  background: url(../images/subnav9.png) no-repeat 100%/100%;
 }
 .subnav li .subnav-icon10 {
-  background: url(../images/short-distance.png) no-repeat 100%/100%;
+  background: url(../images/subnav10.png) no-repeat 100%/100%;
 }
 
 /* 活动 */
@@ -216,7 +216,7 @@ h2 {
   align-items: center;
   justify-content: space-between;
   height: 36px;
-  padding: 4px 16px 0;
+  padding: 4px 16px;
 }
 
 .sales-hd h2 {
