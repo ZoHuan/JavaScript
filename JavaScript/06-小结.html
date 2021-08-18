@@ -66,16 +66,18 @@
       function arrSort(arr) {
         var num;
         for (var i = 0; i < arr.length; i++) {
-          if (arr[i] > arr[i + 1]) {
-            num = arr[i];
-            arr[i] = arr[i + 1];
-            arr[i + 1] = num;
+          for (var j = 0; j < arr.length - i; j++) {
+            if (arr[j] > arr[j + 1]) {
+              num = arr[j];
+              arr[j] = arr[j + 1];
+              arr[j + 1] = num;
+            }
           }
         }
         return arr;
       }
 
-      var arr1 = arrSort([7, 2, 6, 18, 64, 8, 98]);
+      var arr1 = arrSort([1, 10, 2, 20, 3, 30, 4, 40]);
       console.log(arr1);
 
       var num = prompt(
@@ -100,7 +102,6 @@
         switch (num) {
           case "1":
             sum = parseFloat(num1) + parseFloat(num2);
-            debugger;
             break;
           case "2":
             sum = num1 - num2;
