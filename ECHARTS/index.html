@@ -9,167 +9,105 @@
     <link rel="stylesheet" href="./css/index.css" />
   </head>
   <body>
-    <header>ZQL-SMT-1</header>
-    <div class="warp">
-      <div class="showTime">2021-01-01 00:00:00</div>
-      <section class="mainbox">
-        <div class="mainbox-left">
-          <div class="plan panel">
-            <h3>计划与完工数量</h3>
+    <header>
+      <div>ZQL-SMT-1</div>
+      <div class="time">2021-01-01 00:00:00</div>
+    </header>
+    <section>
+      <div class="content-left">
+        <div class="panel">
+          <h3>计划与完工数量</h3>
+          <div class="plan">
             <div class="plan-left">
-              <img src="./images/portrait.jpg" alt="" />
+              <div><img src="./images/portrait.jpg" alt="" /></div>
               <span>嘻嘻嘻</span>
             </div>
             <div class="plan-right">
-              <div class="plan-right-top">
-                <div class="plan-right-num">
+              <div class="plan-top">
+                <div class="plan-num">
                   计划数量
                   <span id="planNumber">8942154</span>
                 </div>
-                <div class="plan-right-num">
+                <div class="plan-num">
                   完工数量
                   <span id="fulfilNumber">7942154</span>
                 </div>
               </div>
-              <div class="plan-right-bottom">
-                <div class="plan-right-rate">
+              <div class="plan-bottom">
+                <div class="plan-rate">
                   总完成率
                   <div><span id="fulfil">35%</span></div>
                 </div>
-                <div class="plan-right-rate">
+                <div class="plan-rate">
                   总通过率
                   <div><span id="adopt">96%</span></div>
                 </div>
-                <div class="plan-right-rate">
+                <div class="plan-rate">
                   PPM
                   <div><span id="PPM">6584</span></div>
                 </div>
               </div>
             </div>
-            <div class="panel-foot"></div>
           </div>
-          <div class="panel bar1">
-            <h3>设备移动率</h3>
-            <div class="chart"></div>
-            <div class="panel-foot"></div>
-          </div>
-          <div class="panel pie">
-            <h3>前五大不良</h3>
-            <div class="chart"></div>
-            <div class="panel-foot"></div>
-          </div>
+          <div class="panel-foot"></div>
         </div>
-        <div class="mainbox-middle">
-          <div class="state">
-            <div class="state-body">
-              <div class="state-item">
-                <div class="state-left">
-                  <div class="state-data">
-                    <div class="state-model">
-                      ZgL-ZZ-5XIAN
-                      <div>
-                        <a href="#">
-                          <img src="./images/play.jpg" alt="" />
-                          线体状态
-                        </a>
-                        <span>空闲</span>
-                      </div>
-                    </div>
-                    <div class="division"></div>
-                    <div class="state-param">
-                      <div class="state-param-item">
-                        <span>机种</span>2019.1474
-                      </div>
-                      <div class="state-param-item"><span>PPM</span>57</div>
-                      <div class="state-param-item"><span>规格</span>89%</div>
-                      <div class="state-param-item">
-                        <span>延时</span>13451.2H
-                      </div>
+        <div class="panel" id="impacting">
+          <h3>设备移动率</h3>
+          <div class="chart"></div>
+          <div class="panel-foot"></div>
+        </div>
+        <div class="panel" id="bad">
+          <h3>前五大不良</h3>
+          <div class="chart"></div>
+          <div class="panel-foot"></div>
+        </div>
+      </div>
+      <div class="content-middle">
+        <div class="lines">
+          <div class="lines-list">
+            <div class="lines-item">
+              <div class="item-left">
+                <div class="item-top">
+                  <div class="state-info">
+                    ZgL-ZZ-5XIAN
+                    <div>
+                      <a href="#">
+                        <img src="./images/play.jpg" alt="" />
+                        线体状态
+                      </a>
+                      <span class="state-signal">空闲</span>
                     </div>
                   </div>
-                  <div class="state-progress">
-                    <span class="progress-bar"></span>
-                    <span>500/1000</span>
+                  <div class="param-list">
+                    <div class="param-item">
+                      <span class="param-name">机种</span><span>2019.1474</span>
+                    </div>
+                    <div class="param-item">
+                      <span class="param-name">PPM</span><span>57</span>
+                    </div>
+                    <div class="param-item">
+                      <span class="param-name">规格</span><span>89%</span>
+                    </div>
+                    <div class="param-item">
+                      <span class="param-name">延时</span><span>13451.2H</span>
+                    </div>
                   </div>
                 </div>
-                <div class="state-right meter">
-                  <div class="chart"></div>
-                </div>
-              </div>
-              <div class="state-item">
-                <div class="state-left">
-                  <div class="state-data">
-                    <div class="state-model">
-                      ZgL-ZZ-5XIAN
-                      <div>
-                        <a href="#">
-                          <img src="./images/play.jpg" alt="" />
-                          线体状态
-                        </a>
-                        <span>空闲</span>
-                      </div>
-                    </div>
-                    <div class="division"></div>
-                    <div class="state-param">
-                      <div class="state-param-item">
-                        <span>机种</span>2019.1474
-                      </div>
-                      <div class="state-param-item"><span>PPM</span>57</div>
-                      <div class="state-param-item"><span>规格</span>89%</div>
-                      <div class="state-param-item">
-                        <span>延时</span>13451.2H
-                      </div>
-                    </div>
-                  </div>
-                  <div class="state-progress">
-                    <span class="progress-bar"></span>
-                    <span>500/1000</span>
-                  </div>
-                </div>
-                <div class="state-right meter">
-                  <div class="chart"></div>
+                <div class="progress">
+                  <span class="progress-bar"></span>
+                  <span class="progress-text">500/1000</span>
                 </div>
               </div>
-              <div class="state-item">
-                <div class="state-left">
-                  <div class="state-data">
-                    <div class="state-model">
-                      ZgL-ZZ-5XIAN
-                      <div>
-                        <a href="#">
-                          <img src="./images/play.jpg" alt="" />
-                          线体状态
-                        </a>
-                        <span>空闲</span>
-                      </div>
-                    </div>
-                    <div class="division"></div>
-                    <div class="state-param">
-                      <div class="state-param-item">
-                        <span>机种</span>2019.1474
-                      </div>
-                      <div class="state-param-item"><span>PPM</span>57</div>
-                      <div class="state-param-item"><span>规格</span>89%</div>
-                      <div class="state-param-item">
-                        <span>延时</span>13451.2H
-                      </div>
-                    </div>
-                  </div>
-                  <div class="state-progress">
-                    <span class="progress-bar"></span>
-                    <span>500/1000</span>
-                  </div>
-                </div>
-                <div class="state-right meter">
-                  <div class="chart"></div>
-                </div>
+              <div class="item-right" id="meter">
+                <div class="chart"></div>
               </div>
             </div>
-            <div class="state-body1"></div>
           </div>
-          <div class="panel work">
-            <h3>制令单信息</h3>
-            <div class="list">
+        </div>
+        <div class="panel work">
+          <h3>制令单信息</h3>
+          <div class="table">
+            <div class="table-header">
               <table>
                 <thead>
                   <tr>
@@ -181,6 +119,10 @@
                     <th>状态</th>
                   </tr>
                 </thead>
+              </table>
+            </div>
+            <div class="table-body">
+              <table>
                 <tbody>
                   <tr>
                     <td>Z-A19090401-01-01</td>
@@ -273,16 +215,18 @@
                 </tbody>
               </table>
             </div>
+          </div>
+          <div class="panel-foot"></div>
+        </div>
+        <div class="panel-row">
+          <div class="panel" id="direct">
+            <h3>直通率对比</h3>
+            <div class="chart"></div>
             <div class="panel-foot"></div>
           </div>
-          <div class="middle-chart">
-            <div class="panel line">
-              <h3>直通率对比</h3>
-              <div class="chart"></div>
-              <div class="panel-foot"></div>
-            </div>
-            <div class="panel bar3">
-              <h3>线体效率对比</h3>
+          <div class="panel">
+            <h3>线体效率对比</h3>
+            <div class="efficiency">
               <div class="chart"></div>
               <div class="target">
                 <div class="target-box">
@@ -301,20 +245,22 @@
             </div>
           </div>
         </div>
-        <div class="mainbox-right">
-          <div class="panel bar">
-            <h3>时段产量</h3>
-            <div class="chart"></div>
-            <div class="panel-foot"></div>
-          </div>
-          <div class="panel bar2">
-            <h3>时段直通车</h3>
-            <div class="chart"></div>
-            <div class="panel-foot"></div>
-          </div>
-          <div class="panel warning">
-            <h3>预警信息</h3>
-            <div class="list">
+      </div>
+      <div class="content-right">
+        <div class="panel" id="yield">
+          <h3>时段产量</h3>
+          <div class="chart"></div>
+          <div class="panel-foot"></div>
+        </div>
+        <div class="panel" id="train">
+          <h3>时段直通车</h3>
+          <div class="chart"></div>
+          <div class="panel-foot"></div>
+        </div>
+        <div class="panel warning">
+          <h3>预警信息</h3>
+          <div class="table">
+            <div class="table-header">
               <table>
                 <thead>
                   <tr>
@@ -322,83 +268,88 @@
                     <th>预警名称</th>
                     <th>报警信息</th>
                     <th>报警状态</th>
-                    <th>报警事件</th>
+                    <th>报警时间</th>
                   </tr>
                 </thead>
+              </table>
+            </div>
+            <div class="table-body">
+              <table>
                 <tbody>
                   <tr>
                     <td>兴国华山</td>
                     <td>出口压力低</td>
                     <td>出口压力低</td>
                     <td>紧急</td>
-                    <td>2019-09-13 10:55:00</td>
+                    <td>2019-09-13</td>
                   </tr>
                   <tr>
                     <td>兴国华山</td>
                     <td>出口压力低</td>
                     <td>出口压力低</td>
                     <td>紧急</td>
-                    <td>2019-09-13 10:55:00</td>
+                    <td>2019-09-13</td>
                   </tr>
                   <tr>
                     <td>兴国华山</td>
                     <td>出口压力低</td>
                     <td>出口压力低</td>
                     <td>紧急</td>
-                    <td>2019-09-13 10:55:00</td>
+                    <td>2019-09-13</td>
                   </tr>
                   <tr>
                     <td>兴国华山</td>
                     <td>出口压力低</td>
                     <td>出口压力低</td>
                     <td>紧急</td>
-                    <td>2019-09-13 10:55:00</td>
+                    <td>2019-09-13</td>
                   </tr>
                   <tr>
                     <td>兴国华山</td>
                     <td>出口压力低</td>
                     <td>出口压力低</td>
                     <td>紧急</td>
-                    <td>2019-09-13 10:55:00</td>
+                    <td>2019-09-13</td>
                   </tr>
                   <tr>
                     <td>兴国华山</td>
                     <td>出口压力低</td>
                     <td>出口压力低</td>
                     <td>紧急</td>
-                    <td>2019-09-13 10:55:00</td>
+                    <td>2019-09-13</td>
                   </tr>
                   <tr>
                     <td>兴国华山</td>
                     <td>出口压力低</td>
                     <td>出口压力低</td>
                     <td>紧急</td>
-                    <td>2019-09-13 10:55:00</td>
+                    <td>2019-09-13</td>
                   </tr>
                   <tr>
                     <td>兴国华山</td>
                     <td>出口压力低</td>
                     <td>出口压力低</td>
                     <td>紧急</td>
-                    <td>2019-09-13 10:55:00</td>
+                    <td>2019-09-13</td>
                   </tr>
                   <tr>
                     <td>兴国华山</td>
                     <td>出口压力低</td>
                     <td>出口压力低</td>
                     <td>紧急</td>
-                    <td>2019-09-13 10:55:00</td>
+                    <td>2019-09-13</td>
                   </tr>
                 </tbody>
               </table>
             </div>
-            <div class="panel-foot"></div>
           </div>
+          <div class="panel-foot"></div>
         </div>
-      </section>
-    </div>
+      </div>
+    </section>
     <script src="./js/echarts.min.js"></script>
     <script src="./js/jquery.min.js"></script>
+    <script src="./js/rem.js"></script>
     <script src="./js/index.js"></script>
   </body>
 </html>
