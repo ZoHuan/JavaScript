@@ -54,7 +54,7 @@
   display: block;
   width: 175px;
   height: 56px;
-  background: url(../img/logo.png) no-repeat;
+  background: url(../images/logo.png) no-repeat;
   background-size: 175px;
   font-size: 0px;
 }
@@ -222,7 +222,7 @@
   width: 40px;
   height: 40px;
   margin-left: 35px;
-  background: url(../img/icons.svg) no-repeat;
+  background: url(../images/icons.svg) no-repeat;
 }
 
 .mod_service_quan,
