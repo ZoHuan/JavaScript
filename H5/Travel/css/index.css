@@ -123,20 +123,20 @@ h2 {
   width: 56px;
   height: 56px;
   margin: 8px 0 4px;
-  background: url(../images/nav1.png) no-repeat 100%/100%;
+  background: url(../upload/nav1.png) no-repeat 100%/100%;
 }
 
 .nav li .nav-icon2 {
-  background: url(../images/nav2.png) no-repeat 100%/100%;
+  background: url(../upload/nav2.png) no-repeat 100%/100%;
 }
 .nav li .nav-icon3 {
-  background: url(../images/nav3.png) no-repeat 100%/100%;
+  background: url(../upload/nav3.png) no-repeat 100%/100%;
 }
 .nav li .nav-icon4 {
-  background: url(../images/nav4.png) no-repeat 100%/100%;
+  background: url(../upload/nav4.png) no-repeat 100%/100%;
 }
 .nav li .nav-icon5 {
-  background: url(../images/nav5.png) no-repeat 100%/100%;
+  background: url(../upload/nav5.png) no-repeat 100%/100%;
 }
 
 /* 副导航 */
@@ -144,20 +144,20 @@ h2 {
   width: 32px;
   height: 32px;
   margin: 10px 0 4px;
-  background: url(../images/localnav1.png) no-repeat 100%/100%;
+  background: url(../upload/localnav1.png) no-repeat 100%/100%;
 }
 
 .local-nav li .local-nav-icon2 {
-  background: url(../images/localnav2.png) no-repeat 100%/100%;
+  background: url(../upload/localnav2.png) no-repeat 100%/100%;
 }
 .local-nav li .local-nav-icon3 {
-  background: url(../images/localnav3.png) no-repeat 100%/100%;
+  background: url(../upload/localnav3.png) no-repeat 100%/100%;
 }
 .local-nav li .local-nav-icon4 {
-  background: url(../images/localnav4.png) no-repeat 100%/100%;
+  background: url(../upload/localnav4.png) no-repeat 100%/100%;
 }
 .local-nav li .local-nav-icon5 {
-  background: url(../images/localnav5.png) no-repeat 100%/100%;
+  background: url(../upload/localnav5.png) no-repeat 100%/100%;
 }
 
 /* 子导航 */
@@ -173,35 +173,35 @@ h2 {
   width: 32px;
   height: 32px;
   margin: 10px 0 4px;
-  background: url(../images/subnav1.png) no-repeat 100%/100%;
+  background: url(../upload/subnav1.png) no-repeat 100%/100%;
 }
 
 .subnav li .subnav-icon2 {
-  background: url(../images/subnav2.png) no-repeat 100%/100%;
+  background: url(../upload/subnav2.png) no-repeat 100%/100%;
 }
 .subnav li .subnav-icon3 {
-  background: url(../images/subnav3.png) no-repeat 100%/100%;
+  background: url(../upload/subnav3.png) no-repeat 100%/100%;
 }
 .subnav li .subnav-icon4 {
-  background: url(../images/subnav4.png) no-repeat 100%/100%;
+  background: url(../upload/subnav4.png) no-repeat 100%/100%;
 }
 .subnav li .subnav-icon5 {
-  background: url(../images/subnav5.png) no-repeat 100%/100%;
+  background: url(../upload/subnav5.png) no-repeat 100%/100%;
 }
 .subnav li .subnav-icon6 {
-  background: url(../images/subnav6.png) no-repeat 100%/100%;
+  background: url(../upload/subnav6.png) no-repeat 100%/100%;
 }
 .subnav li .subnav-icon7 {
-  background: url(../images/subnav7.png) no-repeat 100%/100%;
+  background: url(../upload/subnav7.png) no-repeat 100%/100%;
 }
 .subnav li .subnav-icon8 {
-  background: url(../images/subnav8.png) no-repeat 100%/100%;
+  background: url(../upload/subnav8.png) no-repeat 100%/100%;
 }
 .subnav li .subnav-icon9 {
-  background: url(../images/subnav9.png) no-repeat 100%/100%;
+  background: url(../upload/subnav9.png) no-repeat 100%/100%;
 }
 .subnav li .subnav-icon10 {
-  background: url(../images/subnav10.png) no-repeat 100%/100%;
+  background: url(../upload/subnav10.png) no-repeat 100%/100%;
 }
 
 /* 活动 */
