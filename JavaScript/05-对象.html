@@ -14,7 +14,6 @@
           console.log("bark");
         },
       };
-
       dog.show();
 
       var naruto = new Object();
@@ -37,10 +36,10 @@
         };
       }
 
-      var lp = new Hero("廉颇", "力量型", "500血量");
+      var hero = new Hero("桐人", "力量型", "500血量");
       console.log(lp.name);
       console.log(lp["type"]);
-      lp.attacker("近战");
+      hero.attacker("近战");
 
       var obj = {
         name: "name",
@@ -50,7 +49,7 @@
         [Symbol("telephone")]: "telephone", //设置Symbol属性
       };
       Object.defineProperty(obj, "birthday", {
-        //设置obj对象的birthday不可枚举
+        // 设置obj对象的birthday不可枚举
         enumerable: false,
       });
 
