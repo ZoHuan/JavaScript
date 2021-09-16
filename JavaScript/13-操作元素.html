@@ -14,23 +14,14 @@
 
     <div></div>
 
-    <p>
-      获取文字
-      <span>获取标签文字</span>
-    </p>
+    <p>获取文字<span>获取标签文字</span></p>
 
     <!-- 修改元素属性 -->
     <button id="change1">1</button>
     <button id="change2">2</button><br />
-    <img src="images/vue-1.jpg" alt="" title="vue1" width="300" />
-    <script>
-      // 修改元素内容
-      var time = document.querySelector("button");
-      var timeText = document.querySelector("div");
-      time.onclick = function () {
-        timeText.innerText = getDate();
-      };
+    <img src="images/focus2.png" alt="" title="vue1" width="300" />
 
+    <script>
       function getDate() {
         var date = new Date();
         var year = date.getFullYear();
@@ -49,6 +40,13 @@
         return year + "年" + month + "月" + dates + "日 " + arr[day];
       }
 
+      // 修改元素内容
+      var time = document.querySelector("button");
+      var timeText = document.querySelector("div");
+      time.onclick = function () {
+        timeText.innerText = getDate();
+      };
+
       var p = document.querySelector("p");
       p.innerText = getDate();
 
@@ -65,11 +63,11 @@
       var change2 = document.getElementById("change2");
       var img = document.querySelector("img");
       change1.onclick = function () {
-        img.src = "images/vue-1.jpg";
+        img.src = "images/focus2.png";
         img.title = "vue1";
       };
       change2.onclick = function () {
-        img.src = "images/vue-2.jpg";
+        img.src = "images/focus3.png";
         img.title = "vue2";
       };
     </script>

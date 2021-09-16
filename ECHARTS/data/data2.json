@@ -1,0 +1,35 @@
+{
+  "code": "200",
+  "message": "success",
+  "data": {
+    "plan": {
+      "planNumber": "22222",
+      "fulfilNumber": "20000",
+      "fulfil": "92%",
+      "adopt": "92%",
+      "PPM": "600"
+    },
+    "impacting": {
+      "yAxis": ["设备6", "设备7", "设备8", "设备9", "设备10"],
+      "value": [60, 70, 80, 90, 100]
+    },
+    "bad": [
+      {
+        "value": 25,
+        "name": "不良原因5"
+      },
+      {
+        "value": 30,
+        "name": "不良原因6"
+      },
+      {
+        "value": 35,
+        "name": "不良原因7"
+      },
+      {
+        "value": 40,
+        "name": "不良原因8"
+      }
+    ]
+  }
+}

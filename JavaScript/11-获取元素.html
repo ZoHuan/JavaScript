@@ -9,16 +9,16 @@
   <body>
     <div id="time">2020-09-19</div>
     <ul>
-      <li>知否知否，应是绿肥红瘦</li>
-      <li>知否知否，应是绿肥红瘦</li>
-      <li>知否知否，应是绿肥红瘦</li>
-      <li>知否知否，应是绿肥红瘦</li>
+      <li>我不愿让你一个人，一个人在人海浮沉</li>
+      <li>我不愿让你一个人，一个人在人海浮沉</li>
+      <li>我不愿让你一个人，一个人在人海浮沉</li>
+      <li>我不愿让你一个人，一个人在人海浮沉</li>
     </ul>
     <ul id="nav">
-      <li>绿叶繁茂，红花凋落</li>
-      <li>绿叶繁茂，红花凋落</li>
-      <li>绿叶繁茂，红花凋落</li>
-      <li>绿叶繁茂，红花凋落</li>
+      <li>终于你身影消失在人海尽头</li>
+      <li>终于你身影消失在人海尽头</li>
+      <li>终于你身影消失在人海尽头</li>
+      <li>终于你身影消失在人海尽头</li>
     </ul>
     <div class="box">盒子</div>
     <div class="box">盒子</div>
@@ -33,7 +33,7 @@
       var timer = document.getElementById("time");
       console.log(timer);
       console.log(typeof timer);
-      //打印我们返回的元素对象 更好的查看里面的属性和方法
+      // 打印我们返回的元素对象 更好的查看里面的属性和方法
       console.dir(timer);
 
       // 返回的是 获取过来元素对象的集合 以伪数组的形式存储的
@@ -44,6 +44,7 @@
       for (let i = 0; i < lis.length; i++) {
         console.log(lis[i]);
       }
+
       // 得到这个元素里面的某些标签
       var nav = document.getElementById("nav");
       console.log(nav.getElementsByTagName("li"));
@@ -51,6 +52,7 @@
       // 根据类名获得某些元素集合
       var boxs = document.getElementsByClassName("box");
       console.log(boxs);
+
       // 返回指定选择器的第一个元素对象 里面的选择器需要加符号
       var firstBox = document.querySelector(".box");
       console.log(firstBox);
@@ -71,7 +73,8 @@
       var bodyEle = document.body;
       console.log(bodyEle);
       console.dir(bodyEle);
-      //获取html元素
+
+      // 获取html元素
       var htmlEle = document.documentElement;
       console.log(htmlEle);
     </script>
