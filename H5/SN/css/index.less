@@ -61,3 +61,38 @@ body {
     height: 100%;
   }
 }
+
+// 活动
+.promotion {
+  display: flex;
+  a {
+    flex: 1;
+    img {
+      width: 100%;
+    }
+  }
+}
+
+// 导航
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  width: (750rem / @baseFont);
+  a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: (150rem / @baseFont);
+    height: (140rem / @baseFont);
+    text-decoration: none;
+    img {
+      width: (82rem / @baseFont);
+      height: (82rem / @baseFont);
+      margin: (10rem / @baseFont) auto 0;
+    }
+    span {
+      font-size: (25rem / @baseFont);
+      color: #333;
+    }
+  }
+}

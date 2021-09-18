@@ -12,7 +12,7 @@
     <div id="login" style="margin-top: 20px">
       <input type="text" /><br />
       <input type="password" />
-      <button>◎</button>
+      <button>○</button>
     </div>
     <script>
       var btn = document.querySelector("button");
@@ -30,10 +30,10 @@
         var type = password.type;
         if (type == "password") {
           password.type = "text";
-          this.innerHTML = "¤";
+          this.innerHTML = "●";
         } else {
           password.type = "password";
-          this.innerHTML = "◎";
+          this.innerHTML = "○";
         }
       };
     </script>

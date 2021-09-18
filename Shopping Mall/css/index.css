@@ -116,14 +116,14 @@
   right: 0;
   width: 12px;
   height: 15px;
-  background: url(../img/jian.png) no-repeat;
+  background: url(../images/jian.png) no-repeat;
 }
 
 .service_ico {
   display: block;
   width: 24px;
   height: 24px;
-  background: url(../img/icons.png) no-repeat;
+  background: url(../images/icons.png) no-repeat;
   margin: 10px auto;
 }
 
@@ -188,14 +188,14 @@
 .recom-hd {
   width: 200px;
   height: 163px;
-  background: url(../img/recommend.png) no-repeat;
+  background: url(../images/recommend.png) no-repeat;
 }
 
 .recom-hd-text {
   width: 160px;
   height: 90px;
   margin: 30px auto 0;
-  background: url(../img/container.png) no-repeat;
+  background: url(../images/container.png) no-repeat;
   font-size: 16px;
   color: #fff;
   text-align: center;

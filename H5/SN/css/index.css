@@ -111,3 +111,34 @@ body {
   width: 100%;
   height: 100%;
 }
+.promotion {
+  display: flex;
+}
+.promotion a {
+  flex: 1;
+}
+.promotion a img {
+  width: 100%;
+}
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  width: 15rem;
+}
+nav a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 3rem;
+  height: 2.8rem;
+  text-decoration: none;
+}
+nav a img {
+  width: 1.64rem;
+  height: 1.64rem;
+  margin: 0.2rem auto 0;
+}
+nav a span {
+  font-size: 0.5rem;
+  color: #333;
+}
