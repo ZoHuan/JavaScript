@@ -14,9 +14,9 @@
   </head>
 
   <body>
-    <div>1</div>
-    <div>2</div>
-    <div>3</div>
+    <div>传统方式删除事件</div>
+    <div>方法监听删除事件</div>
+    <div>ie9 detachEvent</div>
     <script>
       var divs = document.querySelectorAll("div");
       // 1.传统方式删除事件
@@ -33,7 +33,7 @@
         divs[1].removeEventListener("click", fn);
       }
 
-      // 3.
+      // 3. detachEvent ie9以前的版本支持
       divs[2].attachEvent("onclick", fn1);
 
       function fn1() {
