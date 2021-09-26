@@ -4,20 +4,33 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>轮播图</title>
-    <link rel="stylesheet" href="css\base.css" />
     <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      li,
+      ol {
+        list-style: none;
+      }
+
+      a {
+        text-decoration: none;
+      }
+
       .w {
-        width: 800px;
+        width: 500px;
         margin: auto;
       }
       .main {
-        width: 800px;
-        height: 600px;
+        width: 500px;
+        height: 500px;
       }
       .focus {
         position: relative;
-        width: 800px;
-        height: 600px;
+        width: 500px;
+        height: 500px;
         overflow: hidden;
       }
       .focus ul {
@@ -84,17 +97,17 @@
           <ul>
             <li>
               <a href="javaScript:;">
-                <img src="images\vue-1.jpg" alt="" />
+                <img src="images/focus2.png" alt="" />
               </a>
             </li>
             <li>
               <a href="javaScript:;">
-                <img src="images\vue-2.jpg" alt="" />
+                <img src="images/focus1.png" alt="" />
               </a>
             </li>
             <li>
               <a href="javaScript:;">
-                <img src="images\vue-3.jpg" alt="" />
+                <img src="images/focus3.png" alt="" />
               </a>
             </li>
           </ul>
@@ -111,7 +124,6 @@
       var focusWidth = focus.offsetWidth;
       // 控制左右箭头显示隐藏
       focus.addEventListener("mouseenter", function () {
-        console.log(22);
         arrow_l.style.display = "block";
         arrow_r.style.display = "block";
         // 鼠标经过停止定时器
