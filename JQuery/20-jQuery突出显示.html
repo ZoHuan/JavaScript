@@ -24,10 +24,14 @@
         float: left;
         width: 200px;
         margin: 10px;
+        transition: all 0.6s;
       }
       .wrap ul img {
         width: 200px;
         height: 305px;
+      }
+      .current {
+        transform: rotateY(360deg);
       }
     </style>
     <script src="jquery\jquery.min.js"></script>
@@ -35,26 +39,10 @@
       $(function () {
         $(".wrap li").hover(
           function () {
-            $(this)
-              .css({
-                transformStyle: "preserve-3d",
-                "-webkitTransform": "rotateY(360deg)",
-                "-webkitTransition": "all 0.6s",
-              })
-              .siblings()
-              .stop()
-              .fadeTo(200, 0.5);
+            $(this).addClass("current").siblings().stop().fadeTo(200, 0.5);
           },
           function () {
-            $(this)
-              .css({
-                transformStyle: "preserve-3d",
-                "-webkitTransform": "rotateY(0deg)",
-                "-webkitTransition": "all 0.6s",
-              })
-              .siblings()
-              .stop()
-              .fadeTo(200, 1);
+            $(this).removeClass("current").siblings().stop().fadeTo(200, 1);
           }
         );
       });
