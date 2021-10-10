@@ -286,6 +286,7 @@
 
 /* 电梯导航 */
 .fixedtool {
+  display: none;
   position: fixed;
   top: 100px;
   left: 50%;

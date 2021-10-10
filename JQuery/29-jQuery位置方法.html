@@ -25,6 +25,27 @@
         top: 10px;
         left: 10px;
       }
+
+      .container {
+        height: 800px;
+        width: 900px;
+        background-color: coral;
+        margin: 100px auto;
+      }
+
+      .back {
+        display: none;
+        position: fixed;
+        right: 30px;
+        bottom: 100px;
+        width: 40px;
+        height: 40px;
+        background-color: crimson;
+        border-radius: 50%;
+        color: #fff;
+        text-align: center;
+        line-height: 40px;
+      }
     </style>
     <script src="jquery\jquery.min.js"></script>
   </head>
@@ -32,14 +53,37 @@
     <div class="father">
       <div class="son"></div>
     </div>
+
+    <div class="back">↑</div>
+    <div class="container"></div>
     <script>
       $(function () {
         // 1. 获取设置距离文档的位置（偏移）offset
         console.log($(".son").offset());
         console.log($(".son").offset().top);
-        $(".son").offset({ top: 200, left: 200 });
+        // $(".son").offset({ top: 200, left: 200 });
+
         // 2. 获取距离带有定位父级位置（偏移）position 如果没有带有定位的父级，则以文档为准
-        console.log($("div").innerWidth());
+        // 只能获取不能设置偏移
+        console.log($(".son").position());
+
+        // 3. 被卷去的头部 scrollTop() / 被卷去的左侧 scrollLeft()
+        let boxTop = $(".container").offset().top;
+        $(window).scroll(function () {
+          console.log($(document).scrollTop());
+          if ($(document).scrollTop() >= boxTop) {
+            $(".back").fadeIn();
+          } else {
+            $(".back").fadeOut();
+          }
+        });
+        // 返回顶部
+        $(".back").click(function () {
+          // $(document).scrollTop(0);
+          $("body,html").stop().animate({
+            scrollTop: 0,
+          });
+        });
       });
     </script>
   </body>
