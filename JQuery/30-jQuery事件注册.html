@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      div {
+        width: 100px;
+        height: 100px;
+        background-color: cornflowerblue;
+      }
+    </style>
+    <script src="jquery\jquery.min.js"></script>
+  </head>
+  <body>
+    <div></div>
+
+    <script>
+      $(function () {
+        // 1. 单个事件注册
+        $("div").click(function () {
+          $(this).css("bakcground", "cadetblue");
+        });
+        // 2. 事件处理on
+      });
+    </script>
+  </body>
+</html>
