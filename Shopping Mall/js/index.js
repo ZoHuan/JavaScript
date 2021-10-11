@@ -11,6 +11,12 @@ $(function () {
   }
   $(window).scroll(function () {
     toggleTool();
+    // 3. 页面滚动到某个内容区域，左侧电梯导航相应添加和删除current类名
+    $(".floor .wrap").each(function (i, ele) {
+      if ($(document).scrollTop() >= $(ele).offset().top) {
+        $(".fixedtool li").eq(i).addClass("current").siblings().removeClass();
+      }
+    });
   });
 
   // 2. 点击电梯导航页面可以滚动到相应内容区域
