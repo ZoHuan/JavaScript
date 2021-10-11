@@ -53,20 +53,20 @@
 
         console.log($(".son").parent());
 
-        $(".nav").children("p").css("color", "darkcyan");
+        $(".nav").children("p").css("color", "cadetblue");
 
-        $(".nav").find("p").css("color", "dodgerblue");
+        $(".nav").find("p").css("color", "cornflowerblue");
 
-        $("ol .item").siblings("li").css("color", "dodgerblue");
+        $("ol .item").siblings("li").css("color", "cornflowerblue");
 
         let index = 2;
-        // $("ul li:eq(2)").css("color", "darkcyan");
-        $("ul li:eq(" + index + ")").css("color", "darkcyan");
+        // $("ul li:eq(2)").css("color", "cadetblue");
+        $("ul li:eq(" + index + ")").css("color", "cadetblue");
 
-        // $("ul li").eq(3).css("color", "dodgerblue");
+        // $("ul li").eq(3).css("color", "cornflowerblue");
         $("ul li")
           .eq(index + 1)
-          .css("color", "dodgerblue");
+          .css("color", "cornflowerblue");
 
         console.log($("ol li").hasClass("item"));
       });
