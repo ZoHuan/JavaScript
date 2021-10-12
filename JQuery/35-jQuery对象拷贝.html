@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="jquery\jquery.min.js"></script>
+    <script>
+      $(function () {
+        // var targetObj = {};
+        // var obj = {
+        //   id: 1,
+        //   name: "object",
+        // };
+        // // $.extend(target,obj)
+        // $.extend(targetObj, obj);
+        // console.log(targetObj);
+
+        // var targetObj = {
+        //   id: 0,
+        // };
+        // var obj = {
+        //   id: 1,
+        //   name: "object",
+        // };
+        // // $.extend(target,obj)
+        // $.extend(targetObj, obj);
+        // console.log(targetObj); // 会覆盖原先对象里面的数据
+
+        var targetObj = {
+          id: 0,
+          msg: {
+            content: "成功",
+          },
+        };
+        var obj = {
+          id: 1,
+          name: "object",
+          msg: {
+            code: 200,
+          },
+        };
+
+        // $.extend(targetObj, obj);
+        // // 1. 浅拷贝把原来对象里面的复杂数据类型地址拷贝给目标对象
+        // targetObj.msg.code = 400;
+        // console.log(targetObj);
+        // console.log(obj);
+
+        $.extend(true, targetObj, obj);
+        // 2. 深拷贝把里面的数据完全复制一份给目标对象，如果里面有不冲突的属性，会合并在一起
+        console.log(targetObj);
+        console.log(obj);
+      });
+    </script>
+  </head>
+  <body></body>
+</html>
