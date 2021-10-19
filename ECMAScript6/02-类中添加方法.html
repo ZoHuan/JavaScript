@@ -9,19 +9,19 @@
   <body>
     <script>
       // 1. 创建类 class
-      class Star {
+      class Character {
         constructor(name) {
           this.name = name;
         }
-        Ninjutsu(skill) {
+        skill(skill) {
           // console.log("手里剑");
           console.log(this.name + ",绝招:" + skill);
         }
       }
       // 2. 利用类创建对象 new
-      var s1 = new Star("漩涡鸣人");
-      console.log(s1.name);
-      s1.Ninjutsu("螺旋丸");
+      var c1 = new Character("漩涡鸣人");
+      console.log(c1.name);
+      c1.skill("螺旋丸");
     </script>
   </body>
 </html>
