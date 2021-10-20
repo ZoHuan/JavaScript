@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // 借用父构造函数继承属性
+      // 1. 父构造函数
+      function Father(name, age) {
+        // this 指向父构造函数的对象实例
+        this.name = name;
+        this.age = age;
+      }
+      Father.prototype.money = function () {
+        console.log("技能");
+      };
+
+      // 2. 子构造函数
+      function Son(name, age, sex) {
+        // this 指向子构造函数的对象实例
+        Father.call(this, name, age);
+        this.sex = sex;
+      }
+      //   Son.prototype = Father.prototype;
+      // 这样直接赋值会有问题，如果修改了子原型对象，父原型对象也会跟着一起变化
+      Son.prototype = new Father();
+      // 如果利用对象的形式修改了原型对象，别忘了利用constructor指回原来的构造函数
+      Son.prototype.constructor = Son;
+      // 这个是子构造函数专门的方法
+      Son.prototype.exam = function () {
+        console.log("考试");
+      };
+      var son = new Son("鸣人", 20, "男");
+      console.log(son);
+      console.log(Father.prototype);
+    </script>
+  </body>
+</html>

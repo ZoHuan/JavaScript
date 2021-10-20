@@ -15,14 +15,18 @@
       Character.prototype.skill = function () {
         console.log("忍术");
       };
+      Character.prototype.sex = "男";
 
+      Object.prototype.sex = "男";
       var c1 = new Character("鸣人", 20);
-      // 1. 只要是对象就有__proto__原型，指向原型对象
+      c1.sex = "男";
+      console.log(c1.sex);
+
+      console.log(Object.prototype);
       console.log(Character.prototype);
-      console.log(Character.prototype.__proto__ === Object.prototype);
-      // 2. 我们Character原型对象里面的__proto__原型指向的是 Object.prototype
-      console.log(Object.prototype.__proto__);
-      // 3. 我们Object.prototype原型对象里面的__proto__原型 指向为 null
+      console.log(c1);
+
+      console.log(c1.toString());
     </script>
   </body>
 </html>
