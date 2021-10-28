@@ -9,34 +9,34 @@
   <body>
     <script>
       // 字符类：[] 表示有一系列字符可供选择，只要匹配其中一个就可以
-      var rg = /[abc]/; // 只要包含a或b或c都返回true
-      console.log(rg.test("baby"));
-      console.log(rg.test("hello"));
+      var reg = /[abc]/; // 只要包含a或b或c都返回true
+      console.log(reg.test("baby"));
+      console.log(reg.test("hello"));
       console.log("--------------");
-      var rg = /^[abc]$/; // 三选一 只有a或b或c这三个字母才返回true
-      console.log(rg.test("a"));
-      console.log(rg.test("aa"));
+      var reg = /^[abc]$/; // 三选一 只有a或b或c这三个字母才返回true
+      console.log(reg.test("a"));
+      console.log(reg.test("aa"));
       console.log("--------------");
-      var rg = /^[a-z]$/; // 26个字母任何一个字母返回true - 表示的是a到z的范围
-      console.log(rg.test("a"));
-      console.log(rg.test("z"));
-      console.log(rg.test("A"));
-      console.log(rg.test(1));
+      var reg = /^[a-z]$/; // 26个字母任何一个字母返回true - 表示的是a到z的范围
+      console.log(reg.test("a"));
+      console.log(reg.test("z"));
+      console.log(reg.test("A"));
+      console.log(reg.test(1));
       console.log("--------------");
 
       // 字符组合
-      var rg = /^[a-zA-Z0-9_-]$/; // 26个字母(大小写都可以)任何一个字母返回true
-      console.log(rg.test(1));
-      console.log(rg.test("a"));
-      console.log(rg.test("A"));
-      console.log(rg.test("!"));
+      var reg = /^[a-zA-Z0-9_-]$/; // 26个字母(大小写都可以)任何一个字母返回true
+      console.log(reg.test(1));
+      console.log(reg.test("a"));
+      console.log(reg.test("A"));
+      console.log(reg.test("!"));
       console.log("--------------");
       // 如果中括号里面有^ 表示取反的意思
-      var rg = /^[^a-zA-Z0-9_-]$/;
-      console.log(rg.test(1));
-      console.log(rg.test("a"));
-      console.log(rg.test("A"));
-      console.log(rg.test("!"));
+      var reg = /^[^a-zA-Z0-9_-]$/;
+      console.log(reg.test(1));
+      console.log(reg.test("a"));
+      console.log(reg.test("A"));
+      console.log(reg.test("!"));
     </script>
   </body>
 </html>
