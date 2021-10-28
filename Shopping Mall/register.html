@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="font/iconfont.css" />
     <link rel="stylesheet" href="css/base.css" />
     <link rel="stylesheet" href="css/register.css" />
+    <script src="js/reg.js"></script>
   </head>
   <body>
     <div class="warp">
@@ -27,27 +28,28 @@
             <ul>
               <li>
                 <label for="">手机号：</label>
-                <input type="text" class="inp" />
-                <span class="error">
-                  <i class="iconfont icon-error error_icon"></i
-                  >手机号码格式不正确，请重新输入</span
-                >
+                <input type="text" class="inp" id="tel" />
+                <span></span>
+              </li>
+              <li>
+                <label for="">QQ：</label>
+                <input type="text" class="inp" id="qq" />
+                <span></span>
+              </li>
+              <li>
+                <label for="">昵称：</label>
+                <input type="text" class="inp" id="nickname" />
+                <span></span>
               </li>
               <li>
                 <label for="">短信验证码：</label>
-                <input type="text" class="inp" />
-                <span class="success">
-                  <i class="iconfont icon-success error_icon"></i
-                  >短信验证码正确</span
-                >
+                <input type="text" class="inp" id="msg" />
+                <span></span>
               </li>
               <li>
                 <label for="">登录密码：</label>
-                <input type="password" class="inp" />
-                <span class="error">
-                  <i class="iconfont icon-error error_icon"></i
-                  >手机号码格式不正确，请重新输入</span
-                >
+                <input type="password" class="inp" id="pwd" />
+                <span></span>
               </li>
               <li class="safe">
                 安全程度
@@ -57,11 +59,8 @@
               </li>
               <li>
                 <label for="">确认密码：</label>
-                <input type="password" class="inp" />
-                <span class="error">
-                  <i class="iconfont icon-error success_icon"></i
-                  >手机号码格式不正确，请重新输入</span
-                >
+                <input type="password" class="inp" id="surepwd" />
+                <span></span>
               </li>
               <li class="agree">
                 <input type="checkbox" name="" id="" />同意协议并注册<a href="#"
