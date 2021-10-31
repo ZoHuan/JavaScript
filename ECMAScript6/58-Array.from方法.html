@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      var arrayLike = {
+        0: "鸣人",
+        1: "佐助",
+        2: "卡卡西",
+        length: 3,
+      };
+      var ary = Array.from(arrayLike);
+      console.log(ary);
+
+      var array = {
+        0: 1,
+        1: 2,
+        length: 2,
+      };
+      var arr = Array.from(array, (item) => item * 2);
+      console.log(arr);
+    </script>
+  </body>
+</html>
