@@ -10,19 +10,46 @@
   <body>
     <script>
       let p = new Promise((resolve, reject) => {
-        resolve("OK");
-        reject("ERROR");
+        setTimeout(() => {
+          resolve("OK");
+          reject("ERROR");
+        }, 100);
       });
+
       console.log(p);
 
-      p.then(
-        (value) => {
-          console.log(value);
-        },
-        (reason) => {
+      // const result = p.then(
+      //   (value) => {
+      //     console.log("one", value);
+      //     // return value;
+      //     // return new Promise((resolve, reject) => {
+      //     //   resolve("success");
+      //     //   reject("failure");
+      //     // });
+
+      //     throw "FAIL";
+      //   },
+      //   (reason) => {
+      //     console.warn("one", reason);
+      //   }
+      // );
+      // console.log(result);
+
+      let res = p
+        .then((value) => {
+          console.log("one");
+        })
+        .then((value) => {
+          console.log("two");
+        })
+        .then((value) => {
+          console.log("three");
+        })
+        .catch((reason) => {
           console.warn(reason);
-        }
-      );
+        });
+
+      console.log(res);
     </script>
   </body>
 </html>
