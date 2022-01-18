@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <script src="./promise.js"></script>
+    <script src="./promise-class.js"></script>
   </head>
   <body>
     <script>
@@ -16,7 +16,7 @@
         }, 100);
       });
 
-      console.log(p);
+      // console.log(p);
 
       // const result = p.then(
       //   (value) => {
@@ -49,7 +49,34 @@
           console.warn(reason);
         });
 
-      console.log(res);
+      // console.log(res);
+
+      let ps = Promise.resolve("OK");
+      let ps2 = Promise.resolve(
+        new Promise((resolve, reject) => {
+          // resolve("Success");
+          reject("Error");
+        })
+      );
+
+      let pj = Promise.reject("OK");
+      let pj2 = Promise.reject(
+        new Promise((resolve, reject) => {
+          resolve("Success");
+          reject("Error");
+        })
+      );
+
+      let p1 = new Promise((resolve, reject) => {
+        resolve("OK");
+      });
+      let p2 = Promise.resolve("Success");
+      let p3 = Promise.resolve("Yeah");
+
+      // let result = Promise.all([p1, p2, p3]);
+      let result = Promise.race([p1, p2, p3]);
+
+      console.log(result);
     </script>
   </body>
 </html>
