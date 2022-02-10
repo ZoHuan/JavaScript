@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdn.bootcdn.net/ajax/libs/axios/0.21.1/axios.min.js"></script>
+    <style>
+      .btn {
+        display: inline-block;
+        margin-bottom: 0;
+        padding: 6px 12px;
+        border: 1px solid transparent;
+        border-radius: 4px;
+        white-space: nowrap;
+        vertical-align: middle;
+        cursor: pointer;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 1.42857143;
+        text-align: center;
+        user-select: none;
+      }
+      .btn-get {
+        color: #fff;
+        background-color: #337ab7;
+        border-color: #2e6da4;
+      }
+      .btn-get:hover {
+        color: #fff;
+        background-color: #286090;
+        border-color: #204d74;
+      }
+      .btn-post {
+        color: #fff;
+        background-color: #5cb85c;
+        border-color: #4cae4c;
+      }
+      .btn-post:hover {
+        color: #fff;
+        background-color: #449d44;
+        border-color: #398439;
+      }
+      .btn-put {
+        color: #fff;
+        background-color: #f0ad4e;
+        border-color: #eea236;
+      }
+      .btn-put:hover {
+        color: #fff;
+        background-color: #ec971f;
+        border-color: #d58512;
+      }
+      .btn-delete {
+        color: #fff;
+        background-color: #d9534f;
+        border-color: #d43f3a;
+      }
+      .btn-delete:hover {
+        color: #fff;
+        background-color: #c9302c;
+        border-color: #ac2925;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h2 class="header">axios取消请求</h2>
+      <button class="btn btn-get">发送请求</button>
+      <button class="btn btn-put">取消请求</button>
+    </div>
+    <script>
+      // 获取按钮
+      const btns = document.querySelectorAll("button");
+      // 2. 声明全局变量
+      let cancel = null;
+      // 发送请求
+      btns[0].onclick = function () {
+        // 检测上一次的请求是否完成
+        if (cancel !== null) {
+          // 取消上一次的请求
+          cancel();
+        }
+        axios({
+          method: "GET",
+          url: "http://localhost:3000/posts",
+          // 1. 添加配置对象的属性
+          cancelToken: new axios.CancelToken(function (c) {
+            //3. 将c的值赋值给cancel
+            cancel = c;
+          }),
+        }).then((response) => {
+          console.log(response);
+          // 将cancel 的值初始化
+          cancel = null;
+        });
+      };
+
+      // 绑定取消事件
+      btns[1].onclick = function () {
+        cancel();
+      };
+    </script>
+  </body>
+</html>
