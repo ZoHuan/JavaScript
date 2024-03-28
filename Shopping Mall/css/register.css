@@ -2,6 +2,7 @@
   width: 1200px;
   margin: 0 auto;
 }
+
 header {
   height: 84px;
   border-bottom: 2px solid #c81523;
@@ -10,6 +11,7 @@ header {
 .logo {
   padding-top: 6px;
 }
+
 .registerarrea {
   height: 522px;
   margin-top: 20px;
@@ -34,6 +36,7 @@ header {
 .login a {
   color: #c81523;
 }
+
 .reg_form {
   width: 600px;
   margin: 50px auto 0;
@@ -54,6 +57,7 @@ header {
   height: 37px;
   border: 1px solid #ccc;
 }
+
 .error {
   color: #c81523;
 }
@@ -66,6 +70,7 @@ header {
   margin-top: -6px;
   vertical-align: middle;
 }
+
 .success {
   color: green;
 }
@@ -78,12 +83,15 @@ header {
   padding: 0 12px;
   color: #fff;
 }
+
 .weak {
   background-color: #de1111;
 }
+
 .medium {
   background-color: #40b83f;
 }
+
 .strong {
   background-color: #f79100;
 }
@@ -91,6 +99,7 @@ header {
 .agree {
   padding-left: 95px;
 }
+
 .agree input {
   vertical-align: middle;
 }
@@ -107,6 +116,7 @@ header {
   font-size: 14px;
   color: #fff;
 }
+
 .mod_copyright {
   text-align: center;
 }

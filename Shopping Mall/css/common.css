@@ -3,12 +3,14 @@
   float: left;
 }
 
-.fr { 
+.fr {
   float: right;
 }
+
 .iconfont {
   vertical-align: middle;
 }
+
 /* 版心 */
 .wrap {
   width: 1200px;
