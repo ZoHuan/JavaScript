@@ -1,69 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script src="./05-util.js"></script>
-    <title>Document</title>
-  </head>
-  <body>
-    <button onclick="getMsg()">GET请求</button>
-    <button onclick="postMsg()">POST请求</button>
-    <button onclick="getAjaxMsg()">AJAX-GET请求</button>
-    <button onclick="postAjaxMsg()">AJAX-POST请求</button>
 
-    <script>
-      function getMsg() {
-        util.get(
-          "http://wthrcdn.etouch.cn/weather_mini",
-          { city: "福州" },
-          function (resp) {
-            console.log(resp);
-          },
-          true
-        );
-      }
-      function postMsg() {
-        util.post(
-          "https://autumnfish.cn/api/user/reg",
-          {
-            username: "jack",
-          },
-          function (resp) {
-            console.log(resp);
-          },
-          false
-        );
-      }
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="./05-util.js"></script>
+  <title>Document</title>
+</head>
 
-      function getAjaxMsg() {
-        util.ajax(
-          // {method,url,query,callback,isJson}
-          {
-            method: "get",
-            url: "http://wthrcdn.etouch.cn/weather_mini",
-            query: { city: "福州" },
-            callback: function (resp) {
-              console.log(resp);
-            },
-            isJson: true,
-          }
-        );
-      }
+<body>
+  <button onclick="getMsg()">GET请求</button>
+  <button onclick="postMsg()">POST请求</button>
+  <button onclick="getAjaxMsg()">AJAX-GET请求</button>
+  <button onclick="postAjaxMsg()">AJAX-POST请求</button>
 
-      function postAjaxMsg() {
-        util.ajax({
-          method: "post",
-          url: "https://autumnfish.cn/api/user/reg",
-          query: {
-            username: "jack",
-          },
+  <script>
+    function getMsg() {
+      util.get(
+        "http://wthrcdn.etouch.cn/weather_mini",
+        { city: "福州" },
+        function (resp) {
+          console.log(resp);
+        },
+        true
+      );
+    }
+    function postMsg() {
+      util.post(
+        "https://autumnfish.cn/api/user/reg",
+        {
+          username: "jack",
+        },
+        function (resp) {
+          console.log(resp);
+        },
+        false
+      );
+    }
+
+    function getAjaxMsg() {
+      util.ajax(
+        // {method,url,query,callback,isJson}
+        {
+          method: "get",
+          url: "http://wthrcdn.etouch.cn/weather_mini",
+          query: { city: "福州" },
           callback: function (resp) {
             console.log(resp);
           },
-          isJson: false,
-        });
-      }
-    </script>
-  </body>
+          isJson: true,
+        }
+      );
+    }
+
+    function postAjaxMsg() {
+      util.ajax({
+        method: "post",
+        url: "https://autumnfish.cn/api/user/reg",
+        query: {
+          username: "jack",
+        },
+        callback: function (resp) {
+          console.log(resp);
+        },
+        isJson: false,
+      });
+    }
+  </script>
+</body>
+
 </html>
