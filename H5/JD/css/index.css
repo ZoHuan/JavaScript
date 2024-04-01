@@ -21,6 +21,7 @@ img,
 a {
   -webkit-touch-callout: none;
 }
+
 ul {
   margin: 0;
   padding: 0;
@@ -60,6 +61,7 @@ a {
 .app ul li:nth-child(2) {
   width: 10%;
 }
+
 .app ul li:nth-child(2) img {
   width: 30px;
   vertical-align: middle;
@@ -68,6 +70,7 @@ a {
 .app ul li:nth-child(3) {
   width: 57%;
 }
+
 .app ul li:nth-child(4) {
   width: 25%;
   background-color: #f63515;
@@ -90,6 +93,7 @@ a {
   width: 40px;
   height: 44px;
 }
+
 .search-btn::before {
   content: "";
   display: block;
@@ -194,11 +198,13 @@ nav a span {
 .news {
   margin-top: 20px;
 }
+
 .news a {
   float: left;
   box-sizing: border-box;
   width: 33.33%;
 }
+
 .news img {
   width: 100%;
 }
