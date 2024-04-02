@@ -1,37 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-  </head>
-  <body>
-    <script>
-      let name = `javaScript`;
-      let sayHi = `Hello,${name}`;
-      console.log(sayHi);
 
-      // 模板字符串可以换行
-      let result = {
-        name: "object",
-        age: 20,
-      };
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+</head>
 
-      let html = `
+<body>
+  <script>
+    let name = `javaScript`;
+    let sayHi = `Hello,${name}`;
+    console.log(sayHi);
+
+    // 模板字符串可以换行
+    let result = {
+      name: "object",
+      age: 20,
+    };
+
+    let html = `
           <div>
             <span>${result.name}</span>  
             <span>${result.age}</span>  
           </div>
       `;
-      console.log(html);
+    console.log(html);
 
-      // 模板字符串可以调用函数
-      const fn = () => {
-        return "我是模板字符串";
-      };
-      html = `我是模板字符串${fn()}`;
-      console.log(html);
-    </script>
-  </body>
+    // 模板字符串可以调用函数
+    const fn = () => {
+      return "我是模板字符串";
+    };
+    html = `我是模板字符串${fn()}`;
+    console.log(html);
+  </script>
+</body>
+
 </html>

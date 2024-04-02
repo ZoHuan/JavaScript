@@ -1,47 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-  </head>
-  <body>
-    <script>
-      const s1 = new Set();
-      console.log(s1.size);
 
-      const s2 = new Set(["a", "b"]);
-      console.log(s2.size);
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+</head>
 
-      const s3 = new Set(["a", "a", "b", "b"]);
-      console.log(s3.size);
+<body>
+  <script>
+    const s1 = new Set();
+    console.log(s1.size);
 
-      const ary = [...s3];
+    const s2 = new Set(["a", "b"]);
+    console.log(s2.size);
 
-      // add(value) 添加某个值，返回Set结构本身
-      const s4 = new Set();
-      s4.add("a").add("b");
-      console.log(s4.size);
+    const s3 = new Set(["a", "a", "b", "b"]);
+    console.log(s3.size);
 
-      // delete(value) 删除某个值，返回布尔值
-      const r1 = s4.delete("b");
-      console.log(s4.size);
-      console.log(r1);
+    const ary = [...s3];
 
-      // has(value) 返回博二字，表示该值是否为Set的成员
-      const r2 = s4.has("a");
-      console.log(r2);
+    // add(value) 添加某个值，返回Set结构本身
+    const s4 = new Set();
+    s4.add("a").add("b");
+    console.log(s4.size);
 
-      // clear() 清除所有成员，没有返回值
-      s4.clear();
-      console.log(s4.size);
+    // delete(value) 删除某个值，返回布尔值
+    const r1 = s4.delete("b");
+    console.log(s4.size);
+    console.log(r1);
 
-      // 遍历set数据结构
-      const s5 = new Set(["a", "b", "c"]);
-      s5.forEach((value) => {
-        console.log(value);
-      });
-    </script>
-  </body>
+    // has(value) 返回布尔，表示该值是否为Set的成员
+    const r2 = s4.has("a");
+    console.log(r2);
+
+    // clear() 清除所有成员，没有返回值
+    s4.clear();
+    console.log(s4.size);
+
+    // 遍历set数据结构
+    const s5 = new Set(["a", "b", "c"]);
+    s5.forEach((value) => {
+      console.log(value);
+    });
+  </script>
+</body>
+
 </html>

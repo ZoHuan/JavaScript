@@ -1,28 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-  </head>
-  <body>
-    <script>
-      function Character(name, age) {
-        this.name = name;
-        this.age = age;
-      }
-      Character.prototype.skill = function () {
-        console.log("忍术");
-      };
 
-      var c1 = new Character("鸣人", 20);
-      // 1. 只要是对象就有__proto__原型，指向原型对象
-      console.log(Character.prototype);
-      console.log(Character.prototype.__proto__ === Object.prototype);
-      // 2. 我们Character原型对象里面的__proto__原型指向的是 Object.prototype
-      console.log(Object.prototype.__proto__);
-      // 3. 我们Object.prototype原型对象里面的__proto__原型 指向为 null
-    </script>
-  </body>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    function Character(name, age) {
+      this.name = name;
+      this.age = age;
+    }
+    Character.prototype.skill = function () {
+      console.log("忍术");
+    };
+
+    var c1 = new Character("鸣人", 20);
+    // 1. 只要是对象就有__proto__原型，指向原型对象
+    console.log(Character.prototype);
+    console.log(Character.prototype.__proto__ === Object.prototype);
+    // 2. 我们Character原型对象里面的__proto__原型指向的是 Object.prototype
+    console.log(Object.prototype.__proto__);
+    // 3. 我们Object.prototype原型对象里面的__proto__原型 指向为 null
+  </script>
+</body>
+
 </html>

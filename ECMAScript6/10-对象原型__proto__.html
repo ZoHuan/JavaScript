@@ -1,29 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-  </head>
-  <body>
-    <script>
-      function Character(name, age) {
-        this.name = name;
-        this.age = age;
-      }
-      Character.prototype.skill = function () {
-        console.log("忍术");
-      };
 
-      var c1 = new Character("鸣人", 20);
-      var c2 = new Character("佐助", 20);
-      c1.skill();
-      console.log(c1); // 对象身上系统自动添加一个__proto__ 指向我们构造函数的原型对象 prototype
-      console.log(c1.__proto__ === Character.prototype);
-      // 方法的查找规则： 首先先看c1 对象身上是否有 skill 方法，如果有就执行这个对象上的skill
-      // 如果没有skill这个方法，因为有__proto__的存在，就去构造函数原型对象prototype身上去查找
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+</head>
 
-    </script>
-  </body>
+<body>
+  <script>
+    function Character(name, age) {
+      this.name = name;
+      this.age = age;
+    }
+    Character.prototype.skill = function () {
+      console.log("忍术");
+    };
+
+    var c1 = new Character("鸣人", 20);
+    var c2 = new Character("佐助", 20);
+    c1.skill();
+    console.log(c1); // 对象身上系统自动添加一个__proto__ 指向我们构造函数的原型对象 prototype
+    console.log(c1.__proto__ === Character.prototype);
+    // 方法的查找规则： 首先先看c1 对象身上是否有 skill 方法，如果有就执行这个对象上的skill
+    // 如果没有skill这个方法，因为有__proto__的存在，就去构造函数原型对象prototype身上去查找
+  </script>
+</body>
+
 </html>

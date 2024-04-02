@@ -10,13 +10,18 @@
 
 <body>
   <script>
-    // filter 筛选数组
-    var arr = [11, 22, 33, 44];
-    var newArr = arr.filter(function (value, index) {
-      // return value >= 20;
-      return value % 2 === 0;
-    });
-    console.log(newArr);
+    var ary = [
+      {
+        id: 1,
+        name: "鸣人",
+      },
+      {
+        id: 2,
+        name: "佐助",
+      },
+    ];
+    var target = ary.find((item) => item.id == 2);
+    console.log(target);
   </script>
 </body>
 

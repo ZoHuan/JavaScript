@@ -1,39 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-  </head>
-  <body>
-    <script>
-      // 改变函数内this指向 js 提供了三种方法 call() apply() bind()
 
-      // 1. call()
-      // call 第一可以调用函数 第二可以改变函数内的this指向
-      // call的主要作用可以实现继承
-      var o = {
-        name: "object",
-      };
-      function fn(a, b) {
-        console.log(this);
-        console.log(a + b);
-      }
-      fn.call(o, 1, 2);
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+</head>
 
-      function Father(name, age, sex) {
-        this.name = name;
-        this.age = age;
-        this.sex = sex;
-      }
+<body>
+  <script>
+    // 改变函数内this指向 js 提供了三种方法 call() apply() bind()
 
-      function Son(name, age, sex) {
-        Father.call(this, name, age, sex);
-      }
+    // 1. call()
+    // call 第一可以调用函数 第二可以改变函数内的this指向
+    // call的主要作用可以实现继承
+    var o = {
+      name: "object",
+    };
+    function fn(a, b) {
+      console.log(this);
+      console.log(a + b);
+    }
+    fn.call(o, 1, 2);
 
-      var son = new Son("鸣人", 20, "男");
-      console.log(son);
-    </script>
-  </body>
+    function Father(name, age, sex) {
+      this.name = name;
+      this.age = age;
+      this.sex = sex;
+    }
+
+    function Son(name, age, sex) {
+      Father.call(this, name, age, sex);
+    }
+
+    var son = new Son("鸣人", 20, "男");
+    console.log(son);
+  </script>
+</body>
+
 </html>
