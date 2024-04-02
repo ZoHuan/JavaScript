@@ -1,30 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-  </head>
-  <body>
-    <script>
-      // 边界符 ^ $
-      var reg = /abc/; // 正则表达式里面不需要加引号
-      // /abc/ 只要包含abc这个字符串返回的都是true
-      console.log(reg.test("abc"));
-      console.log(reg.test("abcd"));
-      console.log(reg.test("aabcd"));
-      console.log("--------------");
-      var reg = /^abc/;
-      console.log(reg.test("abc"));
-      console.log(reg.test("abcd"));
-      console.log(reg.test("aabcd"));
-      console.log("--------------");
-      var reg = /^abc$/; // 精确匹配 要求必须是 abc字符串才符合规范
-      console.log(reg.test("abc"));
-      console.log(reg.test("abcd"));
-      console.log(reg.test("aabcd"));
-      console.log(reg.test("abcabc"));
-    </script>
-  </body>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // 边界符 ^ $
+    var reg = /abc/; // 正则表达式里面不需要加引号
+    // /abc/ 只要包含abc这个字符串返回的都是true
+    console.log(reg.test("abc"));
+    console.log(reg.test("abcd"));
+    console.log(reg.test("aabcd"));
+    console.log("--------------");
+    var reg = /^abc/;
+    console.log(reg.test("abc"));
+    console.log(reg.test("abcd"));
+    console.log(reg.test("aabcd"));
+    console.log("--------------");
+    var reg = /^abc$/; // 精确匹配 要求必须是 abc字符串才符合规范
+    console.log(reg.test("abc"));
+    console.log(reg.test("abcd"));
+    console.log(reg.test("aabcd"));
+    console.log(reg.test("abcabc"));
+  </script>
+</body>
+
 </html>

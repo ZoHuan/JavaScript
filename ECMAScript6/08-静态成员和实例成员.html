@@ -1,34 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-  </head>
-  <body>
-    <script>
-      // 构造函数中的属性和方法我们称为成员，成员可以添加
-      function Character(name, age) {
-        this.name = name;
-        this.age = age;
-        this.skill = function () {
-          console.log("忍术");
-        };
-      }
 
-      var c1 = new Character("鸣人", 20);
-      // 实例成员就是构造函数内部通过this添加的成员 name age skill 就是实例成员
-      // 实例成员只能通过实例化的对象来访问
-      console.log(c1.name);
-      c1.skill();
-      // console.log(Character.name);// 不可以通过构造函数来访问实例成员
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+</head>
 
-      // 2. 静态成员 在构造函数本身添加的成员 sex 就是静态成员
-      Character.sex = "男";
-      // 静态成员只能通过构造函数来访问
-      console.log(Character.sex);
-      console.log(c1.sex); // 不能通过对象来访问
-    </script>
-  </body>
+<body>
+  <script>
+    // 构造函数中的属性和方法我们称为成员，成员可以添加
+    function Character(name, age) {
+      this.name = name;
+      this.age = age;
+      this.skill = function () {
+        console.log("忍术");
+      };
+    }
+
+    var c1 = new Character("鸣人", 20);
+    // 实例成员就是构造函数内部通过this添加的成员 name age skill 就是实例成员
+    // 实例成员只能通过实例化的对象来访问
+    console.log(c1.name);
+    c1.skill();
+    // console.log(Character.name);// 不可以通过构造函数来访问实例成员
+
+    // 2. 静态成员 在构造函数本身添加的成员 sex 就是静态成员
+    Character.sex = "男";
+    // 静态成员只能通过构造函数来访问
+    console.log(Character.sex);
+    console.log(c1.sex); // 不能通过对象来访问
+  </script>
+</body>
+
 </html>

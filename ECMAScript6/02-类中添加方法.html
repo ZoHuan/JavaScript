@@ -1,27 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-  </head>
-  <body>
-    <script>
-      // 1. 创建类 class
-      class Character {
-        constructor(name) {
-          this.name = name;
-        }
-        skill(skill) {
-          // console.log("手里剑");
-          console.log(this.name + ",绝招:" + skill);
-        }
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // 1. 创建类 class
+    class Character {
+      constructor(name) {
+        this.name = name;
       }
-      // 2. 利用类创建对象 new
-      var c1 = new Character("漩涡鸣人");
-      console.log(c1.name);
-      c1.skill("螺旋丸");
-    </script>
-  </body>
+      skill(skill) {
+        // console.log("手里剑");
+        console.log(this.name + ",绝招:" + skill);
+      }
+    }
+    // 2. 利用类创建对象 new
+    var c1 = new Character("漩涡鸣人");
+    console.log(c1.name);
+    c1.skill("螺旋丸");
+  </script>
+</body>
+
 </html>

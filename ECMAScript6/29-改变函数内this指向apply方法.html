@@ -1,33 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-  </head>
-  <body>
-    <script>
-      // 改变函数内this指向 js 提供了三种方法 call() apply() bind()
 
-      // 2. apply() 应用/运用的意思
-      // apply 第一可以调用函数 第二可以改变函数内的this指向
-      // 但是他的参数必须是数组(伪数组)
-      // apply的主要应用 比如可以利用 apply 借助数学内置对象求最大值
-      var o = {
-        name: "object",
-      };
-      function fn(arr) {
-        console.log(this);
-        console.log(arr); // 'red'
-      }
-      fn.apply(o, ["red"]);
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+</head>
 
-      var arr = [1, 2, 3];
-      // var max = Math.max.apply(null, arr);
-      var max = Math.max.apply(Math, arr);
-      var min = Math.min.apply(Math, arr);
-      console.log(min, max);
-    </script>
-  </body>
+<body>
+  <script>
+    // 改变函数内this指向 js 提供了三种方法 call() apply() bind()
+
+    // 2. apply() 应用/运用的意思
+    // apply 第一可以调用函数 第二可以改变函数内的this指向
+    // 但是他的参数必须是数组(伪数组)
+    // apply的主要应用 比如可以利用 apply 借助数学内置对象求最大值
+    var o = {
+      name: "object",
+    };
+    function fn(arr) {
+      console.log(this);
+      console.log(arr); // 'red'
+    }
+    fn.apply(o, ["red"]);
+
+    var arr = [1, 2, 3];
+    // var max = Math.max.apply(null, arr);
+    var max = Math.max.apply(Math, arr);
+    var min = Math.min.apply(Math, arr);
+    console.log(min, max);
+  </script>
+</body>
+
 </html>

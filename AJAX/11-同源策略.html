@@ -1,32 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-  </head>
-  <body>
-    <button onclick="sendMsg()">发送请求</button>
-    <script>
-      /* 
-        同源策略:
-        浏览器的安全策略
-        必须协议、域名、端口号三者完全一致才叫同源
-        非同源数据不能直接互相访问 
-      */
 
-      /* 
-        cors:
-        Cross origin resource sharing 跨域资源共享
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+</head>
 
-        后端设置响应头
-        header('Access-Control-Allow-Origin:*')
-      */
-      function sendMsg() {
-        fetch("http://wthrcdn.etouch.cn/weather_mini?city=福州")
-          .then((response) => response.json())
-          .then((response) => console.log(response));
-      }
-    </script>
-  </body>
+<body>
+  <button onclick="sendMsg()">发送请求</button>
+  <script>
+    /* 
+      同源策略:
+      浏览器的安全策略
+      必须协议、域名、端口号三者完全一致才叫同源
+      非同源数据不能直接互相访问 
+    */
+
+    /* 
+      cors:
+      Cross origin resource sharing 跨域资源共享
+
+      后端设置响应头
+      header('Access-Control-Allow-Origin:*')
+    */
+    function sendMsg() {
+      fetch("http://wthrcdn.etouch.cn/weather_mini?city=福州")
+        .then((response) => response.json())
+        .then((response) => console.log(response));
+    }
+  </script>
+</body>
+
 </html>

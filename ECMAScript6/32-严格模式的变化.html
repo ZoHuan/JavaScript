@@ -1,48 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-  </head>
-  <body>
-    <script>
-      "use strict";
-      // 1. 变量名必须先声明再使用
-      // num = 10;
-      // console.log(num);
 
-      // 2. 不能删除已经声明好的变量
-      var num = 10;
-      console.log(num);
-      // delete num
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+</head>
 
-      // 3. 全局作用域中的函数的 this 是undefined
-      function fn() {
-        console.log(this);
-      }
-      fn();
+<body>
+  <script>
+    "use strict";
+    // 1. 变量名必须先声明再使用
+    // num = 10;
+    // console.log(num);
 
-      // 4. 构造函数不加new调用，this 会报错
-      function Fun() {
-        this.sex = "男";
-      }
-      // Fun();
-      // console.log(window.sex);
-      var f = new Fun();
-      console.log(f.sex);
+    // 2. 不能删除已经声明好的变量
+    var num = 10;
+    console.log(num);
+    // delete num
 
-      // 5. 定时器this还是指向window
-      setTimeout(function () {
-        console.log(this);
-      }, 2000);
+    // 3. 全局作用域中的函数的 this 是undefined
+    function fn() {
+      console.log(this);
+    }
+    fn();
 
-      // 6. 函数里面参数不允许重名
-      function fn1(a, b) {
-        console.log(a + a);
-      }
-      fn1(1, 2);
-    </script>
-  </body>
+    // 4. 构造函数不加new调用，this 会报错
+    function Fun() {
+      this.sex = "男";
+    }
+    // Fun();
+    // console.log(window.sex);
+    var f = new Fun();
+    console.log(f.sex);
+
+    // 5. 定时器this还是指向window
+    setTimeout(function () {
+      console.log(this);
+    }, 2000);
+
+    // 6. 函数里面参数不允许重名
+    function fn1(a, b) {
+      console.log(a + a);
+    }
+    fn1(1, 2);
+  </script>
+</body>
+
 </html>

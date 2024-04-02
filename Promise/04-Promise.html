@@ -1,82 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <script src="./promise-class.js"></script>
-  </head>
-  <body>
-    <script>
-      let p = new Promise((resolve, reject) => {
-        setTimeout(() => {
-          resolve("OK");
-          reject("ERROR");
-        }, 100);
-      });
 
-      // console.log(p);
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <script src="./promise-class.js"></script>
+</head>
 
-      // const result = p.then(
-      //   (value) => {
-      //     console.log("one", value);
-      //     // return value;
-      //     // return new Promise((resolve, reject) => {
-      //     //   resolve("success");
-      //     //   reject("failure");
-      //     // });
-
-      //     throw "FAIL";
-      //   },
-      //   (reason) => {
-      //     console.warn("one", reason);
-      //   }
-      // );
-      // console.log(result);
-
-      let res = p
-        .then((value) => {
-          console.log("one");
-        })
-        .then((value) => {
-          console.log("two");
-        })
-        .then((value) => {
-          console.log("three");
-        })
-        .catch((reason) => {
-          console.warn(reason);
-        });
-
-      // console.log(res);
-
-      let ps = Promise.resolve("OK");
-      let ps2 = Promise.resolve(
-        new Promise((resolve, reject) => {
-          // resolve("Success");
-          reject("Error");
-        })
-      );
-
-      let pj = Promise.reject("OK");
-      let pj2 = Promise.reject(
-        new Promise((resolve, reject) => {
-          resolve("Success");
-          reject("Error");
-        })
-      );
-
-      let p1 = new Promise((resolve, reject) => {
+<body>
+  <script>
+    let p = new Promise((resolve, reject) => {
+      setTimeout(() => {
         resolve("OK");
+        reject("ERROR");
+      }, 100);
+    });
+
+    // console.log(p);
+
+    // const result = p.then(
+    //   (value) => {
+    //     console.log("one", value);
+    //     // return value;
+    //     // return new Promise((resolve, reject) => {
+    //     //   resolve("success");
+    //     //   reject("failure");
+    //     // });
+
+    //     throw "FAIL";
+    //   },
+    //   (reason) => {
+    //     console.warn("one", reason);
+    //   }
+    // );
+    // console.log(result);
+
+    let res = p
+      .then((value) => {
+        console.log("one");
+      })
+      .then((value) => {
+        console.log("two");
+      })
+      .then((value) => {
+        console.log("three");
+      })
+      .catch((reason) => {
+        console.warn(reason);
       });
-      let p2 = Promise.resolve("Success");
-      let p3 = Promise.resolve("Yeah");
 
-      // let result = Promise.all([p1, p2, p3]);
-      let result = Promise.race([p1, p2, p3]);
+    // console.log(res);
 
-      console.log(result);
-    </script>
-  </body>
+    let ps = Promise.resolve("OK");
+    let ps2 = Promise.resolve(
+      new Promise((resolve, reject) => {
+        // resolve("Success");
+        reject("Error");
+      })
+    );
+
+    let pj = Promise.reject("OK");
+    let pj2 = Promise.reject(
+      new Promise((resolve, reject) => {
+        resolve("Success");
+        reject("Error");
+      })
+    );
+
+    let p1 = new Promise((resolve, reject) => {
+      resolve("OK");
+    });
+    let p2 = Promise.resolve("Success");
+    let p3 = Promise.resolve("Yeah");
+
+    // let result = Promise.all([p1, p2, p3]);
+    let result = Promise.race([p1, p2, p3]);
+
+    console.log(result);
+  </script>
+</body>
+
 </html>
