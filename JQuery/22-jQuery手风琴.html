@@ -1,146 +1,157 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="stylesheet" href="css/base.css" />
-    <style>
-      .wrap {
-        width: 1046px;
-        margin: auto;
-        margin-top: 140px;
-      }
-      ul {
-        overflow: hidden;
-      }
-      li {
-        float: left;
-        position: relative;
-        width: 106px;
-        height: 354px;
-      }
-      li.current {
-        width: 200px;
-      }
-      li.current .big {
-        display: block;
-      }
-      li.current div {
-        display: none;
-      }
-      li a div {
-        display: inline-block;
-        position: absolute;
-      }
-      .big {
-        width: 200px;
-        display: none;
-      }
-      .small {
-        position: absolute;
-        top: 0;
-        width: 260px;
-        clip: rect(0px, 106px, 354px, 0px);
-      }
-    </style>
-    <script src="jquery\jquery.min.js"></script>
-    <script>
-      $(function () {
-        $(".wrap li").mouseenter(function () {
-          $(this)
-            .stop()
-            .animate({ width: 200 }, 200)
-            .find("div")
-            .stop()
-            .fadeOut()
-            .siblings(".big")
-            .stop()
-            .fadeIn();
-        });
-        $(".wrap li").mouseleave(function () {
-          $(this)
-            .stop()
-            .animate({ width: 106 })
-            .find("div")
-            .stop()
-            .fadeIn()
-            .siblings(".big")
-            .stop()
-            .fadeOut();
-        });
-      });
-    </script>
-  </head>
 
-  <body>
-    <div class="wrap">
-      <ul>
-        <li class="current">
-          <a href="#">
-            <div>
-              <img src="./images/Digimon01.jpg" alt="" class="small" />
-            </div>
-            <img src="./images/Digimon01.jpg" alt="" class="big" />
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <div>
-              <img src="./images/Digimon02.jpg" alt="" class="small" />
-            </div>
-            <img src="./images/Digimon02.jpg" alt="" class="big" />
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <div>
-              <img src="./images/Digimon03.jpg" alt="" class="small" />
-            </div>
-            <img src="./images/Digimon03.jpg" alt="" class="big" />
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <div>
-              <img src="./images/Digimon04.jpg" alt="" class="small" />
-            </div>
-            <img src="./images/Digimon04.jpg" alt="" class="big" />
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <div>
-              <img src="./images/Digimon05.jpg" alt="" class="small" />
-            </div>
-            <img src="./images/Digimon05.jpg" alt="" class="big" />
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <div>
-              <img src="./images/Digimon06.jpg" alt="" class="small" />
-            </div>
-            <img src="./images/Digimon06.jpg" alt="" class="big" />
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <div>
-              <img src="./images/Digimon07.jpg" alt="" class="small" />
-            </div>
-            <img src="./images/Digimon07.jpg" alt="" class="big" />
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <div>
-              <img src="./images/Digimon08.jpg" alt="" class="small" />
-            </div>
-            <img src="./images/Digimon08.jpg" alt="" class="big" />
-          </a>
-        </li>
-      </ul>
-    </div>
-  </body>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <link rel="stylesheet" href="css/base.css" />
+  <script src="jquery\jquery.min.js"></script>
+  <style>
+    .wrap {
+      width: 1046px;
+      margin: auto;
+      margin-top: 140px;
+    }
+
+    ul {
+      overflow: hidden;
+    }
+
+    li {
+      float: left;
+      position: relative;
+      width: 106px;
+      height: 354px;
+    }
+
+    li.current {
+      width: 200px;
+    }
+
+    li.current .big {
+      display: block;
+    }
+
+    li.current div {
+      display: none;
+    }
+
+    li a div {
+      display: inline-block;
+      position: absolute;
+    }
+
+    .big {
+      width: 200px;
+      display: none;
+    }
+
+    .small {
+      position: absolute;
+      top: 0;
+      width: 260px;
+      clip: rect(0px, 106px, 354px, 0px);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <ul>
+      <li class="current">
+        <a href="#">
+          <div>
+            <img src="./images/Digimon01.jpg" alt="" class="small" />
+          </div>
+          <img src="./images/Digimon01.jpg" alt="" class="big" />
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          <div>
+            <img src="./images/Digimon02.jpg" alt="" class="small" />
+          </div>
+          <img src="./images/Digimon02.jpg" alt="" class="big" />
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          <div>
+            <img src="./images/Digimon03.jpg" alt="" class="small" />
+          </div>
+          <img src="./images/Digimon03.jpg" alt="" class="big" />
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          <div>
+            <img src="./images/Digimon04.jpg" alt="" class="small" />
+          </div>
+          <img src="./images/Digimon04.jpg" alt="" class="big" />
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          <div>
+            <img src="./images/Digimon05.jpg" alt="" class="small" />
+          </div>
+          <img src="./images/Digimon05.jpg" alt="" class="big" />
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          <div>
+            <img src="./images/Digimon06.jpg" alt="" class="small" />
+          </div>
+          <img src="./images/Digimon06.jpg" alt="" class="big" />
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          <div>
+            <img src="./images/Digimon07.jpg" alt="" class="small" />
+          </div>
+          <img src="./images/Digimon07.jpg" alt="" class="big" />
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          <div>
+            <img src="./images/Digimon08.jpg" alt="" class="small" />
+          </div>
+          <img src="./images/Digimon08.jpg" alt="" class="big" />
+        </a>
+      </li>
+    </ul>
+  </div>
+
+  <script>
+    $(function () {
+      $(".wrap li").mouseenter(function () {
+        $(this)
+          .stop()
+          .animate({ width: 200 }, 200)
+          .find("div")
+          .stop()
+          .fadeOut()
+          .siblings(".big")
+          .stop()
+          .fadeIn();
+      });
+      $(".wrap li").mouseleave(function () {
+        $(this)
+          .stop()
+          .animate({ width: 106 })
+          .find("div")
+          .stop()
+          .fadeIn()
+          .siblings(".big")
+          .stop()
+          .fadeOut();
+      });
+    });
+  </script>
+</body>
+
 </html>

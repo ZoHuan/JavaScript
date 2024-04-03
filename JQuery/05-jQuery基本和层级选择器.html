@@ -1,44 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <script src="jquery\jquery.min.js"></script>
-  </head>
-  <body>
-    <div>DIV</div>
-    <div class="nav">NAV</div>
-    <p>P</p>
-    <ol>
-      <li>我不愿让你一个人，一个人在人海浮沉</li>
-      <li>我不愿让你一个人，一个人在人海浮沉</li>
-      <li>我不愿让你一个人，一个人在人海浮沉</li>
-      <li>我不愿让你一个人，一个人在人海浮沉</li>
-      <li>我不愿让你一个人，一个人在人海浮沉</li>
-    </ol>
-    <ul>
-      <li>终于你身影消失在人海尽头</li>
-      <li>终于你身影消失在人海尽头</li>
-      <li>终于你身影消失在人海尽头</li>
-      <li>终于你身影消失在人海尽头</li>
-      <li>终于你身影消失在人海尽头</li>
-    </ul>
-    <script>
-      $(function () {
-        /* 
-        $("*");            匹配所有元素
-        $("#id");          获取指定ID的元素
-        $(".class");       获取同一类class的元素
-        $("div");          获取同一类标签的所有元素
-        $("div,p,li");     获取多个元素
-        $("li.current");   获取交集元素
-        $("ul>li");        获取子代元素
-        $("ul li");        获取后代元素
-        */
-        console.log($(".nav"));
-        console.log($("ul li"));
-      });
-    </script>
-  </body>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <script src="jquery\jquery.min.js"></script>
+</head>
+
+<body>
+  <div>DIV</div>
+  <div class="nav">NAV</div>
+  <p>P</p>
+  <ol>
+    <li>我不愿让你一个人，一个人在人海浮沉</li>
+    <li>我不愿让你一个人，一个人在人海浮沉</li>
+    <li>我不愿让你一个人，一个人在人海浮沉</li>
+    <li>我不愿让你一个人，一个人在人海浮沉</li>
+    <li>我不愿让你一个人，一个人在人海浮沉</li>
+  </ol>
+  <ul>
+    <li>终于你身影消失在人海尽头</li>
+    <li>终于你身影消失在人海尽头</li>
+    <li>终于你身影消失在人海尽头</li>
+    <li>终于你身影消失在人海尽头</li>
+    <li>终于你身影消失在人海尽头</li>
+  </ul>
+  <script>
+    $(function () {
+      /* 
+      $("*");            匹配所有元素
+      $("#id");          获取指定ID的元素
+      $(".class");       获取同一类class的元素
+      $("div");          获取同一类标签的所有元素
+      $("div,p,li");     获取多个元素
+      $("li.current");   获取交集元素
+      $("ul>li");        获取子代元素
+      $("ul li");        获取后代元素
+      */
+      console.log($(".nav"));
+      console.log($("ul li"));
+    });
+  </script>
+</body>
+
 </html>

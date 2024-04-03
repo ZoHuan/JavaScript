@@ -1,44 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <script src="jquery\jquery.min.js"></script>
-    <style>
-      div {
-        height: 200px;
-        width: 200px;
-        background-color: cornflowerblue;
-        transition: all 2s;
-      }
-      .current {
-        background-color: cadetblue;
-        transform: rotate(360deg);
-      }
-    </style>
-  </head>
 
-  <body>
-    <div class="current"></div>
-    <script>
-      // 操作样式之css方法
-      $(function () {
-        // 1. 添加类 addClass()
-        // $("div").click(function () {
-        //   $(this).addClass("current");
-        // });
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <script src="jquery\jquery.min.js"></script>
+  <style>
+    div {
+      height: 200px;
+      width: 200px;
+      background-color: cornflowerblue;
+      transition: all 2s;
+    }
 
-        // 2. 删除类 removeClass()
-        // $("div").click(function () {
-        //   $("div").removeClass("current");
-        // });
+    .current {
+      background-color: cadetblue;
+      transform: rotate(360deg);
+    }
+  </style>
+</head>
 
-        // 3. 切换类 toggleClass()
-        $("div").click(function () {
-          $("div").toggleClass("current");
-        });
+<body>
+  <div class="current"></div>
+  <script>
+    // 操作样式之css方法
+    $(function () {
+      // 1. 添加类 addClass()
+      // $("div").click(function () {
+      //   $(this).addClass("current");
+      // });
+
+      // 2. 删除类 removeClass()
+      // $("div").click(function () {
+      //   $("div").removeClass("current");
+      // });
+
+      // 3. 切换类 toggleClass()
+      $("div").click(function () {
+        $("div").toggleClass("current");
       });
-    </script>
-  </body>
+    });
+  </script>
+</body>
+
 </html>

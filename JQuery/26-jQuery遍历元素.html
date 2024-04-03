@@ -1,57 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <script src="jquery\jquery.min.js"></script>
-  </head>
-  <body>
-    <div>1</div>
-    <div>2</div>
-    <div>3</div>
-    <script>
-      /*
-        如果针对于同一类元素做不同操作，需要用到遍历元素(类似for，但是比for强大)
-        1. each() 方法遍历元素
-        (1) each() 方法遍历的每一个元素。主要用DOM处理。
-        (2) 里面的回调函数有2个参数: index是每个元素的索引号，domELe是每个DOM元素对象，不是jquery对象
-        (3) 要想使用jquery方法，需要给这个dom元素转换为jquery对象$(domEle)
 
-        2. $.each(object,function(index,element){})
-        (1) $.each()方法可用于遍历任何对象。主要用于数据处理，比如数组，对象
-        (2) 里面的函数有2个参数:index是每个元素的索引号，element遍历内容
-      */
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <script src="jquery\jquery.min.js"></script>
+</head>
 
-      $(function () {
-        // 1.each() 方法
-        // $("div").css("color", "red");
-        let sum = 0;
-        let arr = ["deeppink", "darkcyan", "dodgerblue"];
-        $("div").each(function (index, domEle) {
-          console.log(index);
-          console.log(domEle);
-          $(domEle).css("color", arr[index]);
-          sum += parseInt($(domEle).text());
-        });
-        console.log(sum);
+<body>
+  <div>1</div>
+  <div>2</div>
+  <div>3</div>
+  <script>
+    /*
+      如果针对于同一类元素做不同操作，需要用到遍历元素(类似for，但是比for强大)
+      1. each() 方法遍历元素
+      (1) each() 方法遍历的每一个元素。主要用DOM处理。
+      (2) 里面的回调函数有2个参数: index是每个元素的索引号，domELe是每个DOM元素对象，不是jquery对象
+      (3) 要想使用jquery方法，需要给这个dom元素转换为jquery对象$(domEle)
 
-        // 2. $.each() 方法
-        $.each($("div"), function (index, ele) {
-          console.log(index);
-          console.log(ele);
-        });
+      2. $.each(object,function(index,element){})
+      (1) $.each()方法可用于遍历任何对象。主要用于数据处理，比如数组，对象
+      (2) 里面的函数有2个参数:index是每个元素的索引号，element遍历内容
+    */
 
-        $.each(arr, function (i, ele) {
-          console.log(i);
-          console.log(ele);
-        });
-
-        $.each({ name: "jQuery", age: 20 }, function (i, ele) {
-          console.log(i);
-          console.log(ele);
-        });
+    $(function () {
+      // 1.each() 方法
+      // $("div").css("color", "red");
+      let sum = 0;
+      let arr = ["deeppink", "darkcyan", "dodgerblue"];
+      $("div").each(function (index, domEle) {
+        console.log(index);
+        console.log(domEle);
+        $(domEle).css("color", arr[index]);
+        sum += parseInt($(domEle).text());
       });
-    </script>
-  </body>
+      console.log(sum);
+
+      // 2. $.each() 方法
+      $.each($("div"), function (index, ele) {
+        console.log(index);
+        console.log(ele);
+      });
+
+      $.each(arr, function (i, ele) {
+        console.log(i);
+        console.log(ele);
+      });
+
+      $.each({ name: "jQuery", age: 20 }, function (i, ele) {
+        console.log(i);
+        console.log(ele);
+      });
+    });
+  </script>
+</body>
+
 </html>

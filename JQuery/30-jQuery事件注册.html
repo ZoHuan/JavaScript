@@ -1,75 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <style>
-      div {
-        width: 100px;
-        height: 100px;
-        background-color: cornflowerblue;
-      }
 
-      .current {
-        background-color: coral;
-      }
-    </style>
-    <script src="jquery\jquery.min.js"></script>
-  </head>
-  <body>
-    <div></div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <script src="jquery\jquery.min.js"></script>
+  <style>
+    div {
+      width: 100px;
+      height: 100px;
+      background-color: cornflowerblue;
+    }
 
-    <ul>
-      <li>我不愿让你一个人</li>
-      <li>我不愿让你一个人</li>
-      <li>我不愿让你一个人</li>
-      <li>我不愿让你一个人</li>
-      <li>我不愿让你一个人</li>
-    </ul>
+    .current {
+      background-color: coral;
+    }
+  </style>
+</head>
 
-    <ol></ol>
-    <script>
-      $(function () {
-        // 1. 单个事件注册
-        // $("div").click(function () {
-        //   $(this).css("background", "cadetblue");
-        // });
-        // $("div").mouseenter(function () {
-        //   $(this).css("background", "coral");
-        // });
-        // 2. 事件处理on
-        // $("div").on({
-        //   click: function () {
-        //     $(this).css("background", "cadetblue");
-        //   },
-        //   mouseenter: function () {
-        //     $(this).css("background", "coral");
-        //   },
-        //   mouseleave: function () {
-        //     $(this).css("background", "cyan");
-        //   },
-        // });
-        $("div").on("mouseenter mouseleave", function () {
-          $(this).toggleClass("current");
-        });
+<body>
+  <div></div>
 
-        // (2) on可以实现事件委托（委派）
-        // click是绑定在ul身上的，但是触发的对象是ul里面的小li
-        $("ul").on("click", "li", function () {
-          alert("点击");
-        });
+  <ul>
+    <li>我不愿让你一个人</li>
+    <li>我不愿让你一个人</li>
+    <li>我不愿让你一个人</li>
+    <li>我不愿让你一个人</li>
+    <li>我不愿让你一个人</li>
+  </ul>
 
-        // (3) on可以给动态创建的元素绑定事件
-        // $("ol li").click(function () {
-        //   alert("点击");
-        // });
-        $("ol").on("click", "li", function () {
-          alert("点击");
-        });
-        var li = $("<li>一个人在人海浮沉</li>");
-        $("ol").append(li);
+  <ol></ol>
+  <script>
+    $(function () {
+      // 1. 单个事件注册
+      // $("div").click(function () {
+      //   $(this).css("background", "cadetblue");
+      // });
+      // $("div").mouseenter(function () {
+      //   $(this).css("background", "coral");
+      // });
+      // 2. 事件处理on
+      // $("div").on({
+      //   click: function () {
+      //     $(this).css("background", "cadetblue");
+      //   },
+      //   mouseenter: function () {
+      //     $(this).css("background", "coral");
+      //   },
+      //   mouseleave: function () {
+      //     $(this).css("background", "cyan");
+      //   },
+      // });
+      $("div").on("mouseenter mouseleave", function () {
+        $(this).toggleClass("current");
       });
-    </script>
-  </body>
+
+      // (2) on可以实现事件委托（委派）
+      // click是绑定在ul身上的，但是触发的对象是ul里面的小li
+      $("ul").on("click", "li", function () {
+        alert("点击");
+      });
+
+      // (3) on可以给动态创建的元素绑定事件
+      // $("ol li").click(function () {
+      //   alert("点击");
+      // });
+      $("ol").on("click", "li", function () {
+        alert("点击");
+      });
+      var li = $("<li>一个人在人海浮沉</li>");
+      $("ol").append(li);
+    });
+  </script>
+</body>
+
 </html>

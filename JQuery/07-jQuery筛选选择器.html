@@ -1,40 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <script src="jquery\jquery.min.js"></script>
-  </head>
-  <body>
-    <ul>
-      <li>我不愿让你一个人，一个人在人海浮沉</li>
-      <li>我不愿让你一个人，一个人在人海浮沉</li>
-      <li>我不愿让你一个人，一个人在人海浮沉</li>
-      <li>我不愿让你一个人，一个人在人海浮沉</li>
-      <li>我不愿让你一个人，一个人在人海浮沉</li>
-    </ul>
 
-    <ol>
-      <li>终于你身影消失在人海尽头</li>
-      <li>终于你身影消失在人海尽头</li>
-      <li>终于你身影消失在人海尽头</li>
-      <li>终于你身影消失在人海尽头</li>
-      <li>终于你身影消失在人海尽头</li>
-    </ol>
-    <script>
-      $(function () {
-        /*
-        :first      获取第一个元素
-        :last       获取最后一个元素
-        :eq(index)  获取到的元素中，索引号为2的元素，索引号index从0开始
-        :odd        获取到的元素中，选择索引号为奇数的元素
-        :even       获取到的元素中，选择索引号为偶数的元素
-        */
-        $("ul li:first").css("color", "cadetblue");
-        $("ul li:eq(2)").css("color", "cornflowerblue");
-        $("ol li:odd").css("color", "cornflowerblue");
-      });
-    </script>
-  </body>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <script src="jquery\jquery.min.js"></script>
+</head>
+
+<body>
+  <ul>
+    <li>我不愿让你一个人，一个人在人海浮沉</li>
+    <li>我不愿让你一个人，一个人在人海浮沉</li>
+    <li>我不愿让你一个人，一个人在人海浮沉</li>
+    <li>我不愿让你一个人，一个人在人海浮沉</li>
+    <li>我不愿让你一个人，一个人在人海浮沉</li>
+  </ul>
+
+  <ol>
+    <li>终于你身影消失在人海尽头</li>
+    <li>终于你身影消失在人海尽头</li>
+    <li>终于你身影消失在人海尽头</li>
+    <li>终于你身影消失在人海尽头</li>
+    <li>终于你身影消失在人海尽头</li>
+  </ol>
+  <script>
+    $(function () {
+      /*
+      :first      获取第一个元素
+      :last       获取最后一个元素
+      :eq(index)  获取到的元素中，索引号为2的元素，索引号index从0开始
+      :odd        获取到的元素中，选择索引号为奇数的元素
+      :even       获取到的元素中，选择索引号为偶数的元素
+      */
+      $("ul li:first").css("color", "cadetblue");
+      $("ul li:eq(2)").css("color", "cornflowerblue");
+      $("ol li:odd").css("color", "cornflowerblue");
+    });
+  </script>
+</body>
+
 </html>

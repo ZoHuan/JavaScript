@@ -1,75 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <script src="jquery\jquery.min.js"></script>
-  </head>
-  <body>
-    <div class="grandpa">
-      <div class="father">
-        <div class="son">son</div>
-      </div>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <script src="jquery\jquery.min.js"></script>
+</head>
+
+<body>
+  <div class="grandpa">
+    <div class="father">
+      <div class="son">son</div>
     </div>
+  </div>
 
-    <div class="nav">
-      <p>一级</p>
-      <div>
-        <p>三级</p>
-      </div>
+  <div class="nav">
+    <p>一级</p>
+    <div>
+      <p>三级</p>
     </div>
+  </div>
 
-    <ol>
-      <li>我不愿让你一个人，一个人在人海浮沉</li>
-      <li>我不愿让你一个人，一个人在人海浮沉</li>
-      <li class="item">我不愿让你一个人，一个人在人海浮沉</li>
-      <li>我不愿让你一个人，一个人在人海浮沉</li>
-      <li>我不愿让你一个人，一个人在人海浮沉</li>
-      <li>我不愿让你一个人，一个人在人海浮沉</li>
-    </ol>
+  <ol>
+    <li>我不愿让你一个人，一个人在人海浮沉</li>
+    <li>我不愿让你一个人，一个人在人海浮沉</li>
+    <li class="item">我不愿让你一个人，一个人在人海浮沉</li>
+    <li>我不愿让你一个人，一个人在人海浮沉</li>
+    <li>我不愿让你一个人，一个人在人海浮沉</li>
+    <li>我不愿让你一个人，一个人在人海浮沉</li>
+  </ol>
 
-    <ul>
-      <li>终于你身影消失在人海尽头</li>
-      <li>终于你身影消失在人海尽头</li>
-      <li>终于你身影消失在人海尽头</li>
-      <li>终于你身影消失在人海尽头</li>
-      <li>终于你身影消失在人海尽头</li>
-      <li>终于你身影消失在人海尽头</li>
-    </ul>
+  <ul>
+    <li>终于你身影消失在人海尽头</li>
+    <li>终于你身影消失在人海尽头</li>
+    <li>终于你身影消失在人海尽头</li>
+    <li>终于你身影消失在人海尽头</li>
+    <li>终于你身影消失在人海尽头</li>
+    <li>终于你身影消失在人海尽头</li>
+  </ul>
 
-    <script>
-      $(function () {
-        /*
-        parent()              查找父级
-        children(selector)    相当于$("ul>li"),最近一级
-        find(selector)        相当于$("ul li"),后代选择器
-        siblings(selector)    查找兄弟节点，不包括本身
-        nextAll([expr])       查找当前元素之后所有的同辈元素
-        prevtAll([expr])      查找当前元素之前所有的同辈元素
-        hasClass(class)       检查当前的元素是否含有某个特定的类
-        eq(index)             相当于$("li:eq(2)"),index从0开始
-        */
+  <script>
+    $(function () {
+      /*
+      parent()              查找父级
+      children(selector)    相当于$("ul>li"),最近一级
+      find(selector)        相当于$("ul li"),后代选择器
+      siblings(selector)    查找兄弟节点，不包括本身
+      nextAll([expr])       查找当前元素之后所有的同辈元素
+      prevtAll([expr])      查找当前元素之前所有的同辈元素
+      hasClass(class)       检查当前的元素是否含有某个特定的类
+      eq(index)             相当于$("li:eq(2)"),index从0开始
+      */
 
-        console.log($(".son").parent());
+      console.log($(".son").parent());
 
-        $(".nav").children("p").css("color", "cadetblue");
+      $(".nav").children("p").css("color", "cadetblue");
 
-        $(".nav").find("p").css("color", "cornflowerblue");
+      $(".nav").find("p").css("color", "cornflowerblue");
 
-        $("ol .item").siblings("li").css("color", "cornflowerblue");
+      $("ol .item").siblings("li").css("color", "cornflowerblue");
 
-        let index = 2;
-        // $("ul li:eq(2)").css("color", "cadetblue");
-        $("ul li:eq(" + index + ")").css("color", "cadetblue");
+      let index = 2;
+      // $("ul li:eq(2)").css("color", "cadetblue");
+      $("ul li:eq(" + index + ")").css("color", "cadetblue");
 
-        // $("ul li").eq(3).css("color", "cornflowerblue");
-        $("ul li")
-          .eq(index + 1)
-          .css("color", "cornflowerblue");
+      // $("ul li").eq(3).css("color", "cornflowerblue");
+      $("ul li")
+        .eq(index + 1)
+        .css("color", "cornflowerblue");
 
-        console.log($("ol li").hasClass("item"));
-      });
-    </script>
-  </body>
+      console.log($("ol li").hasClass("item"));
+    });
+  </script>
+</body>
+
 </html>

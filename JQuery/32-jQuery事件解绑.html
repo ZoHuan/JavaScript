@@ -1,55 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <style>
-      div {
-        width: 100px;
-        height: 100px;
-        background-color: cornflowerblue;
-      }
-    </style>
-    <script src="jquery\jquery.min.js"></script>
-  </head>
-  <body>
-    <div></div>
 
-    <ul>
-      <li>我不愿让你一个人</li>
-      <li>我不愿让你一个人</li>
-      <li>我不愿让你一个人</li>
-      <li>我不愿让你一个人</li>
-      <li>我不愿让你一个人</li>
-    </ul>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <script src="jquery\jquery.min.js"></script>
+  <style>
+    div {
+      width: 100px;
+      height: 100px;
+      background-color: cornflowerblue;
+    }
+  </style>
+</head>
 
-    <p>一个人在人海浮沉</p>
-    <script>
-      $(function () {
-        $("div").on({
-          click: function () {
-            console.log("点击");
-          },
-          mouseenter: function () {
-            console.log("滑过");
-          },
-        });
+<body>
+  <div></div>
 
-        $("ul").on("click", "li", function () {
-          alert("点击");
-        });
+  <ul>
+    <li>我不愿让你一个人</li>
+    <li>我不愿让你一个人</li>
+    <li>我不愿让你一个人</li>
+    <li>我不愿让你一个人</li>
+    <li>我不愿让你一个人</li>
+  </ul>
 
-        // 1. 事件解绑 off
-        // $("div").off();// 这个是解除了div身上的所有事件
-        $("div").off("click"); // 这个是解除了div身上的点击事件
-        $("ul").off("click", "li"); // 解除事件委托
-
-        // 2. one() 只触发一次事件
-        $("p").one("click", function () {
-          alert("点击");
-        });
+  <p>一个人在人海浮沉</p>
+  <script>
+    $(function () {
+      $("div").on({
+        click: function () {
+          console.log("点击");
+        },
+        mouseenter: function () {
+          console.log("滑过");
+        },
       });
-    </script>
-  </body>
+
+      $("ul").on("click", "li", function () {
+        alert("点击");
+      });
+
+      // 1. 事件解绑 off
+      // $("div").off();// 这个是解除了div身上的所有事件
+      $("div").off("click"); // 这个是解除了div身上的点击事件
+      $("ul").off("click", "li"); // 解除事件委托
+
+      // 2. one() 只触发一次事件
+      $("p").one("click", function () {
+        alert("点击");
+      });
+    });
+  </script>
+</body>
+
 </html>
