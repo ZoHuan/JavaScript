@@ -1,58 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>密码校验</title>
-    <style>
-      div {
-        width: 600px;
-        margin: 100px auto;
-      }
 
-      div input {
-        width: 220px;
-        height: 20px;
-        line-height: 30px;
-      }
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>密码校验</title>
+  <style>
+    div {
+      width: 600px;
+      margin: 100px auto;
+    }
 
-      .message {
-        display: inline-block;
-        margin: 0;
-        padding: 0;
-        padding-left: 20px;
-        font-size: 14px;
-        color: #999;
-      }
+    div input {
+      width: 220px;
+      height: 20px;
+      line-height: 30px;
+    }
 
-      .wrong {
-        color: #e65757;
-      }
+    .message {
+      display: inline-block;
+      margin: 0;
+      padding: 0;
+      padding-left: 20px;
+      font-size: 14px;
+      color: #999;
+    }
 
-      .right {
-        color: #08b408;
-      }
-    </style>
-  </head>
+    .wrong {
+      color: #e65757;
+    }
 
-  <body>
-    <div class="register">
-      <input type="password" class="ipt" />
-      <p class="message">请输入6~16位密码</p>
-    </div>
-    <script>
-      var input = document.querySelector(".ipt");
-      var message = document.querySelector(".message");
-      input.onfocus = function () {};
-      input.onblur = function () {
-        if (this.value.length < 6 || this.value.length > 16) {
-          message.innerHTML = "☹您输入的位数不对要求6~16位";
-          message.className = "message wrong";
-        } else {
-          message.innerHTML = "☺您输入的正确";
-          message.className = "message right";
-        }
-      };
-    </script>
-  </body>
+    .right {
+      color: #08b408;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="register">
+    <input type="password" class="ipt" />
+    <p class="message">请输入6~16位密码</p>
+  </div>
+  <script>
+    var input = document.querySelector(".ipt");
+    var message = document.querySelector(".message");
+    input.onfocus = function () { };
+    input.onblur = function () {
+      if (this.value.length < 6 || this.value.length > 16) {
+        message.innerHTML = "☹您输入的位数不对要求6~16位";
+        message.className = "message wrong";
+      } else {
+        message.innerHTML = "☺您输入的正确";
+        message.className = "message right";
+      }
+    };
+  </script>
+</body>
+
 </html>

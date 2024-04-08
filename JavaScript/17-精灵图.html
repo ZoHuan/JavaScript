@@ -1,60 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>精灵图</title>
-    <style>
-      * {
-        margin: 0;
-        padding: 0;
-      }
 
-      ul,
-      li {
-        padding: 0;
-        margin: 0;
-        list-style: none;
-      }
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>精灵图</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
 
-      .box {
-        width: 250px;
-        margin: 100px auto;
-      }
+    ul,
+    li {
+      padding: 0;
+      margin: 0;
+      list-style: none;
+    }
 
-      .box li {
-        float: left;
-        width: 24px;
-        height: 24px;
-        background-color: aqua;
-        margin: 15px;
-        background: url(images/sprite.png);
-      }
-    </style>
-  </head>
+    .box {
+      width: 250px;
+      margin: 100px auto;
+    }
 
-  <body>
-    <div class="box">
-      <ul>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-      </ul>
-    </div>
-    <script>
-      var lis = document.querySelectorAll("li");
-      for (let i = 0; i < lis.length; i++) {
-        lis[i].style.backgroundPositionY = i * -44 + "px";
-      }
-    </script>
-  </body>
+    .box li {
+      float: left;
+      width: 24px;
+      height: 24px;
+      background-color: aqua;
+      margin: 15px;
+      background: url(images/sprite.png);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="box">
+    <ul>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+    </ul>
+  </div>
+  <script>
+    var lis = document.querySelectorAll("li");
+    for (let i = 0; i < lis.length; i++) {
+      lis[i].style.backgroundPositionY = i * -44 + "px";
+    }
+  </script>
+</body>
+
 </html>

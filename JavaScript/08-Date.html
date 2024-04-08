@@ -1,77 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Date</title>
     <script>
-      var date = new Date();
-      console.log(date);
-      var year = date.getFullYear();
-      var month = date.getMonth() + 1;
-      var dates = date.getDate();
-      var arr = [
-        "星期天",
-        "星期一",
-        "星期二",
-        "星期三",
-        "星期四",
-        "星期五",
-        "星期六",
-      ];
-      var day = date.getDay();
-      console.log(year + "年" + month + "月" + day + "日 " + arr[day]);
-
-      console.log(
-        date.getHours() +
-          "时" +
-          date.getMinutes() +
-          "分" +
-          date.getSeconds() +
-          "秒"
-      );
-
-      // 输出时分秒函数
-      function getTimer() {
         var date = new Date();
-        var h = date.getHours();
-        h = h < 10 ? "0" + h : h;
-        var m = date.getMinutes();
-        m = m < 10 ? "0" + m : m;
-        var s = date.getSeconds();
-        s = s < 10 ? "0" + s : s;
-        return h + ":" + m + ":" + s;
-      }
-      console.log(getTimer());
+        console.log(date);
+        var year = date.getFullYear();
+        var month = date.getMonth() + 1;
+        var dates = date.getDate();
+        var arr = [
+            "星期天",
+            "星期一",
+            "星期二",
+            "星期三",
+            "星期四",
+            "星期五",
+            "星期六",
+        ];
+        var day = date.getDay();
+        console.log(year + "年" + month + "月" + day + "日 " + arr[day]);
 
-      // 获取1970到当前时间的毫秒数
-      console.log(date.valueOf());
-      console.log(date.getTime());
+        console.log(
+            date.getHours() +
+            "时" +
+            date.getMinutes() +
+            "分" +
+            date.getSeconds() +
+            "秒"
+        );
 
-      var time = +new Date();
-      console.log(time);
+        // 输出时分秒函数
+        function getTimer() {
+            var date = new Date();
+            var h = date.getHours();
+            h = h < 10 ? "0" + h : h;
+            var m = date.getMinutes();
+            m = m < 10 ? "0" + m : m;
+            var s = date.getSeconds();
+            s = s < 10 ? "0" + s : s;
+            return h + ":" + m + ":" + s;
+        }
+        console.log(getTimer());
 
-      console.log(Date.now());
+        // 获取1970到当前时间的毫秒数
+        console.log(date.valueOf());
+        console.log(date.getTime());
 
-      // 倒计时函数
-      function countDown(time) {
-        var nowTime = +new Date();
-        var inputTime = +new Date(time);
-        var times = (inputTime - nowTime) / 1000;
-        var d = parseInt(times / 60 / 60 / 24);
-        d = d < 10 ? "0" + d : d;
-        var h = parseInt((times / 60 / 60) % 24);
-        h = h < 10 ? "0" + h : h;
-        var m = parseInt((times / 60) % 60);
-        m = m < 10 ? "0" + m : m;
-        var s = parseInt(times % 60);
-        s = s < 10 ? "0" + s : s;
-        return d + "天" + h + "时" + m + "分" + s + "秒";
-      }
+        var time = +new Date();
+        console.log(time);
 
-      console.log(countDown("2020-8-31 12:00:00"));
+        console.log(Date.now());
+
+        // 倒计时函数
+        function countDown(time) {
+            var nowTime = +new Date();
+            var inputTime = +new Date(time);
+            var times = (inputTime - nowTime) / 1000;
+            var d = parseInt(times / 60 / 60 / 24);
+            d = d < 10 ? "0" + d : d;
+            var h = parseInt((times / 60 / 60) % 24);
+            h = h < 10 ? "0" + h : h;
+            var m = parseInt((times / 60) % 60);
+            m = m < 10 ? "0" + m : m;
+            var s = parseInt(times % 60);
+            s = s < 10 ? "0" + s : s;
+            return d + "天" + h + "时" + m + "分" + s + "秒";
+        }
+
+        console.log(countDown("2020-8-31 12:00:00"));
     </script>
-  </head>
+</head>
 
-  <body></body>
+<body></body>
+
 </html>

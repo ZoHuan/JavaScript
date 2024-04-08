@@ -1,55 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>换肤功能</title>
-    <style>
-      * {
-        margin: 0;
-        padding: 0;
-      }
 
-      body {
-        background: url(images/vue-1.jpg) no-repeat center top;
-      }
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>换肤功能</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
 
-      ul,
-      li {
-        padding: 0;
-        margin: 0;
-        list-style: none;
-      }
+    body {
+      background: url(images/vue-1.jpg) no-repeat center top;
+    }
 
-      .option {
-        width: 370px;
-        margin: 100px auto;
-      }
+    ul,
+    li {
+      padding: 0;
+      margin: 0;
+      list-style: none;
+    }
 
-      .option li {
-        display: inline-block;
-        cursor: pointer;
-      }
+    .option {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 370px;
+      margin: 100px auto;
+    }
 
-      .option img {
-        width: 120px;
-      }
-    </style>
-  </head>
+    .option li {
+      cursor: pointer;
+    }
 
-  <body>
-    <ul class="option">
-      <li><img src="images/focus2.png" /></li>
-      <li><img src="images/focus1.png" /></li>
-      <li><img src="images/focus3.png" /></li>
-    </ul>
-    <script>
-      var imgs = document.querySelector(".option").querySelectorAll("img");
-      for (let i = 0; i < imgs.length; i++) {
-        imgs[i].onclick = function () {
-          document.body.style.backgroundImage = "url(" + this.src + ")";
-        };
-      }
-    </script>
-  </body>
+    .option img {
+      width: 120px;
+    }
+  </style>
+</head>
+
+<body>
+  <ul class="option">
+    <li><img src="images/focus2.png" /></li>
+    <li><img src="images/focus1.png" /></li>
+    <li><img src="images/focus3.png" /></li>
+  </ul>
+  <script>
+    var imgs = document.querySelector(".option").querySelectorAll("img");
+    for (let i = 0; i < imgs.length; i++) {
+      imgs[i].onclick = function () {
+        document.body.style.backgroundImage = "url(" + this.src + ")";
+      };
+    }
+  </script>
+</body>
+
 </html>

@@ -1,71 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>对象</title>
     <script>
-      var dog = {
-        name: "犬夜叉",
-        type: "阿拉斯加犬",
-        age: 5,
-        color: "红色",
-        show: function () {
-          console.log("bark");
-        },
-      };
-      dog.show();
-
-      var naruto = new Object();
-      naruto.name = "鸣人";
-      naruto.sex = "男";
-      naruto.age = 20;
-      naruto.skill = function () {
-        console.log("影分身术");
-      };
-      console.log(naruto.name);
-      console.log(naruto["sex"]);
-      naruto.skill();
-
-      function Hero(name, type, blood) {
-        this.name = name;
-        this.type = type;
-        this.blood = blood;
-        this.attacker = function (attack) {
-          console.log(this.name + attack);
+        var dog = {
+            name: "犬夜叉",
+            type: "阿拉斯加犬",
+            age: 5,
+            color: "红色",
+            show: function () {
+                console.log("bark");
+            },
         };
-      }
+        dog.show();
 
-      var hero = new Hero("桐人", "力量型", "500血量");
-      console.log(lp.name);
-      console.log(lp["type"]);
-      hero.attacker("近战");
+        var naruto = new Object();
+        naruto.name = "鸣人";
+        naruto.sex = "男";
+        naruto.age = 20;
+        naruto.skill = function () {
+            console.log("影分身术");
+        };
+        console.log(naruto.name);
+        console.log(naruto["sex"]);
+        naruto.skill();
 
-      var obj = {
-        name: "name",
-        age: "age",
-        sex: "sex",
-        birthday: "birthday",
-        [Symbol("telephone")]: "telephone", //设置Symbol属性
-      };
-      Object.defineProperty(obj, "birthday", {
-        // 设置obj对象的birthday不可枚举
-        enumerable: false,
-      });
+        function Hero(name, type, blood) {
+            this.name = name;
+            this.type = type;
+            this.blood = blood;
+            this.attacker = function (attack) {
+                console.log(this.name + attack);
+            };
+        }
 
-      for (var k in obj) {
-        console.log(k + ":" + obj[k]);
-      }
+        var hero = new Hero("桐人", "力量型", "500血量");
+        console.log(lp.name);
+        console.log(lp["type"]);
+        hero.attacker("近战");
 
-      console.log(Object.entries(obj));
+        var obj = {
+            name: "name",
+            age: "age",
+            sex: "sex",
+            birthday: "birthday",
+            [Symbol("telephone")]: "telephone", //设置Symbol属性
+        };
+        Object.defineProperty(obj, "birthday", {
+            // 设置obj对象的birthday不可枚举
+            enumerable: false,
+        });
 
-      console.log(Object.getOwnPropertyNames(obj));
+        for (var k in obj) {
+            console.log(k + ":" + obj[k]);
+        }
 
-      console.log(Object.getOwnPropertySymbols(obj));
+        console.log(Object.entries(obj));
 
-      console.log(Reflect.ownKeys(obj));
+        console.log(Object.getOwnPropertyNames(obj));
+
+        console.log(Object.getOwnPropertySymbols(obj));
+
+        console.log(Reflect.ownKeys(obj));
     </script>
-  </head>
+</head>
 
-  <body></body>
+<body></body>
+
 </html>

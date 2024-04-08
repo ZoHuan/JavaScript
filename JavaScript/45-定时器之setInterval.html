@@ -1,69 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>定时器之setInterval</title>
-    <style>
-      div > span {
-        display: inline-block;
-        width: 40px;
-        height: 40px;
-        background: #000;
-        color: #fff;
-        text-align: center;
-        line-height: 40px;
-        font-size: 20px;
-      }
-    </style>
-  </head>
 
-  <body>
-    <div>
-      <span class="hour">1</span>
-      <span class="minute">2</span>
-      <span class="second">3</span>
-    </div>
-    <script>
-      // 1. setInterval
-      // 语法规范： window.setInterval(调用函数,间隔时间);
-      // 1. window在调用的时候可以省略
-      // 2. 间隔时间单位是毫秒 可以省略，如果省略默认是0
-      // 3. 调用函数可以直接写函数 还可以 写函数名  还可以 '函数名()'
-      // 4. 页面中会有多个定时器，要给定时器加标识符
-      // 3.1
-      setInterval(function () {
-        console.log("间隔输出");
-      }, 10000);
-      // 3.2
-      function callback() {
-        console.log("间隔输出");
-      }
-      var time1 = setInterval(callback, 20000);
-      // 3.3
-      var time2 = setInterval("callback()", 30000);
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>定时器之setInterval</title>
+  <style>
+    div>span {
+      display: inline-block;
+      width: 40px;
+      height: 40px;
+      background: #000;
+      color: #fff;
+      text-align: center;
+      line-height: 40px;
+      font-size: 20px;
+    }
+  </style>
+</head>
 
-      // 倒计时
-      var hour = document.querySelector(".hour");
-      var minute = document.querySelector(".minute");
-      var second = document.querySelector(".second");
-      var inputTime = +new Date("2020-12-30 00:00:00");
-      countDown(); //我们先调用一次这个函数，防止第一次刷新页面有空白
-      setInterval(countDown, 1000);
+<body>
+  <div>
+    <span class="hour">1</span>
+    <span class="minute">2</span>
+    <span class="second">3</span>
+  </div>
+  <script>
+    // 1. setInterval
+    // 语法规范： window.setInterval(调用函数,间隔时间);
+    // 1. window在调用的时候可以省略
+    // 2. 间隔时间单位是毫秒 可以省略，如果省略默认是0
+    // 3. 调用函数可以直接写函数 还可以 写函数名  还可以 '函数名()'
+    // 4. 页面中会有多个定时器，要给定时器加标识符
+    // 3.1
+    setInterval(function () {
+      console.log("间隔输出");
+    }, 10000);
+    // 3.2
+    function callback() {
+      console.log("间隔输出");
+    }
+    var time1 = setInterval(callback, 20000);
+    // 3.3
+    var time2 = setInterval("callback()", 30000);
 
-      function countDown() {
-        var nowTime = +new Date();
-        var times = (inputTime - nowTime) / 1000;
-        var h = parseInt((times / 60 / 60) % 24);
-        h = h < 10 ? "0" + h : h;
-        hour.innerHTML = h;
-        var m = parseInt((times / 60) % 60);
-        m = m < 10 ? "0" + m : m;
-        minute.innerHTML = m;
-        var s = parseInt(times % 60);
-        s = s < 10 ? "0" + s : s;
-        second.innerHTML = s;
-      }
-    </script>
-  </body>
+    // 倒计时
+    var hour = document.querySelector(".hour");
+    var minute = document.querySelector(".minute");
+    var second = document.querySelector(".second");
+    var inputTime = +new Date("2020-12-30 00:00:00");
+    countDown(); //我们先调用一次这个函数，防止第一次刷新页面有空白
+    setInterval(countDown, 1000);
+
+    function countDown() {
+      var nowTime = +new Date();
+      var times = (inputTime - nowTime) / 1000;
+      var h = parseInt((times / 60 / 60) % 24);
+      h = h < 10 ? "0" + h : h;
+      hour.innerHTML = h;
+      var m = parseInt((times / 60) % 60);
+      m = m < 10 ? "0" + m : m;
+      minute.innerHTML = m;
+      var s = parseInt(times % 60);
+      s = s < 10 ? "0" + s : s;
+      second.innerHTML = s;
+    }
+  </script>
+</body>
+
 </html>

@@ -1,50 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>鼠标事件对象</title>
-    <style>
-      body {
-        height: 3000px;
-      }
 
-      img {
-        position: absolute;
-        height: 100px;
-        width: 100px;
-      }
-    </style>
-  </head>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>鼠标事件对象</title>
+  <style>
+    body {
+      height: 3000px;
+    }
 
-  <body>
-    <img src="images/airship.png" />
-    <script>
-      // 鼠标事件对象 MouseEvent
-      document.addEventListener("click", function (e) {
-        // 1. client 鼠标在可视区的x和y坐标
-        console.log(e.clientX);
-        console.log(e.clientY);
-        console.log("-----");
-        // 2. page 鼠标在页面文档的x和y坐标
-        console.log(e.pageX);
-        console.log(e.pageY);
-        console.log("-----");
-        // 3. screen 鼠标在电脑屏幕的x和y坐标
-        console.log(e.screenX);
-        console.log(e.screenY);
-      });
+    img {
+      position: absolute;
+      height: 100px;
+      width: 100px;
+    }
+  </style>
+</head>
 
-      // 跟随鼠标移动图片
-      var img = document.querySelector("img");
-      document.addEventListener("mousemove", fn);
+<body>
+  <img src="images/airship.png" />
+  <script>
+    // 鼠标事件对象 MouseEvent
+    document.addEventListener("click", function (e) {
+      // 1. client 鼠标在可视区的x和y坐标
+      console.log(e.clientX);
+      console.log(e.clientY);
+      console.log("-----");
+      // 2. page 鼠标在页面文档的x和y坐标
+      console.log(e.pageX);
+      console.log(e.pageY);
+      console.log("-----");
+      // 3. screen 鼠标在电脑屏幕的x和y坐标
+      console.log(e.screenX);
+      console.log(e.screenY);
+    });
 
-      function fn(e) {
-        var x = e.pageX;
-        var y = e.pageY;
-        img.style.top = y - 50 + "px";
-        img.style.left = x - 50 + "px";
-      }
-    </script>
-  </body>
+    // 跟随鼠标移动图片
+    var img = document.querySelector("img");
+    document.addEventListener("mousemove", fn);
+
+    function fn(e) {
+      var x = e.pageX;
+      var y = e.pageY;
+      img.style.top = y - 50 + "px";
+      img.style.left = x - 50 + "px";
+    }
+  </script>
+</body>
+
 </html>

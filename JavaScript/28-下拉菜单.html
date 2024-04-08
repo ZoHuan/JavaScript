@@ -1,120 +1,122 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>下拉菜单</title>
-    <style>
-      * {
-        margin: 0;
-        padding: 0;
-      }
 
-      ul,
-      li {
-        padding: 0;
-        margin: 0;
-        list-style: none;
-      }
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>下拉菜单</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
 
-      a {
-        text-decoration: none;
-      }
+    ul,
+    li {
+      padding: 0;
+      margin: 0;
+      list-style: none;
+    }
 
-      .nav {
-        width: 400px;
-        height: 56px;
-        margin: 100px auto;
-      }
+    a {
+      text-decoration: none;
+    }
 
-      .nav > li {
-        position: relative;
-        float: left;
-        height: 56px;
-        line-height: 56px;
-        text-align: center;
-        cursor: pointer;
-      }
+    .nav {
+      width: 400px;
+      height: 56px;
+      margin: 100px auto;
+    }
 
-      .nav > li a {
-        display: inline-block;
-        padding: 0 36px;
-        background-color: #ffe300;
-        font-size: 14px;
-        color: #282828;
-      }
+    .nav>li {
+      position: relative;
+      float: left;
+      height: 56px;
+      line-height: 56px;
+      text-align: center;
+      cursor: pointer;
+    }
 
-      .nav > li a:hover {
-        color: #ffe300;
-        background-color: #282828;
-      }
+    .nav>li a {
+      display: inline-block;
+      padding: 0 36px;
+      background-color: #ffe300;
+      font-size: 14px;
+      color: #282828;
+    }
 
-      .nav ul {
-        display: none;
-        position: absolute;
-        top: 56px;
-        left: 0;
-        width: 100%;
-        padding: 6px 0;
-        border-radius: 0 0 4px 4px;
-        box-shadow: 0 1px 12px 0 rgba(0, 0, 0, 0.2);
-        color: #444;
-        z-index: 14;
-      }
+    .nav>li a:hover {
+      color: #ffe300;
+      background-color: #282828;
+    }
 
-      .nav ul li:hover {
-        background-color: #ffe300;
-      }
-    </style>
-  </head>
+    .nav ul {
+      display: none;
+      position: absolute;
+      top: 56px;
+      left: 0;
+      width: 100%;
+      padding: 6px 0;
+      border-radius: 0 0 4px 4px;
+      box-shadow: 0 1px 12px 0 rgba(0, 0, 0, 0.2);
+      color: #444;
+      z-index: 14;
+    }
 
-  <body>
-    <ul class="nav">
-      <li>
-        <a href="#">发现</a>
-        <ul>
-          <li>精选作品</li>
-          <li>精选文章</li>
-          <li>精选收藏</li>
-        </ul>
-      </li>
-      <li>
-        <a href="#">职位</a>
-        <ul>
-          <li>职位</li>
-          <li>公司</li>
-          <li>发布</li>
-        </ul>
-      </li>
-      <li>
-        <a href="#">活动</a>
-        <ul>
-          <li>设计大赛</li>
-          <li>专题策划</li>
-          <li>学习音频</li>
-        </ul>
-      </li>
-      <li>
-        <a href="#">课程</a>
-        <ul>
-          <li>学习路径</li>
-          <li>正在热销</li>
-          <li>口碑好课</li>
-        </ul>
-      </li>
-    </ul>
+    .nav ul li:hover {
+      background-color: #ffe300;
+    }
+  </style>
+</head>
 
-    <script>
-      var lis = document.querySelector(".nav").children;
+<body>
+  <ul class="nav">
+    <li>
+      <a href="#">发现</a>
+      <ul>
+        <li>精选作品</li>
+        <li>精选文章</li>
+        <li>精选收藏</li>
+      </ul>
+    </li>
+    <li>
+      <a href="#">职位</a>
+      <ul>
+        <li>职位</li>
+        <li>公司</li>
+        <li>发布</li>
+      </ul>
+    </li>
+    <li>
+      <a href="#">活动</a>
+      <ul>
+        <li>设计大赛</li>
+        <li>专题策划</li>
+        <li>学习音频</li>
+      </ul>
+    </li>
+    <li>
+      <a href="#">课程</a>
+      <ul>
+        <li>学习路径</li>
+        <li>正在热销</li>
+        <li>口碑好课</li>
+      </ul>
+    </li>
+  </ul>
 
-      for (let i = 0; i < lis.length; i++) {
-        lis[i].onmouseover = function () {
-          this.children[1].style.display = "block";
-        };
-        lis[i].onmouseout = function () {
-          this.children[1].style.display = "none";
-        };
-      }
-    </script>
-  </body>
+  <script>
+    var lis = document.querySelector(".nav").children;
+
+    for (let i = 0; i < lis.length; i++) {
+      lis[i].onmouseover = function () {
+        this.children[1].style.display = "block";
+      };
+      lis[i].onmouseout = function () {
+        this.children[1].style.display = "none";
+      };
+    }
+  </script>
+</body>
+
 </html>

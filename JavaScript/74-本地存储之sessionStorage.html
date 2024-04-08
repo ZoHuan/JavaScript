@@ -1,41 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>本地存储之sessionStorage</title>
-  </head>
-  <body>
-    <input type="text" />
-    <button class="set">存储数据</button>
-    <button class="get">获取数据</button>
-    <button class="remove">删除数据</button>
-    <button class="del">清空所有数据</button>
-    <script>
-      var ipt = document.querySelector("input");
-      var set = document.querySelector(".set");
-      var get = document.querySelector(".get");
-      var remove = document.querySelector(".remove");
-      var del = document.querySelector(".del");
-      set.addEventListener("click", function () {
-        // 点击之后，就可以把表单里面的值存储起来
-        var val = ipt.value;
-        sessionStorage.setItem("uname", val);
-        sessionStorage.setItem("password", val);
-      });
-      get.addEventListener("click", function () {
-        // 点击之后，就可以把表单里面的值获取出来
-        var val = sessionStorage.getItem("uname");
-        console.log(val);
-      });
-      remove.addEventListener("click", function () {
-        // 点击之后，就可以把表单里面的值删除
-        sessionStorage.removeItem("uname");
-      });
-      del.addEventListener("click", function () {
-        // 点击之后，就可以把表单里面的值清空
-        sessionStorage.clear();
-      });
-    </script>
-  </body>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>本地存储之sessionStorage</title>
+</head>
+
+<body>
+  <input type="text" />
+  <button class="set">存储数据</button>
+  <button class="get">获取数据</button>
+  <button class="remove">删除数据</button>
+  <button class="del">清空所有数据</button>
+  <script>
+    var ipt = document.querySelector("input");
+    var set = document.querySelector(".set");
+    var get = document.querySelector(".get");
+    var remove = document.querySelector(".remove");
+    var del = document.querySelector(".del");
+    set.addEventListener("click", function () {
+      // 点击之后，就可以把表单里面的值存储起来
+      var val = ipt.value;
+      sessionStorage.setItem("uname", val);
+      sessionStorage.setItem("password", val);
+    });
+    get.addEventListener("click", function () {
+      // 点击之后，就可以把表单里面的值获取出来
+      var val = sessionStorage.getItem("uname");
+      console.log(val);
+    });
+    remove.addEventListener("click", function () {
+      // 点击之后，就可以把表单里面的值删除
+      sessionStorage.removeItem("uname");
+    });
+    del.addEventListener("click", function () {
+      // 点击之后，就可以把表单里面的值清空
+      sessionStorage.clear();
+    });
+  </script>
+</body>
+
 </html>

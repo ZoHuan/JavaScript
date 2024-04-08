@@ -1,202 +1,210 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0,user-scalable=no"
-    />
-    <title>移动端轮播图</title>
 
-    <style>
-      * {
-        margin: 0;
-        padding: 0;
-      }
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no" />
+  <title>移动端轮播图</title>
 
-      li,
-      ol {
-        list-style: none;
-      }
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
 
-      a {
-        text-decoration: none;
-      }
-      .focus {
-        position: relative;
-        overflow: hidden;
-      }
-      .focus img {
-        width: 100%;
-      }
-      .focus ul {
-        overflow: hidden;
-        width: 500%;
-        margin-left: -100%;
-      }
-      .focus ul li {
-        float: left;
-        width: 20%;
-      }
-      .focus ol {
-        position: absolute;
-        bottom: 5px;
-        right: 5px;
-      }
-      .focus ol li {
-        display: inline-block;
-        width: 5px;
-        height: 5px;
-        border-radius: 2px;
-        background-color: #fff;
-        transition: all 0.3s;
-      }
-      .focus ol .current {
-        width: 15px;
-      }
+    li,
+    ol {
+      list-style: none;
+    }
 
-      .main {
-        height: 1200px;
-        background-color: cadetblue;
+    a {
+      text-decoration: none;
+    }
+
+    .focus {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .focus img {
+      width: 100%;
+    }
+
+    .focus ul {
+      overflow: hidden;
+      width: 500%;
+      margin-left: -100%;
+    }
+
+    .focus ul li {
+      float: left;
+      width: 20%;
+    }
+
+    .focus ol {
+      position: absolute;
+      bottom: 5px;
+      right: 5px;
+    }
+
+    .focus ol li {
+      display: inline-block;
+      width: 5px;
+      height: 5px;
+      border-radius: 2px;
+      background-color: #fff;
+      transition: all 0.3s;
+    }
+
+    .focus ol .current {
+      width: 15px;
+    }
+
+    .main {
+      height: 1200px;
+      background-color: cadetblue;
+    }
+
+    .goBack {
+      display: none;
+      position: fixed;
+      bottom: 50px;
+      right: 20px;
+      width: 38px;
+      height: 38px;
+      border: 1px solid #eee;
+      border-radius: 50%;
+      background-color: coral;
+      text-align: center;
+      line-height: 38px;
+      font-size: 30px;
+      font-weight: 600;
+      color: #fff;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- 回到顶部模块 -->
+  <div class="goBack">↑</div>
+  <!-- 焦点图模块 -->
+  <div class="focus">
+    <ul>
+      <li><img src="images/focus3.png" alt="" /></li>
+      <li><img src="images/focus2.png" alt="" /></li>
+      <li><img src="images/focus1.png" alt="" /></li>
+      <li><img src="images/focus3.png" alt="" /></li>
+      <li><img src="images/focus2.png" alt="" /></li>
+    </ul>
+    <!-- 小圆点 -->
+    <ol>
+      <li class="current"></li>
+      <li></li>
+      <li></li>
+    </ol>
+  </div>
+  <div class="main"></div>
+  <script>
+    var focus = document.querySelector(".focus");
+    var ul = focus.children[0];
+    var ol = focus.children[1];
+    var w = focus.offsetWidth;
+    var index = 0;
+    // 定时器自动轮播图片
+    var timer = setInterval(function () {
+      index++;
+      var translateX = -index * w;
+      ul.style.transition = "all .3s";
+      ul.style.transform = "translateX(" + translateX + "px)";
+    }, 2000);
+    // 等过渡完成之后，再去判断 监听过渡完成的事件 transitionend
+    ul.addEventListener("transitionend", function () {
+      // 无缝滚动
+      if (index >= 3) {
+        index = 0;
+        // 去掉过渡效果 快速跳到目标位置
+        ul.style.transition = "none";
+        // 利用最新的索引号乘以宽度 去滚动图片
+        var translateX = -index * w;
+        ul.style.transform = "translateX(" + translateX + "px)";
+      } else if (index < 0) {
+        index = 3;
+        // 去掉过渡效果 快速跳到目标位置
+        ul.style.transition = "none";
+        // 利用最新的索引号乘以宽度 去滚动图片
+        var translateX = -index * w;
+        ul.style.transform = "translateX(" + translateX + "px)";
       }
-      .goBack {
-        display: none;
-        position: fixed;
-        bottom: 50px;
-        right: 20px;
-        width: 38px;
-        height: 38px;
-        border: 1px solid #eee;
-        border-radius: 50%;
-        background-color: coral;
-        text-align: center;
-        line-height: 38px;
-        font-size: 30px;
-        font-weight: 600;
-        color: #fff;
-        cursor: pointer;
+      // 小圆点跟随变化
+      // 把ol里面li带有current类名的选出来去掉类名 remove
+      ol.querySelector(".current").classList.remove("current");
+      // 让当前索引号 的小li 加上 current add
+      ol.children[index].classList.add("current");
+    });
+    // 手指滑动轮播图
+    // 触摸元素 touchstart  获取手指初始坐标
+    var startX = 0;
+    var moveX = 0;
+    var flag = false;
+    ul.addEventListener("touchstart", function (e) {
+      startX = e.targetTouches[0].pageX;
+      // 手指触摸停止定时器
+      clearInterval(timer);
+    });
+    // 触摸手指 touchmove 计算手指的滑动距离， 并且移动盒子
+    ul.addEventListener("touchmove", function (e) {
+      moveX = e.targetTouches[0].pageX - startX;
+      var translateX = -index * w + moveX;
+      // 手指拖动不需要动画效果
+      ul.style.transition = "none";
+      ul.style.transform = "translateX(" + translateX + "px)";
+      // 用户手指移动过再去判断否则不做判断效果
+      flag = true;
+      // 阻止滚动屏幕的行为
+      e.preventDefault();
+    });
+    // 手指离开 根据移动距离去判断是回弹还是播放上一张下一张
+    ul.addEventListener("touchend", function (e) {
+      if (flag) {
+        // 如果移动距离大于50像素就播放上一张或者下一张
+        if (Math.abs(moveX) > 50) {
+          // 右滑 播放上一张 moveX 是正值
+          // 左滑 播放下一张 moveX 是负值
+          moveX > 0 ? index-- : index++;
+          var translateX = -index * w;
+          ul.style.transition = "all .3s";
+          ul.style.transform = "translateX(" + translateX + "px)";
+        } else {
+          // 如果移动距离小于50像素就回弹
+          var translateX = -index * w;
+          ul.style.transition = "all .1s";
+          ul.style.transform = "translateX(" + translateX + "px)";
+        }
       }
-    </style>
-  </head>
-  <body>
-    <!-- 回到顶部模块 -->
-    <div class="goBack">↑</div>
-    <!-- 焦点图模块 -->
-    <div class="focus">
-      <ul>
-        <li><img src="images/focus3.png" alt="" /></li>
-        <li><img src="images/focus2.png" alt="" /></li>
-        <li><img src="images/focus1.png" alt="" /></li>
-        <li><img src="images/focus3.png" alt="" /></li>
-        <li><img src="images/focus2.png" alt="" /></li>
-      </ul>
-      <!-- 小圆点 -->
-      <ol>
-        <li class="current"></li>
-        <li></li>
-        <li></li>
-      </ol>
-    </div>
-    <div class="main"></div>
-    <script>
-      var focus = document.querySelector(".focus");
-      var ul = focus.children[0];
-      var ol = focus.children[1];
-      var w = focus.offsetWidth;
-      var index = 0;
-      // 定时器自动轮播图片
-      var timer = setInterval(function () {
+      clearInterval(timer);
+      timer = setInterval(function () {
         index++;
         var translateX = -index * w;
         ul.style.transition = "all .3s";
         ul.style.transform = "translateX(" + translateX + "px)";
       }, 2000);
-      // 等过渡完成之后，再去判断 监听过渡完成的事件 transitionend
-      ul.addEventListener("transitionend", function () {
-        // 无缝滚动
-        if (index >= 3) {
-          index = 0;
-          // 去掉过渡效果 快速跳到目标位置
-          ul.style.transition = "none";
-          // 利用最新的索引号乘以宽度 去滚动图片
-          var translateX = -index * w;
-          ul.style.transform = "translateX(" + translateX + "px)";
-        } else if (index < 0) {
-          index = 3;
-          // 去掉过渡效果 快速跳到目标位置
-          ul.style.transition = "none";
-          // 利用最新的索引号乘以宽度 去滚动图片
-          var translateX = -index * w;
-          ul.style.transform = "translateX(" + translateX + "px)";
-        }
-        // 小圆点跟随变化
-        // 把ol里面li带有current类名的选出来去掉类名 remove
-        ol.querySelector(".current").classList.remove("current");
-        // 让当前索引号 的小li 加上 current add
-        ol.children[index].classList.add("current");
-      });
-      // 手指滑动轮播图
-      // 触摸元素 touchstart  获取手指初始坐标
-      var startX = 0;
-      var moveX = 0;
-      var flag = false;
-      ul.addEventListener("touchstart", function (e) {
-        startX = e.targetTouches[0].pageX;
-        // 手指触摸停止定时器
-        clearInterval(timer);
-      });
-      // 触摸手指 touchmove 计算手指的滑动距离， 并且移动盒子
-      ul.addEventListener("touchmove", function (e) {
-        moveX = e.targetTouches[0].pageX - startX;
-        var translateX = -index * w + moveX;
-        // 手指拖动不需要动画效果
-        ul.style.transition = "none";
-        ul.style.transform = "translateX(" + translateX + "px)";
-        // 用户手指移动过再去判断否则不做判断效果
-        flag = true;
-        // 阻止滚动屏幕的行为
-        e.preventDefault();
-      });
-      // 手指离开 根据移动距离去判断是回弹还是播放上一张下一张
-      ul.addEventListener("touchend", function (e) {
-        if (flag) {
-          // 如果移动距离大于50像素就播放上一张或者下一张
-          if (Math.abs(moveX) > 50) {
-            // 右滑 播放上一张 moveX 是正值
-            // 左滑 播放下一张 moveX 是负值
-            moveX > 0 ? index-- : index++;
-            var translateX = -index * w;
-            ul.style.transition = "all .3s";
-            ul.style.transform = "translateX(" + translateX + "px)";
-          } else {
-            // 如果移动距离小于50像素就回弹
-            var translateX = -index * w;
-            ul.style.transition = "all .1s";
-            ul.style.transform = "translateX(" + translateX + "px)";
-          }
-        }
-        clearInterval(timer);
-        timer = setInterval(function () {
-          index++;
-          var translateX = -index * w;
-          ul.style.transition = "all .3s";
-          ul.style.transform = "translateX(" + translateX + "px)";
-        }, 2000);
-      });
+    });
 
-      // 返回顶部模块制作
-      var goBack = document.querySelector(".goBack");
-      var main = document.querySelector(".main");
-      window.addEventListener("scroll", function () {
-        if (window.pageYOffset >= main.offsetTop) {
-          goBack.style.display = "block";
-        } else {
-          goBack.style.display = "none";
-        }
-      });
-      goBack.addEventListener("click", function () {
-        window.scroll(0, 0);
-      });
-    </script>
-  </body>
+    // 返回顶部模块制作
+    var goBack = document.querySelector(".goBack");
+    var main = document.querySelector(".main");
+    window.addEventListener("scroll", function () {
+      if (window.pageYOffset >= main.offsetTop) {
+        goBack.style.display = "block";
+      } else {
+        goBack.style.display = "none";
+      }
+    });
+    goBack.addEventListener("click", function () {
+      window.scroll(0, 0);
+    });
+  </script>
+</body>
+
 </html>

@@ -1,25 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>client系列属性</title>
-    <style>
-      div {
-        height: 200px;
-        width: 200px;
-        background-color: cornflowerblue;
-        border: 20px solid dodgerblue;
-        padding: 10px;
-      }
-    </style>
-  </head>
-  <body>
-    <div></div>
-    <script>
-      // client 宽度 和offsetWidth 区别是 不包含边框
-      var div = document.querySelector("div");
-      console.log(div.clientWidth);
-    </script>
-  </body>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>client系列属性</title>
+  <style>
+    div {
+      height: 200px;
+      width: 200px;
+      background-color: cornflowerblue;
+      border: 20px solid dodgerblue;
+      padding: 10px;
+    }
+  </style>
+</head>
+
+<body>
+  <div></div>
+  <script>
+    // client 宽度 和offsetWidth 区别是 不包含边框
+    var div = document.querySelector("div");
+    console.log(div.clientWidth);
+  </script>
+</body>
+
 </html>

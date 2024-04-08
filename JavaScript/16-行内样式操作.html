@@ -1,58 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>行内样式操作</title>
-    <style>
-      .div {
-        width: 200px;
-        height: 200px;
-        background-color: aqua;
-      }
 
-      #box {
-        position: relative;
-        width: 200px;
-      }
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>行内样式操作</title>
+  <style>
+    .div {
+      width: 200px;
+      height: 200px;
+      background-color: aqua;
+    }
 
-      #box button {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 20px;
-        height: 20px;
-        padding: 0;
-        border: 1px solid #ccc;
-        border-radius: 50%;
-      }
+    #box {
+      position: relative;
+      width: 200px;
+    }
 
-      #box img {
-        width: 200px;
-      }
-    </style>
-  </head>
+    #box button {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 20px;
+      height: 20px;
+      padding: 0;
+      border: 1px solid #ccc;
+      border-radius: 50%;
+    }
 
-  <body>
-    <div class="div"></div>
+    #box img {
+      width: 200px;
+    }
+  </style>
+</head>
 
-    <div id="box">
-      <button>×</button>
-      <img src="images/focus1.png" alt="" />
-    </div>
-    <script>
-      var div = document.querySelector("div");
-      div.onclick = function () {
-        this.style.backgroundColor = "cornflowerblue";
-        this.style.width = "100px";
-        this.style.height = "100px";
-      };
+<body>
+  <div class="div"></div>
 
-      var box = document.getElementById("box");
-      var close = box.querySelector("button");
-      close.onclick = function () {
-        box.style.display = "none";
-      };
-    </script>
-  </body>
+  <div id="box">
+    <button>×</button>
+    <img src="images/focus1.png" alt="" />
+  </div>
+  <script>
+    var div = document.querySelector("div");
+    div.onclick = function () {
+      this.style.backgroundColor = "cornflowerblue";
+      this.style.width = "100px";
+      this.style.height = "100px";
+    };
+
+    var box = document.getElementById("box");
+    var close = box.querySelector("button");
+    close.onclick = function () {
+      box.style.display = "none";
+    };
+  </script>
+</body>
+
 </html>

@@ -1,29 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>时间换图</title>
-  </head>
 
-  <body>
-    <div>问候语</div>
-    <img src="images/focus1.png" alt="" />
-    <script>
-      var div = document.querySelector("div");
-      var img = document.querySelector("img");
-      var date = new Date();
-      var hours = date.getHours();
-      if ((hours >= 6) & (hours < 12)) {
-        div.innerHTML = "上午好！";
-        img.src = "images/focus2.png";
-      } else if ((hours >= 12) & (hours < 18)) {
-        div.innerHTML = "下午好！";
-        img.src = "images/focus3.png";
-      } else {
-        div.innerHTML = "晚上好！";
-        img.src = "images/focus1.png";
-      }
-    </script>
-  </body>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>时间换图</title>
+</head>
+
+<body>
+  <div>问候语</div>
+  <img src="images/focus1.png" alt="" />
+  <script>
+    var div = document.querySelector("div");
+    var img = document.querySelector("img");
+    var date = new Date();
+    var hours = date.getHours();
+    if ((hours >= 6) & (hours < 12)) {
+      div.innerHTML = "上午好！";
+      img.src = "images/focus2.png";
+    } else if ((hours >= 12) & (hours < 18)) {
+      div.innerHTML = "下午好！";
+      img.src = "images/focus3.png";
+    } else {
+      div.innerHTML = "晚上好！";
+      img.src = "images/focus1.png";
+    }
+  </script>
+</body>
+
 </html>

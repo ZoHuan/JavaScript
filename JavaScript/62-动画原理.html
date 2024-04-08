@@ -1,90 +1,95 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>动画原理</title>
-    <style>
-      div {
-        position: absolute;
-        left: 0;
-        width: 100px;
-        height: 100px;
-        background-color: cadetblue;
-      }
-      span {
-        position: absolute;
-        left: 0;
-        top: 200px;
-        display: block;
-        width: 150px;
-        height: 150px;
-        background-color: cornflowerblue;
-      }
-      .slow {
-        top: 400px;
-      }
-    </style>
-  </head>
-  <body>
-    <button>点击</button>
-    <div></div>
-    <span></span>
-    <button class="btn500">移动500</button>
-    <button class="btn800">移动800</button>
-    <div class="slow"></div>
-    <script>
-      // 动画函数封装 obj 目标对象 target 目标位置
-      function animate(obj, target) {
-        // 多次点击按钮，元素的速度会越来越快，因为开启了太多定时器
-        // 解决方案就是 让元素自有一个定时器
-        // 先清除以前的定时器，只保留当前的一个定时器执行
-        clearInterval(obj.timer);
-        obj.timer = setInterval(function () {
-          if (obj.offsetLeft >= target) {
-            clearInterval(obj.timer);
-          }
-          obj.style.left = obj.offsetLeft + 1 + "px";
-        }, 5);
-      }
-      var div = document.querySelector("div");
-      var span = document.querySelector("span");
-      var btn = document.querySelector("button");
-      animate(div, 300);
-      btn.addEventListener("click", function () {
-        animate(span, 200);
-      });
 
-      // 缓动动画
-      // 核心算法：（目标值 - 现在的位置） / 10
-      function slowAnimate(obj, target, callback) {
-        clearInterval(obj.timer);
-        obj.timer = setInterval(function () {
-          var step = (target - obj.offsetLeft) / 10;
-          step = step > 0 ? Math.ceil(step) : Math.floor(step);
-          if (obj.offsetLeft == target) {
-            clearInterval(obj.timer);
-            // 回调函数写到定时器结束里面
-            if (callback) {
-              // 调用函数
-              callback();
-            }
-          }
-          obj.style.left = obj.offsetLeft + step + "px";
-        }, 30);
-      }
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>动画原理</title>
+  <style>
+    div {
+      position: absolute;
+      left: 0;
+      width: 100px;
+      height: 100px;
+      background-color: cadetblue;
+    }
 
-      var slow = document.querySelector(".slow");
-      var btn500 = document.querySelector(".btn500");
-      var btn800 = document.querySelector(".btn800");
-      btn500.addEventListener("click", function () {
-        slowAnimate(slow, 500);
+    span {
+      position: absolute;
+      left: 0;
+      top: 200px;
+      display: block;
+      width: 150px;
+      height: 150px;
+      background-color: cornflowerblue;
+    }
+
+    .slow {
+      top: 400px;
+    }
+  </style>
+</head>
+
+<body>
+  <button>点击</button>
+  <div></div>
+  <span></span>
+  <button class="btn500">移动500</button>
+  <button class="btn800">移动800</button>
+  <div class="slow"></div>
+  <script>
+    // 动画函数封装 obj 目标对象 target 目标位置
+    function animate(obj, target) {
+      // 多次点击按钮，元素的速度会越来越快，因为开启了太多定时器
+      // 解决方案就是 让元素自有一个定时器
+      // 先清除以前的定时器，只保留当前的一个定时器执行
+      clearInterval(obj.timer);
+      obj.timer = setInterval(function () {
+        if (obj.offsetLeft >= target) {
+          clearInterval(obj.timer);
+        }
+        obj.style.left = obj.offsetLeft + 1 + "px";
+      }, 5);
+    }
+    var div = document.querySelector("div");
+    var span = document.querySelector("span");
+    var btn = document.querySelector("button");
+    animate(div, 300);
+    btn.addEventListener("click", function () {
+      animate(span, 200);
+    });
+
+    // 缓动动画
+    // 核心算法：（目标值 - 现在的位置） / 10
+    function slowAnimate(obj, target, callback) {
+      clearInterval(obj.timer);
+      obj.timer = setInterval(function () {
+        var step = (target - obj.offsetLeft) / 10;
+        step = step > 0 ? Math.ceil(step) : Math.floor(step);
+        if (obj.offsetLeft == target) {
+          clearInterval(obj.timer);
+          // 回调函数写到定时器结束里面
+          if (callback) {
+            // 调用函数
+            callback();
+          }
+        }
+        obj.style.left = obj.offsetLeft + step + "px";
+      }, 30);
+    }
+
+    var slow = document.querySelector(".slow");
+    var btn500 = document.querySelector(".btn500");
+    var btn800 = document.querySelector(".btn800");
+    btn500.addEventListener("click", function () {
+      slowAnimate(slow, 500);
+    });
+    btn800.addEventListener("click", function () {
+      slowAnimate(slow, 800, function () {
+        slow.style.backgroundColor = "coral";
       });
-      btn800.addEventListener("click", function () {
-        slowAnimate(slow, 800, function () {
-          slow.style.backgroundColor = "coral";
-        });
-      });
-    </script>
-  </body>
+    });
+  </script>
+</body>
+
 </html>

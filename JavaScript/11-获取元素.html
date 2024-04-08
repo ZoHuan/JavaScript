@@ -1,82 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>获取元素</title>
-  </head>
+</head>
 
-  <body>
+<body>
     <div id="time">2020-09-19</div>
     <ul>
-      <li>我不愿让你一个人，一个人在人海浮沉</li>
-      <li>我不愿让你一个人，一个人在人海浮沉</li>
-      <li>我不愿让你一个人，一个人在人海浮沉</li>
-      <li>我不愿让你一个人，一个人在人海浮沉</li>
+        <li>我不愿让你一个人，一个人在人海浮沉</li>
+        <li>我不愿让你一个人，一个人在人海浮沉</li>
+        <li>我不愿让你一个人，一个人在人海浮沉</li>
+        <li>我不愿让你一个人，一个人在人海浮沉</li>
     </ul>
     <ul id="nav">
-      <li>终于你身影消失在人海尽头</li>
-      <li>终于你身影消失在人海尽头</li>
-      <li>终于你身影消失在人海尽头</li>
-      <li>终于你身影消失在人海尽头</li>
+        <li>终于你身影消失在人海尽头</li>
+        <li>终于你身影消失在人海尽头</li>
+        <li>终于你身影消失在人海尽头</li>
+        <li>终于你身影消失在人海尽头</li>
     </ul>
     <div class="box">盒子</div>
     <div class="box">盒子</div>
     <div id="nav1">
-      <ul>
-        <li>首页</li>
-        <li>产品</li>
-      </ul>
+        <ul>
+            <li>首页</li>
+            <li>产品</li>
+        </ul>
     </div>
     <script>
-      // 返回一个元素对象
-      var timer = document.getElementById("time");
-      console.log(timer);
-      console.log(typeof timer);
-      // 打印我们返回的元素对象 更好的查看里面的属性和方法
-      console.dir(timer);
+        // 返回一个元素对象
+        var timer = document.getElementById("time");
+        console.log(timer);
+        console.log(typeof timer);
+        // 打印我们返回的元素对象 更好的查看里面的属性和方法
+        console.dir(timer);
 
-      // 返回的是 获取过来元素对象的集合 以伪数组的形式存储的
-      var lis = document.getElementsByTagName("li");
-      console.log(lis);
-      console.log(lis[0]);
-      // 遍历伪数组
-      for (let i = 0; i < lis.length; i++) {
-        console.log(lis[i]);
-      }
+        // 返回的是 获取过来元素对象的集合 以伪数组的形式存储的
+        var lis = document.getElementsByTagName("li");
+        console.log(lis);
+        console.log(lis[0]);
+        // 遍历伪数组
+        for (let i = 0; i < lis.length; i++) {
+            console.log(lis[i]);
+        }
 
-      // 得到这个元素里面的某些标签
-      var nav = document.getElementById("nav");
-      console.log(nav.getElementsByTagName("li"));
+        // 得到这个元素里面的某些标签
+        var nav = document.getElementById("nav");
+        console.log(nav.getElementsByTagName("li"));
 
-      // 根据类名获得某些元素集合
-      var boxs = document.getElementsByClassName("box");
-      console.log(boxs);
+        // 根据类名获得某些元素集合
+        var boxs = document.getElementsByClassName("box");
+        console.log(boxs);
 
-      // 返回指定选择器的第一个元素对象 里面的选择器需要加符号
-      var firstBox = document.querySelector(".box");
-      console.log(firstBox);
+        // 返回指定选择器的第一个元素对象 里面的选择器需要加符号
+        var firstBox = document.querySelector(".box");
+        console.log(firstBox);
 
-      var nav1 = document.querySelector("#nav1");
-      console.log(nav1);
+        var nav1 = document.querySelector("#nav1");
+        console.log(nav1);
 
-      var firstLi = nav1.querySelector("li");
-      console.log(firstLi);
+        var firstLi = nav1.querySelector("li");
+        console.log(firstLi);
 
-      // 返回指定选择器的所有元素对象集合
-      var allBox = document.querySelectorAll(".box");
-      console.log(allBox);
-      var allLis = nav1.querySelectorAll("li");
-      console.log(allLis);
+        // 返回指定选择器的所有元素对象集合
+        var allBox = document.querySelectorAll(".box");
+        console.log(allBox);
+        var allLis = nav1.querySelectorAll("li");
+        console.log(allLis);
 
-      // 获取body元素
-      var bodyEle = document.body;
-      console.log(bodyEle);
-      console.dir(bodyEle);
+        // 获取body元素
+        var bodyEle = document.body;
+        console.log(bodyEle);
+        console.dir(bodyEle);
 
-      // 获取html元素
-      var htmlEle = document.documentElement;
-      console.log(htmlEle);
+        // 获取html元素
+        var htmlEle = document.documentElement;
+        console.log(htmlEle);
     </script>
-  </body>
+</body>
+
 </html>

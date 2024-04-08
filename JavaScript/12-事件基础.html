@@ -1,25 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>事件基础</title>
-  </head>
+</head>
 
-  <body>
+<body>
     <button id="btn">唐伯虎</button>
     <div>控制台</div>
 
     <script>
-      var btn = document.getElementById("btn");
-      btn.onclick = function () {
-        alert("点秋香");
-      };
+        var btn = document.getElementById("btn");
+        btn.onclick = function () {
+            alert("点秋香");
+        };
 
-      var div = document.querySelector("div");
-      div.onclick = function () {
-        console.log("我被选中");
-      };
+        var div = document.querySelector("div");
+        div.onclick = function () {
+            console.log("我被选中");
+        };
     </script>
-  </body>
+</body>
+
 </html>

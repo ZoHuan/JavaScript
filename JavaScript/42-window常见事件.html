@@ -1,34 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>window常见事件</title>
-  </head>
 
-  <body>
-    <script>
-      // 窗口加载事件
-      // 1. window.onload 是窗口(页面)加载事件，当文档内容完全加载完成会触发该事件(包括图像、脚本、CSS文件等)，就调用的处理函数
-      window.onload = function () {
-        var btn = document.querySelector("button");
-        btn.addEventListener("click", function () {
-          alert("点击我");
-        });
-      };
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>window常见事件</title>
+</head>
 
-      window.addEventListener("load", function () {
-        var btn = document.querySelector("button");
-        btn.addEventListener("click", function () {
-          alert("点击我");
-        });
+<body>
+  <script>
+    // 窗口加载事件
+    // 1. window.onload 是窗口(页面)加载事件，当文档内容完全加载完成会触发该事件(包括图像、脚本、CSS文件等)，就调用的处理函数
+    window.onload = function () {
+      var btn = document.querySelector("button");
+      btn.addEventListener("click", function () {
+        alert("点击我");
       });
+    };
 
-      // 2. DOMContentLoaded 事件触发时，仅当DOM加载完成，不包括样式表，图片，flash等等。ie9以上才支持
-      document.addEventListener("DOMContentLoaded", function () {
-        alert("窗口事件");
+    window.addEventListener("load", function () {
+      var btn = document.querySelector("button");
+      btn.addEventListener("click", function () {
+        alert("点击我");
       });
-    </script>
-    <button>点击</button>
-  </body>
+    });
+
+    // 2. DOMContentLoaded 事件触发时，仅当DOM加载完成，不包括样式表，图片，flash等等。ie9以上才支持
+    document.addEventListener("DOMContentLoaded", function () {
+      alert("窗口事件");
+    });
+  </script>
+  <button>点击</button>
+</body>
+
 </html>

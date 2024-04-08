@@ -1,60 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>节点操作</title>
-  </head>
 
-  <body>
-    <div>DIV</div>
-    <span>SPAN</span>
-    <ul>
-      <li>ONE</li>
-      <li>TWO</li>
-      <li>THREE</li>
-      <li>FOUR</li>
-    </ul>
-    <div class="demo">
-      <div class="box">
-        <span class="erweima"></span>
-      </div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>节点操作</title>
+</head>
+
+<body>
+  <div>DIV</div>
+  <span>SPAN</span>
+  <ul>
+    <li>ONE</li>
+    <li>TWO</li>
+    <li>THREE</li>
+    <li>FOUR</li>
+  </ul>
+  <div class="demo">
+    <div class="box">
+      <span class="erweima"></span>
     </div>
+  </div>
 
-    <script>
-      // 1. 父节点 parentNode
-      var erweima = document.querySelector(".erweima");
-      console.log(erweima.parentNode);
+  <script>
+    // 1. 父节点 parentNode
+    var erweima = document.querySelector(".erweima");
+    console.log(erweima.parentNode);
 
-      // 2. 子节点
-      // childNodes 所有的子节点 包含 元素节点 文本节点 等等
-      var ul = document.querySelector("ul");
-      console.log(ul.childNodes);
+    // 2. 子节点
+    // childNodes 所有的子节点 包含 元素节点 文本节点 等等
+    var ul = document.querySelector("ul");
+    console.log(ul.childNodes);
 
-      // children 获取所有的子元素节点
-      console.log(ul.children);
+    // children 获取所有的子元素节点
+    console.log(ul.children);
 
-      // firstChild 第一个子节点 不管是文本节点还是元素节点
-      console.log(ul.firstChild);
-      // lastChild 最后一个子节点 不管是文本节点还是元素节点
-      console.log(ul.lastChild);
+    // firstChild 第一个子节点 不管是文本节点还是元素节点
+    console.log(ul.firstChild);
+    // lastChild 最后一个子节点 不管是文本节点还是元素节点
+    console.log(ul.lastChild);
 
-      // firstElementChild 第一个子元素节点
-      console.log(ul.firstElementChild);
-      // lastElementChild 最后一个子元素节点
-      console.log(ul.lastElementChild);
+    // firstElementChild 第一个子元素节点
+    console.log(ul.firstElementChild);
+    // lastElementChild 最后一个子元素节点
+    console.log(ul.lastElementChild);
 
-      // 3. 兄弟节点
-      // nextSibling 下一个兄弟节点 包含元素节点 或者 文本节点 等等
-      var div = document.querySelector("div");
-      console.log(div.nextSibling);
-      // previousSibling 上一个兄弟节点 包含元素节点 或者 文本节点 等等
-      console.log(div.previousSibling);
+    // 3. 兄弟节点
+    // nextSibling 下一个兄弟节点 包含元素节点 或者 文本节点 等等
+    var div = document.querySelector("div");
+    console.log(div.nextSibling);
+    // previousSibling 上一个兄弟节点 包含元素节点 或者 文本节点 等等
+    console.log(div.previousSibling);
 
-      // nextElementSibling 下一个兄弟元素节点
-      console.log(div.nextElementSibling);
-      // previousElementSibling 上一个兄弟元素节点
-      console.log(div.previousElementSibling);
-    </script>
-  </body>
+    // nextElementSibling 下一个兄弟元素节点
+    console.log(div.nextElementSibling);
+    // previousElementSibling 上一个兄弟元素节点
+    console.log(div.previousElementSibling);
+  </script>
+</body>
+
 </html>
